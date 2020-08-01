@@ -1,0 +1,10 @@
+check50: 
+  dependencies:
+    - check50-java
+
+  files: &check50_files
+    - !exclude "*"
+    - !require Hello.java
+
+submit50:
+  files: *check50_files
