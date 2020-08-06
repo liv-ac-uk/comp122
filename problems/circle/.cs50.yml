@@ -1,0 +1,12 @@
+check50:
+  dependencies:
+    - check50-java
+  files:
+    - !exclude "*"
+    - !include "*.java"
+
+submit50:
+  slug: "liv-ac-uk/comp122/2021/circle"
+  files:
+    - !exclude "*"
+    - !include "*.java"
