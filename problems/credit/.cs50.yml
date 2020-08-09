@@ -1,0 +1,10 @@
+check50:
+  dependencies:
+    - check50-java
+  files: &check50_files
+    - !exclude "*"
+    - !include "Credit.java"
+
+submit50:
+  slug: "liv-ac-uk/comp122/2021/credit"
+  files: *check50_files
