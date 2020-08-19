@@ -1,0 +1,6 @@
+lab50:
+  files:
+    - !exclude "*"
+  window:
+    - readme
+    - terminal
