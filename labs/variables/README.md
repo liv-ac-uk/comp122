@@ -79,7 +79,9 @@ Our program is nearly working as we would expect it to now, but there remains th
 
 Many programming languages will set uninitialized variables to 0 or a random value. Java is not one of these, and any variables which have not been assigned a value are guaranteed to throw a compiler error if we attempt to use these.
 
-Assign some value newWeight and recompile your program.
+Assign a value newWeight and recompile your program.
+
+{% next %}
 
 ## Success!
 
