@@ -2,7 +2,7 @@
 
 ## Declaring Variables
 
-Despite being an incredibly important saying, we unsurprisingly wish our programs to be able to do more than say Hello!
+Despite being an incredibly important saying, in general we wish our programs to be able to do more than say hello!
 
 At the right we can see a simple program which we will use to calculate the difference in two weights, go ahead and compile it using 
 
@@ -11,6 +11,36 @@ javac Declarations.java
 ```
 
 {% next %}
+
+Hmm, that doesn't seem to work quite as we were expecting...
+
+We can see that the compiler has found three errors in our code, given in the order in which the compiler has found them.
+
+```
+Declarations.java:7: error: cannot find symbol
+        weightDifference = newWeight - curentWeight;
+        ^
+  symbol:   variable weightDifference
+  location: class Declarations
+Declarations.java:7: error: cannot find symbol
+        weightDifference = newWeight - curentWeight;
+                                       ^
+  symbol:   variable curentWeight
+  location: class Declarations
+Declarations.java:10: error: cannot find symbol
+        System.out.println(weightDifference); 
+                           ^
+  symbol:   variable weightDifference
+  location: class Declarations
+3 errors
+```
+
+Note how the compiler is helping us here by not only specifying the line the error is in (eg: ```Declarations.java:7```) but also the exact part of the line where the error occurs.
+
+Let's go hunt some bugs.
+
+{% next %}
+
 
 
 
