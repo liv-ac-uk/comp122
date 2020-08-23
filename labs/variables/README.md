@@ -93,6 +93,10 @@ java Declarations
 
 Try it with different values of currentWeight and newWeight to ensure it works as you would expect (don't forget to recompile, or it will simply use the old version of your program)
 
+## Floating Points
+
+As you may have covered in the previous semester, when programming with numbers we generally use integers (0, 1, 2, 3... etc.) or floating point numbers (0.125, 2.5, 17.25 etc.). At a fundamental level inside the computer, these have to be represented in binary and as there are an infinite number of values between 0.125 and 0.126, we need to make some approximations of the real values, and we will not be able to to represent all of these with the numeric Java data types. 
+
 ## Test Your Code
 
 Execute the below command to evaluate the correctness of your code using `check50`, but be sure to compile and test it yourself!
