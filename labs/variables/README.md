@@ -2,8 +2,15 @@
 
 ## Declaring Variables
 
+Despite being an incredibly important saying, we unsurprisingly wish our programs to be able to do more than say Hello!
 
+At the right we can see a simple program which we will use to calculate the difference in two weights, go ahead and compile it using 
 
+```
+javac Declarations.java
+```
+
+{% next %}
 
 
 
