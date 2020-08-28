@@ -14,7 +14,7 @@ def compiles():
 @check50.check(compiles)
 def returnsFloat():
     """Ensures declarations is returning the specified value"""
-    check50_java.run("Declarations").stdout("62.5").exit()
+    check50_java.run("Declarations").stdout("-62.5").exit()
 
 @check50.check()
 def exists():
