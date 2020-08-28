@@ -149,7 +149,7 @@ import java.util.Scanner;
 Execute the below to evaluate the correctness of your code using `check50`, but be sure to compile and test it yourself!
 
 ```
-check50 liv-ac-uk/comp122/2021/problems/hello
+check50 liv-ac-uk/comp122/2021/labs/00_hello
 ```
 
 Execute the below to evaluate the style of your code using `style50`.
@@ -165,5 +165,5 @@ style50 Hello.java
 Execute the below, logging in with your GitHub username and password when prompted. For security, you'll see asterisks (`*`) instead of the actual characters in your password.
 
 ```
-submit50 liv-ac-uk/comp122/2021/problems/hello
+submit50 liv-ac-uk/comp122//2021/labs/00_hello
 ```

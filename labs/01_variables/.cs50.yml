@@ -1,7 +1,7 @@
 lab50:
   files:
     - !exclude "*"
-    - !include Declarations.java FPTestApp.java
+    - !include Declarations.java
   window:
     - editor
     - readme
