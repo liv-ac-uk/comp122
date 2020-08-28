@@ -67,7 +67,7 @@ You will have encountered this bug in your other programs (often at 2 A.M. the n
 
 Check the code carefully and see where it could be going wrong. 
 
-{% spoiler %}
+{% spoiler "Hint" %}
 A very helpful way of quickly checking this is to double click on the troublesome variable in the editor and press ```ctrl + f``` (```cmd + f``` on macs). How many occurrences are there?
 {% endspoiler %}
 
