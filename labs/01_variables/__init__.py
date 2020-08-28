@@ -30,4 +30,4 @@ def compiles():
 @check50.check(compiles)
 def returnsFloat():
     """Ensures FPTestApp is printing the specified value"""
-    check50_java.run("Declarations").stdout("0.9999999").exit()
+    check50_java.run("Declarations").stdout("1.0000000000000002").exit()

@@ -171,7 +171,7 @@ There is a [commonly retold urban legend](https://www.snopes.com/fact-check/the-
 
 Ensure your Declarations.java compiles and set currentWeight = 122.5 and newWeight=60.
 
-In FPTestApp, update x and y when n=3 and submit these both with check50.
+In FPTestApp, update x=1.0/20 and y when n=20 and submit these both with check50.
 
 check50 liv-ac-uk/comp122/2021/labs/01_variables
 
