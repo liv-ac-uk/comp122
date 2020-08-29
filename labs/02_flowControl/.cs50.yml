@@ -1,7 +1,7 @@
 lab50:
   files:
     - !exclude "*"
-    - !include Declarations.java
+    - !include SumAndAverage.java
   window:
     - editor
     - readme

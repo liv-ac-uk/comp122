@@ -120,7 +120,7 @@ Open the file explorer (by clicking on the home button in the upper left corner 
 
 ## Difference of Opinion
 
-By reading through the code, we would expect that as 1 / 10 = 0.1, by adding these values together 10 times we should return 1. Compile and run FPTestApp to confirm this.
+By reading through the code, we would expect that as 1.0 / 10 = 0.1, by adding these values together 10 times we should return 1. Compile and run FPTestApp to confirm this.
 
 {% next %}
 
@@ -128,9 +128,11 @@ By reading through the code, we would expect that as 1 / 10 = 0.1, by adding the
 
 As you have seen, the fraction 1 / 10 cannot be represented perfectly in binary, and thus does not sum to 1 perfectly.  
 
-Make n = 3 (x = 1 / 3) and add this together 3 times. 
+Make n = 3 (x = 1.0 / 3) and add this together 3 times. 
 
 Is this equal to 1?
+
+What happens if we change x = 1 / 3? Does this sum to 1?
 
 {% next %}
 
@@ -166,6 +168,8 @@ There is a [commonly retold urban legend](https://www.snopes.com/fact-check/the-
 {% endspoiler %}
 
 {% next %}
+
+
 
 ## Submission
 
