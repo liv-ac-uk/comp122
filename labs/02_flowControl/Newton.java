@@ -1,8 +1,12 @@
-import java.util.Scanner;
+// imports
 
 public class Newton {
-    Scanner myScanner = new Scanner(System.in);
-    float n = myScanner.nextFloat();
+    public static void main(String[] args) {
+        // Read in values
+        sqRoot(n, guess);
+    }
 
-    
+    public static double sqRoot() {
+        // Your code here
+    }
 }
