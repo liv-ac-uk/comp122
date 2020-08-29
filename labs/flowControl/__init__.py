@@ -3,31 +3,71 @@ import check50_java
 
 @check50.check()
 def exists():
-    """Declarations.java exists."""
-    check50.exists("Declarations.java")
+    """LeapYear.java exists."""
+    check50.exists("LeapYear.java")
 
 @check50.check(exists)
 def compiles():
-    """Declarations.java compiles."""
-    check50_java.compile("Declarations.java")
+    """LeapYear.java compiles."""
+    check50_java.compile("LeapYear.java")
 
 @check50.check(compiles)
 def returnsFloat():
-    """Ensures declarations is returning the specified value"""
-    check50_java.run("Declarations").stdout("62.5").exit()
+    """Ensures LeapYear is returning the specified value for 1980"""
+    check50_java.run("LeapYear").stdin(1980).stdout("true\n").exit()
+
+@check50.check(compiles)
+def returnsFloat():
+    """Ensures LeapYear is returning the specified value for 2000"""
+    check50_java.run("LeapYear").stdin(2000).stdout("true\n").exit()
+
+
+@check50.check(compiles)
+def returnsFloat():
+    """Ensures LeapYear is returning the specified value for 2016"""
+    check50_java.run("LeapYear").stdin(2016).stdout("true\n").exit()
+
+@check50.check(compiles)
+def returnsFloat():
+    """Ensures LeapYear is returning the specified value for 1980"""
+    check50_java.run("LeapYear").stdin(1900).stdout("false\n").exit()
+
+@check50.check(compiles)
+def returnsFloat():
+    """Ensures LeapYear is returning the specified value for 2001"""
+    check50_java.run("LeapYear").stdin(2001).stdout("false\n").exit()
+
+@check50.check(compiles)
+def returnsFloat():
+    """Ensures LeapYear is returning the specified value for 2018"""
+    check50_java.run("LeapYear").stdin(2018).stdout("false\n").exit()
 
 @check50.check()
 def exists():
-    """FPTestApp.java exists."""
-    check50.exists("FPTestApp.java")
+    """Newton.java exists."""
+    check50.exists("Newton.java")
 
 @check50.check(exists)
 def compiles():
-    """FPTestApp.java compiles."""
-    check50_java.compile("FPTestApp.java")
+    """Newton.java compiles."""
+    check50_java.compile("Newton.java")
 
-# TODO make sure return values match
 @check50.check(compiles)
 def returnsFloat():
-    """Ensures FPTestApp is printing the specified value"""
-    check50_java.run("Declarations").stdout("0.9999999").exit()
+    """Ensures LeapYear is returning the specified value for 2.0 1.0"""
+    check50_java.run("Newton").stdin("2.0 1.0").stdout("6\n1.414213562373095").exit()
+
+@check50.check(compiles)
+def returnsFloat():
+    """Ensures Newton is returning the specified value for 9.0 3.0"""
+    check50_java.run("Newton").stdin("9.0 3.0").stdout("1\n3.0").exit()
+
+@check50.check(compiles)
+def returnsFloat():
+    """Ensures Newton is returning the specified value for 25 0.1"""
+    check50_java.run("Newton").stdin("25 0.1").stdout("11\n5.0").exit()
+
+@check50.check(compiles)
+def returnsFloat():
+    """Ensures Newton is returning the correct (but incorrect) value for 25 0"""
+    check50_java.run("Newton").stdin("25 0").stdout("3\nInfinity").exit()

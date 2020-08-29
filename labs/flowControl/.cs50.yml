@@ -1,7 +1,8 @@
 lab50:
   files:
     - !exclude "*"
-    - !include SumAndAverage.java
+    - !include LeapYear.java
+    - !include Newton.java
   window:
     - editor
     - readme

@@ -6,7 +6,7 @@ public class Newton {
         sqRoot(n, guess);
     }
 
-    public static double sqRoot() {
+    public static void sqRoot() {
         // Your code here
     }
 }
