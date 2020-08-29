@@ -151,7 +151,7 @@ Floating point numbers allow us to work with numbers with decimal places, and wi
 
 However as seen, these come with a risk, and when used in arithmetic, these rounding errors whilst initially insignificant can lead to potentially catastrophic consequences. 
 
-Because of this reason, it is important not to use equality when testing if two floating point variables are the same. This will often return an unexpected result. Instead, you should take the absolute difference between the two values, and ensure it is less than a small reference number. This can be done using the Math library (more on that in the next lab).
+Because of this reason, it is important not to use equality when testing if two floating point variables are the same. This will often return an unexpected result. Instead, you should take the absolute difference between the two values, and ensure it is less than a small reference number. This can be done using the Math library (more on that later).
 
 `double_1 == double_2 // Returns False`
 
@@ -169,14 +169,78 @@ There is a [commonly retold urban legend](https://www.snopes.com/fact-check/the-
 
 {% next %}
 
-## Imports and Packages
+## Some Applications of Floats
+
+Pi is a beautiful, transcendental number which has far reaching applications to almost all areas of mathematics, physics, computer science, and philosophy. Others would argue it is roughly equal to 3. 
+
+We can use approximations of `$\pi$`, and the division $`22.0/7`$ leads to a number which is within 0.04% of the true value.
+
+Rather than redefining our own value of `$\pi$` which is guaranteed to introduce some error, it is preferable to use a more precise value. Luckily there is one built into the Java standard library.
+
+## Importing Pi
+
+In the previous lab we imported the `Scanner` class from the  `java.util` package, which contains a large number of widely used utility functions. 
+
+We often wish to perform mathematical operations in our code, and unsurprisingly java comes with lots of helpful functions in the [Math package](https://docs.oracle.com/javase/9/docs/api/java/lang/Math.html), which can be imported with:
+
+`import java.lang.Math`
+
+Once we have this in our code, we may use the closest possible double value to $`\pi`$ with:
+
+`Math.PI`
+
+## Using Pi
+
+Open the `SimpleCircle.java` program.
+
+You will see that we have a mostly complete program which prints the area and circumference of a circle. Finish this program to ensure that we return the right values.
+
+{% spoiler "Hint" %}
+
+Recall that the area of a circle is $`\pi r^2`$, and the circumference is $`2 \pi r`$.
+
+{% endspoiler %}
+
+{% next %}
+
+## Pythagoras's Theorem
+
+Recall the Pythagorean theorem which states that the sides of a right angled triangle labelled $`a, b`$ and $`c`$ in the diagram (where $`c`$ is the length of the side opposite the right angle), satisfy the relationship $`a^2 + b^2 = c^2`$.
+
+[Pythagoras](https://i.imgur.com/4KZ1nDX.png)
+
+Complete the program `Pythagoras.java` which will compute and display the value of $`c`$ when $`a=3`$ and $`b=5`$.
+
+{% spoiler "Hint"}
+
+There is a square root function in the Math package which it would be wise to use!
+
+{% endspoiler %}
+
+{% next %}
+
+## The Law of Cosines
+
+When we do not have a right angled triangle, but we do have the values of $`a, b`$ and the angle between these $`\theta`$, we can see that the relationship between $`a, b, c`$ and $`\theta`$ is given by the [Law of Cosines](https://www.wikipedia.org/wiki/Law_of_cosines)
+
+```math
+
+c^2 = a^2 + b^2 - 2ab \cos \theta
+```
+
+[Cosines](https://i.imgur.com/5gpfSg8.png)
+
+Complete the program Cosines.java which will compute $`c`$ given the values of $`a=3.0, b=5.0`$, and $`\theta=\frac{2\pi}{3}`$ (in radians). 
+
+{% spoiler "Hint" %}
+
+Note that when $`\theta = \pi / 2`$ radians we have a right angled triangle. Use your program from part (b) to partially test the program you write here
+
+{% endspoiler %}
+
 
 ## Submission
 
-Ensure your Declarations.java compiles and set currentWeight = 122.5 and newWeight=60.
-
-In FPTestApp, update x=1.0/20 and y when n=20 and submit these both with check50.
+Ensure your Declarations.java compiles and make `currentWeight = 122.5` and `newWeight = 60`. In FPTestApp, update `x = 1.0/20` and `y` when `$n=20$`, and for `Pythagoras.java` and `Cosines.java` ensure these return the values specified above, and submit these with check50 via:
 
 check50 liv-ac-uk/comp122/2021/labs/variables
-
-
