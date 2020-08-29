@@ -79,7 +79,7 @@ Our program is nearly working as we would expect it to now, but there remains th
 
 Many programming languages will set uninitialized variables to 0 or a random value. Java is not one of these, and any variables which have not been assigned a value are guaranteed to throw a compiler error if we attempt to use these.
 
-Assign a value newWeight and recompile your program.
+Assign a value to `newWeight` and recompile your program.
 
 {% next %}
 
@@ -91,7 +91,7 @@ Now that we have compiled our program successfully we can run it with:
 java Declarations
 ```
 
-Try it with different values of currentWeight and newWeight to ensure it works as you would expect (don't forget to recompile, or it will simply use the old version of your program)
+Try it with different values of `currentWeight` and `newWeight` to ensure it works as you would expect (don't forget to recompile, or it will simply use the old version of your program)
 
 {% next %}
 
@@ -102,7 +102,7 @@ As java is statically typed, we need to define our variables correctly before th
 
 In object oriented programming we generally define variables to be more complex data types (classes), but there are simple representations for integers, floats, boolean (true or false), and single characters. 
 
-We will use ints/longs, doubles, and boolean variables in our programs extensively, with the other datatypes having slightly less relevance in modern 64 bit operating systems.
+We will use `ints/longs`, `doubles`, and `boolean` variables in our programs extensively, with the other datatypes having slightly less relevance in modern 64 bit operating systems.
 
 A full reference to these can be found in the [official documentation](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html).
 
@@ -110,7 +110,7 @@ A full reference to these can be found in the [official documentation](https://d
 
 ## Floating Points
 
-As you may have covered in the previous semester, when programming with numbers we generally use integers (0, 1, 2, 3... etc.) or floating point numbers (1.00, 0.125, 2.5, 17.25 etc.). At a fundamental level inside the computer, these have to be represented in binary and as there are an infinite number of values between 0.125 and 0.126, we need to make approximations of some of the real values. 
+As you may have covered in the previous semester, when programming with numbers we generally use integers ($`0, 1, 2, 3`$... etc.) or floating point numbers ($`1.00, 0.125, 2.5, 17.25`$ etc.). At a fundamental level inside the computer, these have to be represented in binary and as there are an infinite number of values between $`0.125`$ and $`0.126`$, we need to make approximations of some of the real values. 
 
 As a consequence we will not be able to represent all numbers with the numeric Java data types, and this may lead to rounding issues in our code. 
 
@@ -120,7 +120,7 @@ Open the file explorer (by clicking on the home button in the upper left corner 
 
 ## Difference of Opinion
 
-By reading through the code, we would expect that as 1.0 / 10 = 0.1, by adding these values together 10 times we should return 1. Compile and run FPTestApp to confirm this.
+By reading through the code, we would expect that as $`1.0 / 10 = 0.1`$, by adding these values together 10 times we should return $`1`$. Compile and run FPTestApp to confirm this.
 
 {% next %}
 
@@ -128,16 +128,16 @@ By reading through the code, we would expect that as 1.0 / 10 = 0.1, by adding t
 
 As you have seen, the fraction 1 / 10 cannot be represented perfectly in binary, and thus does not sum to 1 perfectly.  
 
-Make n = 3 (x = 1.0 / 3) and add this together 3 times. 
+Make $`n = 3`$ (`x = 1.0 / 3`) and add this together 3 times. 
 
 Is this equal to 1?
 
-What happens if we change x = 1 / 3? Does this sum to 1?
+What happens if we change `x = 1 / 3`? Does this sum to 1?
 
 {% next %}
 
 ## Subtraction
-What do you get when you compute 1−0.9 in Java? How about 1−0.99? Or 1−0.999 and so on?
+What do you get when you compute $`1−0.9`$ in Java? How about $`1−0.99`$? Or $`1−0.999`$ and so on?
 
 Subtraction is particularly problematic in floating point arithmetic, especially when the two numbers are close. 
 
@@ -171,7 +171,7 @@ There is a [commonly retold urban legend](https://www.snopes.com/fact-check/the-
 
 ## Some Applications of Floats
 
-Pi is a beautiful, transcendental number which has far reaching applications to almost all areas of mathematics, physics, computer science, and philosophy. Others would argue it is roughly equal to 3. 
+Pi is a beautiful, transcendental number which has far reaching applications to almost all areas of mathematics, physics, computer science, and philosophy. Others would argue it is roughly equal to $`3`$. 
 
 We can use approximations of `$\pi$`, and the division $`22.0/7`$ leads to a number which is within 0.04% of the true value.
 

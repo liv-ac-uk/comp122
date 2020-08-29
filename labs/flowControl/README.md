@@ -123,6 +123,7 @@ For example, suppose you want to approximate $`\sqrt{n}`$ up to error $`\epsilon
 1.4142135623746899
 1.414213562373095
 ```
+
 These last two numbers differ by less than ϵ\epsilonϵ, so the sequence of guesses stops with the final number as the estimate of $`\sqrt{2}`$​​. By taking $`\epsilon`$ to be smaller, one can get a better estimate of $`\sqrt{2}`$​. Of course, this has limits based on the number of decimal places that the computer can store internally.
 
 {% next %}
