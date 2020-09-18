@@ -48,7 +48,7 @@ In our Gregorian calendar, a leap year is a year that is divisible by $`4`$, exc
 
 Initial code for the program LeapYear.java has been given. When run the user will input a year, which will be read in as an integer (`myScanner.nextInt();`). Implement the rest of the function isLeapYear which will use Java's `if-then-else` construct to return a boolean value from the function and print this to the console. Do not modify the `main()` method. 
 
-{% spoiler "Hint"}
+{% spoiler "Hint" %}
 Use the modulo operator `%` to test if a number divides perfectly by another. `n % 400` returns the remainder when $`n`$ is divided by $`400 `$, so `(n % 400 == 0)` evaluates to `true` if and only if $`n`$ is divisible by $`400`$.
 
 {% endspoiler %}
@@ -96,7 +96,7 @@ while (lessThanTen) {
 
 We should use `while` statements when we do not know how many times a loop will need to run before terminating. 
 
-{% spoiler "Hint"}
+{% spoiler "Hint" %}
 
 We can introduce bugs into our code if we forget to change the condition which is being tested, meaning that the loop runs forever. Infinite while loops can appear as if your program has frozen, when in reality it is executing the same code repeatedly 
 
