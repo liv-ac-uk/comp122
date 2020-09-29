@@ -2,7 +2,6 @@ lab50:
   files:
     - !exclude "*"
     - !include LeapYear.java
-    - !include Newton.java
   window:
     - editor
     - readme
