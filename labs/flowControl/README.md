@@ -42,6 +42,8 @@ else {
 }
 ```
 
+{% next %}
+
 ## Leap Years
 
 In our Gregorian calendar, a leap year is a year that is divisible by ![equation](https://latex.codecogs.com/gif.latex?4), except if it is also divisible by ![equation](https://latex.codecogs.com/gif.latex?100), in which case it's a leap year only if it's divisible by ![equation](https://latex.codecogs.com/gif.latex?400). So ![equation](https://latex.codecogs.com/gif.latex?1980), ![equation](https://latex.codecogs.com/gif.latex?2000), and ![equation](https://latex.codecogs.com/gif.latex?2016) are all leap years, while ![equation](https://latex.codecogs.com/gif.latex?1900), ![equation](https://latex.codecogs.com/gif.latex?2001) and ![equation](https://latex.codecogs.com/gif.latex?2018) are not.
@@ -52,6 +54,8 @@ Initial code for the program LeapYear.java has been given. When run the user wil
 Use the modulo operator `%` to test if a number divides perfectly by another. `n % 400` returns the remainder when ![equation](https://latex.codecogs.com/gif.latex?n) is divided by ![equation](https://latex.codecogs.com/gif.latex?400 ), so `(n % 400 == 0)` evaluates to `true` if and only if ![equation](https://latex.codecogs.com/gif.latex?n) is divisible by ![equation](https://latex.codecogs.com/gif.latex?400).
 
 {% endspoiler %}
+
+{% next %}
 
 ## Condensing our code
 
@@ -102,18 +106,20 @@ We can introduce bugs into our code if we forget to change the condition which i
 
 {% endspoiler %}
 
+{% next %}
+
 ## Newtons Method
 
 In `Newton.java`, implement [Newton's method](https://www.wikipedia.com/en/Newton's_method#/Square_root_of_a_number) in the given function `sqRoot()` to give an approximation of the square root of an inputted value of ![equation](https://latex.codecogs.com/gif.latex?n).
 
-This algorithm (also called the "Babylonian method"), approximates $`\sqrt{n}`$ by iteratively improving a $`guess`$ for the square root according to the formula:
+This algorithm (also called the "Babylonian method"), approximates ![equation](https://latex.codecogs.com/gif.latex?%5Csqrt%7Bn%7D) by iteratively improving a $`guess`$ for the square root according to the formula:
 ```math
 new\ guess = \frac{(n / guess) + guess}{2}
 ```
 
-Until the last two values differ by at most, a given precision %`\epsilon`$.
+Until the last two values differ by at most, a given precision ![equation](https://latex.codecogs.com/gif.latex?%5Cepsilon).
 
-For example, suppose you want to approximate $`\sqrt{n}`$ up to error $`\epsilon=0.0000001`$. If our initial guess is $`1`$, the sequence of guesses would be:
+For example, suppose you want to approximate ![equation](https://latex.codecogs.com/gif.latex?%5Csqrt%7Bn%7D) up to error ![equation](https://latex.codecogs.com/gif.latex?%5Cepsilon%3D0.0000001). If our initial guess is ![equation](https://latex.codecogs.com/gif.latex?1) , the sequence of guesses would be:
 
 ```
 1.0
@@ -124,15 +130,15 @@ For example, suppose you want to approximate $`\sqrt{n}`$ up to error $`\epsilon
 1.414213562373095
 ```
 
-These last two numbers differ by less than ϵ\epsilonϵ, so the sequence of guesses stops with the final number as the estimate of $`\sqrt{2}`$​​. By taking $`\epsilon`$ to be smaller, one can get a better estimate of $`\sqrt{2}`$​. Of course, this has limits based on the number of decimal places that the computer can store internally.
+These last two numbers differ by less than ϵ\epsilonϵ, so the sequence of guesses stops with the final number as the estimate of ![equation](https://latex.codecogs.com/gif.latex?%5Csqrt%7Bn%7D)​​. By taking ![equation](https://latex.codecogs.com/gif.latex?%5Cepsilon) to be smaller, one can get a better estimate of ![equation](https://latex.codecogs.com/gif.latex?%5Csqrt%7Bn%7D). Of course, this has limits based on the number of decimal places that the computer can store internally.
 
 {% next %}
 
 ## Newtons Method
 
-Your code will take in two positive numbers $`n`$ and $`guess`$ as input using `Scanner.nextDouble()`. It should calculate an $`\epsilon`$-approximation of the square root of $`n`$, when $`\epsilon=0.0000001`$.
+Your code will take in two positive numbers ![equation](https://latex.codecogs.com/gif.latex?n) and ![equation](https://latex.codecogs.com/gif.latex?guess) as input using `Scanner.nextDouble()`. It should calculate an ![equation](https://latex.codecogs.com/gif.latex?%5Cepsilon)-approximation of the square root of ![equation](https://latex.codecogs.com/gif.latex?n), when ![equation](https://latex.codecogs.com/gif.latex?%5Cepsilon%3D0.0000001).
 
-Your function should print the square root of $`n`$ and the total number of guesses taken (including the initial guess).
+Your function should print the square root of ![equation](https://latex.codecogs.com/gif.latex?n) and the total number of guesses taken (including the initial guess).
 
 ```
 java Newton
@@ -147,6 +153,7 @@ You may want to use a `while` loop to compute $`new\ guess`$ and compare it to y
 
 {% endspoiler %}
 
+{% next %}
 
 ## Submission
 
