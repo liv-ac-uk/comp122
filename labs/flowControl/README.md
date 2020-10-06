@@ -113,9 +113,8 @@ We can introduce bugs into our code if we forget to change the condition which i
 In `Newton.java`, implement [Newton's method](https://www.wikipedia.com/en/Newton's_method#/Square_root_of_a_number) in the given function `sqRoot()` to give an approximation of the square root of an inputted value of ![equation](https://latex.codecogs.com/gif.latex?n).
 
 This algorithm (also called the "Babylonian method"), approximates ![equation](https://latex.codecogs.com/gif.latex?%5Csqrt%7Bn%7D) by iteratively improving a $`guess`$ for the square root according to the formula:
-```math
-new\ guess = \frac{(n / guess) + guess}{2}
-```
+
+![equation](https://latex.codecogs.com/gif.latex?new%5C%20guess%20%3D%20%5Cfrac%7B%28n%20/%20guess%29%20&plus;%20guess%7D%7B2%7D)
 
 Until the last two values differ by at most, a given precision ![equation](https://latex.codecogs.com/gif.latex?%5Cepsilon).
 
@@ -149,7 +148,7 @@ java Newton
 
 {% spoiler "Hint" %}
 
-You may want to use a `while` loop to compute $`new\ guess`$ and compare it to your previous guess. You can use the function Math.abs() when testing the difference between successive guesses.
+You may want to use a `while` loop to compute ![equation](https://latex.codecogs.com/gif.latex?new%5C%20guess) and compare it to your previous guess. You can use the function Math.abs() when testing the difference between successive guesses.
 
 {% endspoiler %}
 
