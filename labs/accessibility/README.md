@@ -8,7 +8,7 @@ In the previous lab all of our methods and attributes were simply made public, b
 ## Change of Hands
 You should have implemented a `public int grade;`, which allows the lecturer to change the grade of the student. In the following year the lecturer has left the university and the codebase has been passed to an administrator who is a much worse coder, but is still keen to use software to save time.
 
-Instead of using the `updateGrade()'` method, the new administrator has decided to set the `grade` attribute manually for each student. They also have an old keyboard where the $`0`$ key often gets stuck.
+Instead of using the `updateGrade()` method, the new administrator has decided to set the `grade` attribute manually for each student. They also have an old keyboard where the $`0`$ key often gets stuck.
 
 ```java
 ...
@@ -32,10 +32,10 @@ Luckily we can force people to use our software correctly with access modifiers.
 ## Privacy is Important
 
 There are four access modifiers in Java:
-    - `public`
-    - `protected`
-    - no modifier
-    - `private`
+* `public`
+* `protected`
+* no modifier
+* `private`
 
 For now let us look at `public` and `private`.
 
