@@ -5,9 +5,9 @@ At some point in our programs we need to make decisions, and Java implements sim
 
 ## The meaning of if
 
-The most basic of these is the `if` statement. 
+The most basic of these is the `if` statement.
 
-This will evaluate a boolean expression, and _if_ the value of this expression is true then we will execute the next code block. 
+This will evaluate a boolean expression, and _if_ the value of this expression is true then we will execute the next code block.
 
 ```
 if (BOOLEAN_EXPRESSION) {
@@ -44,12 +44,12 @@ else {
 
 ## Leap Years
 
-In our Gregorian calendar, a leap year is a year that is divisible by $`4`$, except if it is also divisible by $`100`$, in which case it's a leap year only if it's divisible by $`400`$. So $`1980`$, $`2000`$, and $`2016`$ are all leap years, while $`1900`$, $`2001`$ and $`2018`$ are not.
+In our Gregorian calendar, a leap year is a year that is divisible by ![equation](https://latex.codecogs.com/gif.latex?4), except if it is also divisible by ![equation](https://latex.codecogs.com/gif.latex?100), in which case it's a leap year only if it's divisible by ![equation](https://latex.codecogs.com/gif.latex?400). So ![equation](https://latex.codecogs.com/gif.latex?1980), ![equation](https://latex.codecogs.com/gif.latex?2000), and ![equation](https://latex.codecogs.com/gif.latex?2016) are all leap years, while ![equation](https://latex.codecogs.com/gif.latex?1900), ![equation](https://latex.codecogs.com/gif.latex?2001) and ![equation](https://latex.codecogs.com/gif.latex?2018) are not.
 
-Initial code for the program LeapYear.java has been given. When run the user will input a year, which will be read in as an integer (`myScanner.nextInt();`). Implement the rest of the function isLeapYear which will use Java's `if-then-else` construct to return a boolean value from the function and print this to the console. Do not modify the `main()` method. 
+Initial code for the program LeapYear.java has been given. When run the user will input a year, which will be read in as an integer (`myScanner.nextInt();`). Implement the rest of the function isLeapYear which will use Java's `if-then-else` construct to return a boolean value from the function and print this to the console. Do not modify the `main()` method.
 
 {% spoiler "Hint" %}
-Use the modulo operator `%` to test if a number divides perfectly by another. `n % 400` returns the remainder when $`n`$ is divided by $`400 `$, so `(n % 400 == 0)` evaluates to `true` if and only if $`n`$ is divisible by $`400`$.
+Use the modulo operator `%` to test if a number divides perfectly by another. `n % 400` returns the remainder when ![equation](https://latex.codecogs.com/gif.latex?n) is divided by ![equation](https://latex.codecogs.com/gif.latex?400 ), so `(n % 400 == 0)` evaluates to `true` if and only if ![equation](https://latex.codecogs.com/gif.latex?n) is divisible by ![equation](https://latex.codecogs.com/gif.latex?400).
 
 {% endspoiler %}
 
@@ -71,10 +71,10 @@ false    // output
 
 ## Whiling away the hours
 
-`while` loops are a core part of controlling the flow of our programs. These will repeatedly execute a block of code _while_ some condition is true. 
+`while` loops are a core part of controlling the flow of our programs. These will repeatedly execute a block of code _while_ some condition is true.
 
 ```
-... 
+...
 boolean lessThanTen = true;
 
 System.out.println("Enter an integer greater than or equal to ten")
@@ -94,17 +94,17 @@ while (lessThanTen) {
 
 ## When to while
 
-We should use `while` statements when we do not know how many times a loop will need to run before terminating. 
+We should use `while` statements when we do not know how many times a loop will need to run before terminating.
 
 {% spoiler "Hint" %}
 
-We can introduce bugs into our code if we forget to change the condition which is being tested, meaning that the loop runs forever. Infinite while loops can appear as if your program has frozen, when in reality it is executing the same code repeatedly 
+We can introduce bugs into our code if we forget to change the condition which is being tested, meaning that the loop runs forever. Infinite while loops can appear as if your program has frozen, when in reality it is executing the same code repeatedly
 
 {% endspoiler %}
 
 ## Newtons Method
 
-In `Newton.java`, implement [Newton's method](https://www.wikipedia.com/en/Newton's_method#/Square_root_of_a_number) in the given function `sqRoot()` to give an approximation of the square root of an inputted value of $`n`$. 
+In `Newton.java`, implement [Newton's method](https://www.wikipedia.com/en/Newton's_method#/Square_root_of_a_number) in the given function `sqRoot()` to give an approximation of the square root of an inputted value of ![equation](https://latex.codecogs.com/gif.latex?n).
 
 This algorithm (also called the "Babylonian method"), approximates $`\sqrt{n}`$ by iteratively improving a $`guess`$ for the square root according to the formula:
 ```math
@@ -150,8 +150,8 @@ You may want to use a `while` loop to compute $`new\ guess`$ and compare it to y
 
 ## Submission
 
-These programs will be tested automatically against a range of test cases, so ensure that the output matches the examples given otherwise these are guaranteed to fail. 
+These programs will be tested automatically against a range of test cases, so ensure that the output matches the examples given otherwise these are guaranteed to fail.
 
-Once you have completed these exercises submit these in the usual way 
+Once you have completed these exercises submit these in the usual way
 
 check50 liv-ac-uk/comp122/2021/labs/variables
