@@ -3,6 +3,8 @@ In the last lab we implemented the `Student.java` class, here we will explore th
 
 In the previous lab all of our methods and attributes were simply made public, but in general this does not provide much assurance that other users will misuse our application.
 
+{% next %}
+
 ## Change of Hands
 You should have implemented a `public int grade;`, which allows the lecturer to change the grade of the student. In the following year the lecturer has left the university and the codebase has been passed to an administrator who is a much worse coder, but is still keen to use software to save time.
 
@@ -17,11 +19,15 @@ charlie.grade = 20000;
 
 This is causing some angry emails.
 
+{% next %}
+
 ## Saving People From Themselves
 
 When designing software we cannot trust the end user. If software can be accidentally misused, it will be misused eventually. *It is our responsibility as engineers to prevent this from happening*.
 
 Luckily we can force people to use our software correctly with access modifiers.
+
+{% next %}
 
 ## Privacy is Important
 
@@ -39,6 +45,8 @@ In contrast `private` variables cannot be seen by other instantiated objects. Tr
 
 Are `private` variables useless then? No, because these *can* be changed within the class body. We can assume that the end user won't be able to modify our class, and therefore we can build error correction into our program from the start. This gives us full control over how these variables can be interacted with.
 
+{% next %}
+
 ## Saving the System
 
 You've been called in to streamline the system. Going forward the module will have three assignments, each worth 33% of the total grade.
@@ -48,6 +56,8 @@ We want there to be two array attributes for our student classes, `hasSubmitted`
 Having learned from the past mistakes, once we have created a student, there should only be a single method we can call to change the attributes of the student.
 
 This method will take the assignment number and grade from the user, and update the appropriate entry in the `private grade;` array, as well as marking the assignment as complete in `hasSubmitted`.
+
+{% next %}
 
 ## Error Checking and Accessing
 
@@ -61,11 +71,14 @@ Additionally to save the administrator some calculation, they also wish for the 
 
 *These getter methods will `return` the values, do not print these to the console*
 
+{% next %}
+
 ## Submitting
 
 You can test your program by running
 
 check_50 TODO FINAL PROGRAM SLUG HERE
+https://lab.cs50.io/liv-ac-uk/comp122/accessibility/labs/accessibility/
 
 And submit by executing
 
