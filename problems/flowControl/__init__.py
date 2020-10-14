@@ -6,7 +6,7 @@ def ly_exists():
     """LeapYear.java exists."""
     check50.exists("LeapYear.java")
 
-@check50.check(exists)
+@check50.check(ly_exists)
 def ly_compiles():
     """LeapYear.java compiles."""
     check50_java.compile("LeapYear.java")
