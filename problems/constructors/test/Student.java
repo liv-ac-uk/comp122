@@ -10,13 +10,34 @@ public class Student {
 
     }
 
-    // Change this constructor to take in more parameters
-    public Student(String studentName) {
-        name = studentName;
+
+    // Change this method to take in more parameters
+    // public Student(String studentName) {
+    //     name = studentName;
+    // }
+
+
+    public Student(String studentName, String new_email, int new_dob, int stud_enrolmentYear, int new_studentId) {
+        name= studentName;
+        email=new_email;
+        yearOfBirth=new_dob;
+
+        enrolmentYear=stud_enrolmentYear;
+        studentId=new_studentId;
     }
 
-    // Add a new constructor below to take in fewer parameters
+    public Student(String studentName, String new_email, int new_dob) {
+        name= studentName;
+        email=new_email;
+        yearOfBirth=new_dob;
 
+    }
+
+    public Student(String studentName, String new_email, String new_dob) {
+        name= studentName;
+        email=new_email;
+        yearOfBirth=Integer.parseInt(new_dob.split("/")[2]);
+    }
 
     public void setName(String studentName) {
         name = studentName;
