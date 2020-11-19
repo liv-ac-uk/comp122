@@ -5,3 +5,9 @@ check50:
   files:
     - !exclude "*"
     - !include "Student.java"
+
+submit50:
+  slug: "liv-ac-uk/comp122/2021/accessibility"
+  files:
+    - !exclude "*"
+    - !include "Student.java"
