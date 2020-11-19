@@ -94,6 +94,12 @@ The `Integer` class, has a built in method `parseInt()`.
 
 Check your submission with 
 
-check50 liv-ac-uk/comp122/constructors/problems/constructors
+```
+check50 liv-ac-uk/comp122/2021/problems/constructors
+```
 
-submit50 liv-ac-uk/comp122/constructors/problems/constructors
+and submit using this command:
+
+```
+submit50 liv-ac-uk/comp122/2021/problems/constructors
+```
