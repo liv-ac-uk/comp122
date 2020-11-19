@@ -72,7 +72,7 @@ For example we might create a `Student` class when the student first applies to 
 
 When we define multiple methods with the same method name, but different arguments this is called *overloading* a method.
 
-Create a new overloaded method for the `Student` class which takes only three arguments, two `String`s and an `int` for the birth year for each of these students.
+Create a new overloaded method for the `Student` class which takes only three arguments, two `String`'s and an `int` for the birth year for each of these students.
 
 {% next %}
 
@@ -89,3 +89,11 @@ You will still store the year of birth as an integer however, so you will need t
 The `Integer` class, has a built in method `parseInt()`.
 
 {% endspoiler %}
+
+## Submitting 
+
+Check your submission with 
+
+check50 liv-ac-uk/comp122/constructors/problems/constructors
+
+submit50 liv-ac-uk/comp122/constructors/problems/constructors

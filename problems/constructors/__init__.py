@@ -19,14 +19,12 @@ def student_constructor_blank():
         classpaths=['tests/'],
         args=['--select-method', 'StudentTest#testBlankConstructor'])
 
-
 @check50.check(student_compiles)
 def student_constructor_full():
     """Student constructor with all parameters"""
     check50_junit.run_and_interpret_test(
         classpaths=['tests/'],
         args=['--select-method', 'StudentTest#testFullConstructor'])
-
 
 @check50.check(student_compiles)
 def student_constructor_partial_1():
@@ -35,7 +33,6 @@ def student_constructor_partial_1():
         classpaths=['tests/'],
         args=['--select-method', 'StudentTest#testPartialConstructor1'])
 
-
 @check50.check(student_compiles)
 def student_constructor_partial_2():
     """Student constructor with some parameters in a different format"""
@@ -43,11 +40,9 @@ def student_constructor_partial_2():
         classpaths=['tests/'],
         args=['--select-method', 'StudentTest#testPartialConstructor2'])
 
-
 @check50.check(student_compiles)
 def student_constructor_partial_3():
     """Student constructor with some parameters in a different format with different details"""
     check50_junit.run_and_interpret_test(
         classpaths=['tests/'],
         args=['--select-method', 'StudentTest#testPartialConstructor3'])
-
