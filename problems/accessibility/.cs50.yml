@@ -1,7 +1,7 @@
 check50:
   dependencies:
     - check50-java
-    - check50_junit
+    - check50-junit
   files:
     - !exclude "*"
-    - !include "*.java"
+    - !include "Student.java"
