@@ -82,7 +82,7 @@ Seeing how useful these constructors are, the administrator has asked you to cha
 
 You will still store the year of birth as an integer however, so you will need to add some more code into this constructor to process this date string and store the year as an `int`.
 
-{% spoiler "Hint"}
+{% spoiler "Hint" %}
 
 `String` classes have a built in method, `split()`. This could be very useful.
 
