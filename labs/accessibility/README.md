@@ -77,9 +77,12 @@ Additionally to save the administrator some calculation, they also wish for the 
 
 You can test your program by running
 
-check_50 TODO FINAL PROGRAM SLUG HERE
-https://lab.cs50.io/liv-ac-uk/comp122/accessibility/labs/accessibility/
+```
+check50 liv-ac-uk/comp122/2021/problems/accessibility
+```
 
-And submit by executing
+and submit by executing
 
-submit_50 TODO FINAL SLUG HERE
+```
+submit50 liv-ac-uk/comp122/2021/problems/accessibility
+```
