@@ -37,7 +37,7 @@ Declarations.java:10: error: cannot find symbol
 3 errors
 ```
 
-Note how the compiler is helping us here by not only specifying the line the error is in (eg: ```Declarations.java:7```) but also the exact part of the line where the error occurs.
+Note how the compiler is helping us here by not only specifying the line the error is in (eg: `Declarations.java:7`) but also the exact part of the line where the error occurs.
 
 Let's go hunt some bugs!
 
@@ -68,7 +68,7 @@ You will have encountered this bug in your other programs (often at 2 A.M. the n
 Check the code carefully and see where it could be going wrong. 
 
 {% spoiler "Hint" %}
-A very helpful way of quickly checking this is to double click on the troublesome variable in the editor and press ```ctrl + f``` (```cmd + f``` on macs). How many occurrences are there?
+A very helpful way of quickly checking this is to double click on the troublesome variable in the editor and press `ctrl + f` (`cmd + f` on macs). How many occurrences are there?
 {% endspoiler %}
 
 {% next %}
@@ -211,7 +211,7 @@ Recall the Pythagorean theorem which states that the sides of a right angled tri
 
 Complete the program `Pythagoras.java` which will compute and display the value of $`c`$ when $`a=3`$ and $`b=5`$.
 
-{% spoiler "Hint"}
+{% spoiler "Hint" %}
 
 There is a square root function in the Math package which it would be wise to use!
 
