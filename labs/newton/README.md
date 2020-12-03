@@ -19,8 +19,6 @@ while (lessThanTen) {
 ...
 ```
 
-{% next %}
-
 ## When to while
 
 We should use `while` statements when we do not know how many times a loop will need to run before terminating.
@@ -84,4 +82,12 @@ These programs will be tested automatically against a range of test cases, so en
 
 Once you have completed these exercises submit these in the usual way
 
-check50 liv-ac-uk/comp122/2021/labs/variables
+```
+check50 liv-ac-uk/comp122/2021/labs/newton
+```
+
+and submit via
+
+```
+submit50 liv-ac-uk/comp122/2021/labs/newton
+```
