@@ -3,10 +3,10 @@ check50:
     - check50-java
   files:
     - !exclude "*"
-    - !include "*.java"
+    - !include "LeapYear.java"
 
 submit50:
-  slug: "liv-ac-uk/comp122/2021/flowControl"
+  slug: "liv-ac-uk/comp122/2021/leapYears"
   files:
     - !exclude "*"
-    - !include "*.java"
+    - !include "LeapYear.java"
