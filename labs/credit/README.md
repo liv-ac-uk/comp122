@@ -88,7 +88,7 @@ The following may help you. Ignore everything related to user input (that's alre
 You can also execute the below to evaluate the correctness of your code using `check50`, but be sure to compile and test it yourself as well!
 
 ```
-check50 liv-ac-uk/comp122/2021/credit
+check50 liv-ac-uk/comp122/2021/problems/credit
 ```
 
 
@@ -99,6 +99,6 @@ check50 liv-ac-uk/comp122/2021/credit
 Execute the below, logging in with your GitHub username and password when prompted. For security, you'll see asterisks (`*`) instead of the actual characters in your password.
 
 ```
-submit50 liv-ac-uk/comp122/2021/credit
+submit50 liv-ac-uk/comp122/2021/problems/credit
 ```
 
