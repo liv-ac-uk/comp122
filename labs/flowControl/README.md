@@ -79,4 +79,6 @@ These programs will be tested automatically against a range of test cases, so en
 
 Once you have completed these exercises submit these in the usual way
 
-check50 liv-ac-uk/comp122/2021/labs/variables
+`check50 liv-ac-uk/comp122/2021/labs/leapYear`
+
+`submit50 liv-ac-uk/comp122/2021/labs/leapYear`
