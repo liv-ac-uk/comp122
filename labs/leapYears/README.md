@@ -1,4 +1,4 @@
-# Lab 3. Program Flow Control in Java
+# Program Flow Control in Java
 At some point in our programs we need to make decisions, and Java implements similar program flow constructs as other programming languages. In this lab we will implement these core principles.
 
 {% next %}
@@ -20,7 +20,7 @@ if (BOOLEAN_EXPRESSION) {
 
 It is good practice to include a statement which executes when our condition fails. The `else` statement. These can be chained together to handle multiple conditions to keep our code organized.
 
-```
+```java
 if (grade > 70) {
   System.out.PrintLn("Congrats on your first!");
 }
@@ -73,12 +73,18 @@ false    // output
 
 {% next %}
 
+
 ## Submission
 
-These programs will be tested automatically against a range of test cases, so ensure that the output matches the examples given otherwise these are guaranteed to fail.
+Once you have completed these exercises check your code using
 
-Once you have completed these exercises submit these in the usual way
+```
+check50 liv-ac-uk/comp122/2021/labs/leapYear
+```
 
-`check50 liv-ac-uk/comp122/2021/labs/leapYear`
+Submit via
 
-`submit50 liv-ac-uk/comp122/2021/labs/leapYear`
+```
+submit50 liv-ac-uk/comp122/2021/labs/leapYear
+```
+
