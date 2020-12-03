@@ -79,12 +79,12 @@ false    // output
 Once you have completed these exercises check your code using
 
 ```
-check50 liv-ac-uk/comp122/2021/labs/leapYear
+check50 liv-ac-uk/comp122/2021/problems/leapYears
 ```
 
 Submit via
 
 ```
-submit50 liv-ac-uk/comp122/2021/labs/leapYear
+submit50 liv-ac-uk/comp122/2021/problems/leapYears
 ```
 
