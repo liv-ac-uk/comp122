@@ -46,12 +46,12 @@ else {
 
 ## Leap Years
 
-In our Gregorian calendar, a leap year is a year that is divisible by ![equation](https://latex.codecogs.com/gif.latex?4), except if it is also divisible by ![equation](https://latex.codecogs.com/gif.latex?100), in which case it's a leap year only if it's divisible by ![equation](https://latex.codecogs.com/gif.latex?400). So ![equation](https://latex.codecogs.com/gif.latex?1980), ![equation](https://latex.codecogs.com/gif.latex?2000), and ![equation](https://latex.codecogs.com/gif.latex?2016) are all leap years, while ![equation](https://latex.codecogs.com/gif.latex?1900), ![equation](https://latex.codecogs.com/gif.latex?2001) and ![equation](https://latex.codecogs.com/gif.latex?2018) are not.
+In our Gregorian calendar, a leap year is a year that is divisible by `4`, except if it is also divisible by `100`, in which case it's a leap year only if it's divisible by `400`. So `1980`, `2000`, and `2016` are all leap years, while `1900`, `2001`, and `2018` are not.
 
 Initial code for the program LeapYear.java has been given. When run the user will input a year, which will be read in as an integer (`myScanner.nextInt();`). Implement the rest of the function isLeapYear which will use Java's `if-then-else` construct to return a boolean value from the function and print this to the console. Do not modify the `main()` method.
 
 {% spoiler "Hint" %}
-Use the modulo operator `%` to test if a number divides perfectly by another. `n % 400` returns the remainder when ![equation](https://latex.codecogs.com/gif.latex?n) is divided by ![equation](https://latex.codecogs.com/gif.latex?400 ), so `(n % 400 == 0)` evaluates to `true` if and only if ![equation](https://latex.codecogs.com/gif.latex?n) is divisible by ![equation](https://latex.codecogs.com/gif.latex?400).
+Use the modulo operator `%` to test if a number divides perfectly by another. `n % 400` returns the remainder when `n` is divided by `400`, so `(n % 400 == 0)` evaluates to `true` if and only if `n` is exactly divisible by `400`.
 
 {% endspoiler %}
 
