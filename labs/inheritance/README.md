@@ -1,4 +1,4 @@
-# Polymorphism
+# Inheritance
 
 Now that we have the basics out of the way we come to the meat of object oriented programming, object inheritance. 
 
@@ -78,11 +78,11 @@ Make very careful note of each of the private and public variables, and addition
 You can test your code with 
 
 ```
-check50 liv-ac-uk/comp122/2021/problems/polymorphism
+check50 liv-ac-uk/comp122/2021/problems/inheritance
 ```
 
 And submit your code with:
 
 ```
-submit50 liv-ac-uk/comp122/2021/problems/polymorphism
+submit50 liv-ac-uk/comp122/2021/problems/inheritance
 ```
