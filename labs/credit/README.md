@@ -42,15 +42,10 @@ So, validating credit card numbers isn't hard, but it does get a bit tedious by 
 
 ## Implementation Details
 
-In `Credit.java` on your right, write a program that prompts the user for a credit card number and then reports (via `System.out.println`) whether it is a valid American Express, MasterCard, or Visa card number, per the definitions of each's format herein. So that we can automate some tests of your code, we ask that your program's last line of output be `AMEX\n` or `MASTERCARD\n` or `VISA\n` or `INVALID\n`, nothing more, nothing less. For simplicity, you may assume that the user's input will be entirely numeric (i.e., devoid of hyphens, as might be printed on an actual card). But do not assume that the user's input will fit in an `int`! Best to use a variable of type `long` to store the users' input. (Why?)
+In `Credit.java` on your right, write a program that prompts the user for a credit card number and then reports (via `System.out.println`) whether it is a valid American Express, MasterCard, or Visa card number, per the definitions of each's format herein. So that we can automate some tests of your code, we ask that your program's last line of output be `AMEX\n` or `MASTERCARD` or `VISA` or `INVALID`, nothing more, nothing less. 
 
-In order to prompt the user for a long integer, we suggest you use the following snippet
-(don't forget to `import java.util.Scanner;` in your class).
+For simplicity, we assume that the user's input will be entirely numeric (i.e., devoid of hyphens, as might be printed on an actual card). But we do not assume that the user's input will fit in an `int` and so we store it in a variable of type `long` (Why?)
 
-```java
-Scanner myScanner = new Scanner(System.in);
-long number = myScanner.nextLong();
-```
 
 Consider the below representative of how your own program should behave when passed a valid credit card number (sans hyphens).
 
@@ -60,7 +55,7 @@ Number: 4003600000000014
 VISA
 ```
 
-Now, `get_long` itself will reject hyphens (and more) anyway:
+The utility method `Terminal.getLong` that we provide for your convenience will reject hyphens (and more):
 
 ```
 $ java Credit
@@ -78,26 +73,15 @@ Number: 6176292929
 INVALID
 ```
 
-Test out your program with a whole bunch of inputs, both valid and invalid. (We certainly will!) Here are a [few card numbers](https://developer.paypal.com/docs/classic/payflow/payflow-pro/payflow-pro-testing/#credit-card-numbers-for-testing) that PayPal recommends for testing.
+Test out your program with a whole bunch of inputs, both valid and invalid. Here are a [few card numbers](https://developer.paypal.com/docs/classic/payflow/payflow-pro/payflow-pro-testing/#credit-card-numbers-for-testing) that PayPal recommends for testing.
 
 If your program behaves incorrectly on some inputs (or doesn't compile at all), time to debug!
 
 ### Walkthrough
+The following may help you. Ignore everything related to user input (that's already done for you here).
 
 {% video https://www.youtube.com/watch?v=dF7wNjsRBjI %}
 
-{% spoiler "Staff's Solution" %}
-
-To try out the staff's own implementation of `credit`, execute
-
-```
-java Credit
-```
-
-TODO! 
-within [this sandbox](http://bit.ly/2QnNB7n).
-
-{% endspoiler %}
 
 ### How to Test Your Code
 
@@ -107,11 +91,6 @@ You can also execute the below to evaluate the correctness of your code using `c
 check50 liv-ac-uk/comp122/2021/credit
 ```
 
-Execute the below to evaluate the style of your code using `style50`.
-
-```
-style50 Credit.java
-```
 
 {% next %}
 
