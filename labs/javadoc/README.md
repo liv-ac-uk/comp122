@@ -12,7 +12,8 @@ These pages are automatically generated from the java source code files using a 
 It comes with the JDK, meaning if you have a Java compiler you will almost certainly also have javadoc installed. Fun fact: Javadoc was one of the very first such documentation generators and is part of the JDK since version 1.0 (Jan 1996)!
 
 {% next %}
-### How does it work?
+
+## How does it work?
 Java code is already quite structured so that it gets past the compiler.
 For instance, a classes' superclass, and the precise signatures of its public methods and attributes can be automatically extracted.
 To add more info, javadoc will look for special **javadoc comments** and interpret them.
@@ -57,7 +58,7 @@ ls docs/
 
 Now let's have a look at the generated pages in a browser.
 
-Open a new "Web Browser" Tab by clocking on the plus symbol next to the file and terminal tabs.
+Open a new "Web Browser" tab by clicking on the plus symbol next to the file and terminal tabs.
 This will open a browser that shows the current folder. Clicking on "docs/" will open the file `docs/index.html` and render it. Voilà!
 
 Notice that this page contains the documentation from our two javadoc comments plus some extra info on the class, such as listing its methods.
