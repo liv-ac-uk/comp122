@@ -1,5 +1,5 @@
 /**
- * A bunch of utility functions for Strings
+ * A bunch of utility functions for Strings.
  *
  * @author Patrick Totzke
  * @version 1.0
