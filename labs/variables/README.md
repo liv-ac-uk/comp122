@@ -110,7 +110,7 @@ A full reference to these can be found in the [official documentation](https://d
 
 ## Floating Points
 
-As you may have covered in the previous semester, when programming with numbers we generally use integers ([Cosines](img/01.gif)... etc.) or floating point numbers ($`1.00, 0.125, 2.5, 17.25`$ etc.). At a fundamental level inside the computer, these have to be represented in binary and as there are an infinite number of values between $`0.125`$ and $`0.126`$, we need to make approximations of some of the real values. 
+As you may have covered in the previous semester, when programming with numbers we generally use integers (![](img/01.gif)... etc.) or floating point numbers ($`1.00, 0.125, 2.5, 17.25`$ etc.). At a fundamental level inside the computer, these have to be represented in binary and as there are an infinite number of values between $`0.125`$ and $`0.126`$, we need to make approximations of some of the real values. 
 
 As a consequence we will not be able to represent all numbers with the numeric Java data types, and this may lead to rounding issues in our code. 
 
