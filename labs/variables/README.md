@@ -192,6 +192,7 @@ Once we have this in our code, we may use the closest possible double value to $
 ```java
 Math.PI
 ```
+{% next %}
 
 ## Using Pi
 
@@ -201,7 +202,7 @@ You will see that we have a mostly complete program which prints the area and ci
 
 {% spoiler "Hint" %}
 
-Recall that the area of a circle is $`\pi r^2`$, and the circumference is $`2 \pi r`$.
+Recall that the area of a circle is ![](img/14.gif), and the circumference is ![](img/15.gif).
 
 {% endspoiler %}
 
@@ -209,11 +210,11 @@ Recall that the area of a circle is $`\pi r^2`$, and the circumference is $`2 \p
 
 ## Pythagoras's Theorem
 
-Recall the Pythagorean theorem which states that the sides of a right angled triangle labelled $`a, b`$ and $`c`$ in the diagram (where $`c`$ is the length of the side opposite the right angle), satisfy the relationship $`a^2 + b^2 = c^2`$.
+Recall the Pythagorean theorem which states that the sides of a right angled triangle labelled ![](img/16.gif) and ![](img/17.gif) in the diagram (where ![](img/17.gif) is the length of the side opposite the right angle), satisfy the relationship ![](img/18.gif).
 
 [Pythagoras](https://i.imgur.com/4KZ1nDX.png)
 
-Complete the program `Pythagoras.java` which will compute and display the value of $`c`$ when $`a=3`$ and $`b=5`$.
+Complete the program `Pythagoras.java` which will compute and display the value of ![](img/17.gif) when `a=3` and `b=5`.
 
 {% spoiler "Hint" %}
 
@@ -225,25 +226,23 @@ There is a square root function in the Math package which it would be wise to us
 
 ## The Law of Cosines
 
-When we do not have a right angled triangle, but we do have the values of $`a, b`$ and the angle between these $`\theta`$, we can see that the relationship between $`a, b, c`$ and $`\theta`$ is given by the [Law of Cosines](https://www.wikipedia.org/wiki/Law_of_cosines)
+When we do not have a right angled triangle, but we do have the values of ![](img/16.gif) and the angle between these ![](img/19.gif), we can see that the relationship between ![](img/20.gif) and ![](img/19.gif) is given by the [Law of Cosines](https://www.wikipedia.org/wiki/Law_of_cosines)
 
-```math
-c^2 = a^2 + b^2 - 2ab \cos \theta
-```
+![](img/21.gif)
 
 [Cosines](https://i.imgur.com/5gpfSg8.png)
 
-Complete the program Cosines.java which will compute $`c`$ given the values of $`a=3.0, b=5.0`$, and $`\theta=\frac{2\pi}{3}`$ (in radians). 
+Complete the program Cosines.java which will compute $`c`$ given the values of ![](img/22.gif), and ![](img/23.gif) (in radians). 
 
 {% spoiler "Hint" %}
 
-Note that when $`\theta = \pi / 2`$ radians we have a right angled triangle. Use your program from part (b) to partially test the program you write here
+Note that when ![](img/24.gif) radians we have a right angled triangle. You may use your program from part (b) to partially test the program you write here
 
 {% endspoiler %}
 
 
 ## Submission
 
-Ensure your Declarations.java compiles and make `currentWeight = 122.5` and `newWeight = 60`. In FPTestApp, update `x = 1.0/20` and `y` when `$n=20$`, and for `Pythagoras.java` and `Cosines.java` ensure these return the values specified above, and submit these with check50 via:
+Ensure your Declarations.java compiles and make `currentWeight = 122.5` and `newWeight = 60`. In FPTestApp, update `x = 1.0/20` and `y` when ![](img/24.gif), and for `Pythagoras.java` and `Cosines.java` ensure these return the values specified above, and submit these with check50 via:
 
 check50 liv-ac-uk/comp122/2021/labs/variables
