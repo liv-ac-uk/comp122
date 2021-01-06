@@ -18,7 +18,7 @@ Hmm, that doesn't seem to work quite as we were expecting...
 
 We can see that the compiler has found three errors in our code, which are given to us in the order in which the compiler has found them.
 
-```
+```java
 Declarations.java:7: error: cannot find symbol
         weightDifference = newWeight - curentWeight;
         ^
@@ -47,7 +47,7 @@ Let's go hunt some bugs!
 
 Our first issue occurs at the start of line 7
 
-```
+```java
 Declarations.java:7: error: cannot find symbol
         weightDifference = newWeight - curentWeight;
         ^
@@ -110,7 +110,7 @@ A full reference to these can be found in the [official documentation](https://d
 
 ## Floating Points
 
-As you may have covered in the previous semester, when programming with numbers we generally use integers ($`0, 1, 2, 3`$... etc.) or floating point numbers ($`1.00, 0.125, 2.5, 17.25`$ etc.). At a fundamental level inside the computer, these have to be represented in binary and as there are an infinite number of values between $`0.125`$ and $`0.126`$, we need to make approximations of some of the real values. 
+As you may have covered in the previous semester, when programming with numbers we generally use integers ([Cosines](img/01.gif)... etc.) or floating point numbers ($`1.00, 0.125, 2.5, 17.25`$ etc.). At a fundamental level inside the computer, these have to be represented in binary and as there are an infinite number of values between $`0.125`$ and $`0.126`$, we need to make approximations of some of the real values. 
 
 As a consequence we will not be able to represent all numbers with the numeric Java data types, and this may lead to rounding issues in our code. 
 
@@ -153,10 +153,10 @@ However as seen, these come with a risk, and when used in arithmetic, these roun
 
 Because of this reason, it is important not to use equality when testing if two floating point variables are the same. This will often return an unexpected result. Instead, you should take the absolute difference between the two values, and ensure it is less than a small reference number. This can be done using the Math library (more on that later).
 
-`double_1 == double_2 // Returns False`
-
-`Math.abs(double_1 - double_2) < 0.000001; // Returns True`
-
+```java
+double_1 == double_2 // Returns False
+Math.abs(double_1 - double_2) < 0.000001; // Returns True
+```
 {% next %}
 
 ## Dealing With Floating Point
@@ -183,11 +183,15 @@ In the previous lab we imported the `Scanner` class from the  `java.util` packag
 
 We often wish to perform mathematical operations in our code, and unsurprisingly java comes with lots of helpful functions in the [Math package](https://docs.oracle.com/javase/9/docs/api/java/lang/Math.html), which can be imported with:
 
-`import java.lang.Math`
+```java
+import java.lang.Math
+```
 
 Once we have this in our code, we may use the closest possible double value to $`\pi`$ with:
 
-`Math.PI`
+```java
+Math.PI
+```
 
 ## Using Pi
 
@@ -224,7 +228,6 @@ There is a square root function in the Math package which it would be wise to us
 When we do not have a right angled triangle, but we do have the values of $`a, b`$ and the angle between these $`\theta`$, we can see that the relationship between $`a, b, c`$ and $`\theta`$ is given by the [Law of Cosines](https://www.wikipedia.org/wiki/Law_of_cosines)
 
 ```math
-
 c^2 = a^2 + b^2 - 2ab \cos \theta
 ```
 
