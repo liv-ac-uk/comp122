@@ -2,6 +2,8 @@ lab50:
   files:
     - !exclude "*"
     - !include Hello.java
+    - !include Terminal.class
+    
   window:
     - editor
     - readme
