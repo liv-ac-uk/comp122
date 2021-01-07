@@ -187,7 +187,7 @@ We often wish to perform mathematical operations in our code, and unsurprisingly
 import java.lang.Math
 ```
 
-Once we have this in our code, we may use the closest possible double value to $`\pi`$ with:
+Once we have this in our code, we may use the closest possible double value to ![](img/12.gif) with:
 
 ```java
 Math.PI
@@ -230,9 +230,9 @@ When we do not have a right angled triangle, but we do have the values of ![](im
 
 ![](img/21.gif)
 
-[Cosines](https://i.imgur.com/5gpfSg8.png)
+![Cosines](https://i.imgur.com/5gpfSg8.png)
 
-Complete the program Cosines.java which will compute $`c`$ given the values of ![](img/22.gif), and ![](img/23.gif) (in radians). 
+Complete the program Cosines.java which will compute `c` given the values of ![](img/22.gif), and ![](img/23.gif) (in radians). 
 
 {% spoiler "Hint" %}
 
