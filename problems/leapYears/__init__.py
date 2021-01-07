@@ -40,3 +40,4 @@ def test2001():
 def test2018():
     """Ensures LeapYear is returning the specified value for 2018"""
     check50_java.run("LeapYear").stdin("2018").stdout("false\n").exit()
+
