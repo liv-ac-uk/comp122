@@ -41,3 +41,11 @@ def test2018():
     """Ensures LeapYear is returning the specified value for 2018"""
     check50_java.run("LeapYear").stdin("2018").stdout("false\n").exit()
 
+@check50.check(ly_compiles)
+def condensed_boolean():
+    with open("LeapYear.java") as f:
+        fileString = f.read().replace("\n", "")
+
+    if "||" not in fileString and "&&" not in fileString:
+        raise check50.Mismatch(methodStr, "", help="You have not included condensed logic")
+    
