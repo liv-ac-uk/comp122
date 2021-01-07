@@ -101,6 +101,13 @@ Suffice it to say, our program is boring because it only ever prints `hello, wor
 
 Modify this program in such a way that it first prompts the user for their name and then prints "hello, so-and-so", where `so-and-so` is their actual name.
 
+To do this we can use the Terminal class which has been given in the current folder as so.
+
+```java
+
+String name = Terminal.getLine("Please enter your name");
+```
+
 As before, be sure to compile your program with:
 `javac Hello.java`
 and execute your program, testing it a few times with different inputs, with `java Hello`.
@@ -110,39 +117,6 @@ and execute your program, testing it a few times with different inputs, with `ja
 You can try out our demo implementation of this problem to see how we expect the program to behave.
 Just execute `java Hello` within
 [this sandbox](https://bit.ly/3jYk0RQ).
-
-### Hints
-
-#### Don't recall how to prompt the user for their name?
-
-You can use a [`Scanner` to get user input](https://www.w3schools.com/java/java_user_input.asp) as follows.
-
-```java
-Scanner myScanner = new Scanner(System.in);
-String name = myScanner.nextLine();
-```
-
-The first line actually creates a Scanner object called `myScanner`.
-The second line calls the method `nextLine` on that scanner, which will cause it to prompt the user for a string,
-and stores the result in a new variable called `name` of type `String`.
-
-#### Error: Cannot find symbol? 
-
-Are you getting an error message like this when trying to compile the code?
-
-```
-Hello.java:6: error: cannot find symbol
-        Scanner input = new Scanner(System.in);
-        ^
-```
-
-This is the compiler telling you that your code uses a name "Scanner" that has not been introduced.
-In order to make the name "Scanner" known to the compiler, remember to import the class at the top of your source code.
-
-```java
-import java.util.Scanner;
-```
-
 
 ### How to Test Your Code
 
