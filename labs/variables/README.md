@@ -234,15 +234,8 @@ When we do not have a right angled triangle, but we do have the values of ![](im
 
 Complete the program Cosines.java which will compute `c` given the values of ![](img/22.gif), and ![](img/23.gif) (in radians). 
 
-{% spoiler "Hint" %}
-
-Note that when ![](img/24.gif) radians we have a right angled triangle. You may use your program from part (b) to partially test the program you write here
-
-{% endspoiler %}
-
-
 ## Submission
 
 Ensure your Declarations.java compiles and make `currentWeight = 122.5` and `newWeight = 60`. In FPTestApp, update `x = 1.0/20` and `y` when ![](img/24.gif), and for `Pythagoras.java` and `Cosines.java` ensure these return the values specified above, and submit these with check50 via:
 
-check50 liv-ac-uk/comp122/2021/labs/variables
+`check50 liv-ac-uk/comp122/2021/labs/variables`
