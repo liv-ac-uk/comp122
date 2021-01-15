@@ -1,8 +1,8 @@
 lab50:
   files:
     - !exclude "*"
-    - !include LeapYear.java
     - !include Terminal.class
+    - !include LeapYear.java
   window:
     - editor
     - readme
