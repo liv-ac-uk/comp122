@@ -47,5 +47,29 @@ def condensed_boolean():
         fileString = f.read().replace("\n", "")
 
     if "||" not in fileString and "&&" not in fileString:
-        raise check50.Mismatch(methodStr, "", help="You have not included condensed logic")
+        raise check50.Mismatch("", "&&, ||", help="You have not included condensed logic")
+    
+@check50.check(condensed_boolean)
+def condensed1980():
+    check50_java.run("LeapYear").stdin("1980").stdout("true\n").exit()
+
+@check50.check(condensed_boolean)
+def condensed2000():
+    check50_java.run("LeapYear").stdin("2000").stdout("true\n").exit()
+
+@check50.check(condensed_boolean)
+def condensed2016():
+    check50_java.run("LeapYear").stdin("2016").stdout("true\n").exit()
+
+@check50.check(condensed_boolean)
+def condensed1900():
+    check50_java.run("LeapYear").stdin("1900").stdout("false\n").exit()
+    
+@check50.check(condensed_boolean)
+def condensed2001():
+    check50_java.run("LeapYear").stdin("2001").stdout("false\n").exit()
+
+@check50.check(condensed_boolean)
+def condensed2018():
+    check50_java.run("LeapYear").stdin("2018").stdout("flase\n").exit()
     
