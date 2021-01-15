@@ -106,6 +106,7 @@ To do this we can use the Terminal class which has been given in the current fol
 ```java
 
 String name = Terminal.getLine("Please enter your name");
+System.out.println("Hello, " +  name);
 ```
 
 As before, be sure to compile your program with:
