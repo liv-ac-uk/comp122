@@ -18,7 +18,7 @@ Hmm, that doesn't seem to work quite as we were expecting...
 
 We can see that the compiler has found three errors in our code, which are given to us in the order in which the compiler has found them.
 
-```
+```java
 Declarations.java:7: error: cannot find symbol
         weightDifference = newWeight - curentWeight;
         ^
@@ -47,7 +47,7 @@ Let's go hunt some bugs!
 
 Our first issue occurs at the start of line 7
 
-```
+```java
 Declarations.java:7: error: cannot find symbol
         weightDifference = newWeight - curentWeight;
         ^
@@ -110,7 +110,7 @@ A full reference to these can be found in the [official documentation](https://d
 
 ## Floating Points
 
-As you may have covered in the previous semester, when programming with numbers we generally use integers ($`0, 1, 2, 3`$... etc.) or floating point numbers ($`1.00, 0.125, 2.5, 17.25`$ etc.). At a fundamental level inside the computer, these have to be represented in binary and as there are an infinite number of values between $`0.125`$ and $`0.126`$, we need to make approximations of some of the real values. 
+As you may have covered in the previous semester, when programming with numbers we generally use integers (![](img/01.gif)... etc.) or floating point numbers (![](img/02.gif) etc.). At a fundamental level inside the computer, these have to be represented in binary and as there are an infinite number of values between ![](img/03.gif) and ![](img/04.gif), we need to make approximations of some of the real values. 
 
 As a consequence we will not be able to represent all numbers with the numeric Java data types, and this may lead to rounding issues in our code. 
 
@@ -120,7 +120,7 @@ Open the file explorer (by clicking on the home button in the upper left corner 
 
 ## Difference of Opinion
 
-By reading through the code, we would expect that as $`1.0 / 10 = 0.1`$, by adding these values together 10 times we should return $`1`$. Compile and run FPTestApp to confirm this.
+By reading through the code, we would expect that as ![](img/05.gif), by adding these values together 10 times we should return ![](img/06.gif). Compile and run FPTestApp to confirm this.
 
 {% next %}
 
@@ -128,7 +128,7 @@ By reading through the code, we would expect that as $`1.0 / 10 = 0.1`$, by addi
 
 As you have seen, the fraction 1 / 10 cannot be represented perfectly in binary, and thus does not sum to 1 perfectly.  
 
-Make $`n = 3`$ (`x = 1.0 / 3`) and add this together 3 times. 
+Make ![](img/07.gif) and add this together 3 times. 
 
 Is this equal to 1?
 
@@ -137,7 +137,7 @@ What happens if we change `x = 1 / 3`? Does this sum to 1?
 {% next %}
 
 ## Subtraction
-What do you get when you compute $`1−0.9`$ in Java? How about $`1−0.99`$? Or $`1−0.999`$ and so on?
+What do you get when you compute ![](img/08.gif) in Java? How about ![](img/09.gif)? Or ![](img/10.gif) and so on?
 
 Subtraction is particularly problematic in floating point arithmetic, especially when the two numbers are close. 
 
@@ -153,10 +153,10 @@ However as seen, these come with a risk, and when used in arithmetic, these roun
 
 Because of this reason, it is important not to use equality when testing if two floating point variables are the same. This will often return an unexpected result. Instead, you should take the absolute difference between the two values, and ensure it is less than a small reference number. This can be done using the Math library (more on that later).
 
-`double_1 == double_2 // Returns False`
-
-`Math.abs(double_1 - double_2) < 0.000001; // Returns True`
-
+```java
+double_1 == double_2 // Returns False
+Math.abs(double_1 - double_2) < 0.000001; // Returns True
+```
 {% next %}
 
 ## Dealing With Floating Point
@@ -171,11 +171,11 @@ There is a [commonly retold urban legend](https://www.snopes.com/fact-check/the-
 
 ## Some Applications of Floats
 
-Pi is a beautiful, transcendental number which has far reaching applications to almost all areas of mathematics, physics, computer science, and philosophy. Others would argue it is roughly equal to $`3`$. 
+Pi is a beautiful, transcendental number which has far reaching applications to almost all areas of mathematics, physics, computer science, and philosophy. Others would argue it is roughly equal to ![](img/11.gif). 
 
-We can use approximations of `$\pi$`, and the division $`22.0/7`$ leads to a number which is within 0.04% of the true value.
+We can use approximations of ![](img/12.gif), and the division ![](img/13.gif) leads to a number which is within 0.04% of the true value.
 
-Rather than redefining our own value of `$\pi$` which is guaranteed to introduce some error, it is preferable to use a more precise value. Luckily there is one built into the Java standard library.
+Rather than redefining our own value of ![](img/12.gif) which is guaranteed to introduce some error, it is preferable to use a more precise value. Luckily there is one built into the Java standard library.
 
 ## Importing Pi
 
@@ -183,11 +183,16 @@ In the previous lab we imported the `Scanner` class from the  `java.util` packag
 
 We often wish to perform mathematical operations in our code, and unsurprisingly java comes with lots of helpful functions in the [Math package](https://docs.oracle.com/javase/9/docs/api/java/lang/Math.html), which can be imported with:
 
-`import java.lang.Math`
+```java
+import java.lang.Math
+```
 
-Once we have this in our code, we may use the closest possible double value to $`\pi`$ with:
+Once we have this in our code, we may use the closest possible double value to ![](img/12.gif) with:
 
-`Math.PI`
+```java
+Math.PI
+```
+{% next %}
 
 ## Using Pi
 
@@ -197,7 +202,7 @@ You will see that we have a mostly complete program which prints the area and ci
 
 {% spoiler "Hint" %}
 
-Recall that the area of a circle is $`\pi r^2`$, and the circumference is $`2 \pi r`$.
+Recall that the area of a circle is ![](img/14.gif), and the circumference is ![](img/15.gif).
 
 {% endspoiler %}
 
@@ -205,11 +210,11 @@ Recall that the area of a circle is $`\pi r^2`$, and the circumference is $`2 \p
 
 ## Pythagoras's Theorem
 
-Recall the Pythagorean theorem which states that the sides of a right angled triangle labelled $`a, b`$ and $`c`$ in the diagram (where $`c`$ is the length of the side opposite the right angle), satisfy the relationship $`a^2 + b^2 = c^2`$.
+Recall the Pythagorean theorem which states that the sides of a right angled triangle labelled ![](img/16.gif) and ![](img/17.gif) in the diagram (where ![](img/17.gif) is the length of the side opposite the right angle), satisfy the relationship ![](img/18.gif).
 
 [Pythagoras](https://i.imgur.com/4KZ1nDX.png)
 
-Complete the program `Pythagoras.java` which will compute and display the value of $`c`$ when $`a=3`$ and $`b=5`$.
+Complete the program `Pythagoras.java` which will compute and display the value of ![](img/17.gif) when `a=3` and `b=5`.
 
 {% spoiler "Hint" %}
 
@@ -221,26 +226,22 @@ There is a square root function in the Math package which it would be wise to us
 
 ## The Law of Cosines
 
-When we do not have a right angled triangle, but we do have the values of $`a, b`$ and the angle between these $`\theta`$, we can see that the relationship between $`a, b, c`$ and $`\theta`$ is given by the [Law of Cosines](https://www.wikipedia.org/wiki/Law_of_cosines)
+When we do not have a right angled triangle, but we do have the values of ![](img/16.gif) and the angle between these ![](img/19.gif), we can see that the relationship between ![](img/20.gif) and ![](img/19.gif) is given by the [Law of Cosines](https://www.wikipedia.org/wiki/Law_of_cosines)
 
-```math
+![](img/21.gif)
 
-c^2 = a^2 + b^2 - 2ab \cos \theta
-```
+![Cosines](https://i.imgur.com/5gpfSg8.png)
 
-[Cosines](https://i.imgur.com/5gpfSg8.png)
-
-Complete the program Cosines.java which will compute $`c`$ given the values of $`a=3.0, b=5.0`$, and $`\theta=\frac{2\pi}{3}`$ (in radians). 
-
-{% spoiler "Hint" %}
-
-Note that when $`\theta = \pi / 2`$ radians we have a right angled triangle. Use your program from part (b) to partially test the program you write here
-
-{% endspoiler %}
-
+Complete the program Cosines.java which will compute `c` given the values of ![](img/22.gif), and ![](img/23.gif) (in radians). 
 
 ## Submission
 
+<<<<<<< HEAD
 Ensure your Declarations.java compiles and make `currentWeight = 122.5` and `newWeight = 60`. In FPTestApp, update `x = 1.0/20` and `y` when `n=20`, and for `Pythagoras.java` and `Cosines.java` ensure these return the values specified above, and submit these with check50 via:
+=======
+Ensure your Declarations.java compiles and make `currentWeight = 122.5` and `newWeight = 60`. In FPTestApp, update `x = 1.0/20` and `y` when ![](img/24.gif), and for `Pythagoras.java` and `Cosines.java` ensure these return the values specified above, and submit these with check50 via:
+>>>>>>> b398a6731c685c83541721f8c65a2077a5889171
 
-check50 liv-ac-uk/comp122/2021/labs/variables
+```
+check50 liv-ac-uk/comp122/2021/problems/variables
+```
