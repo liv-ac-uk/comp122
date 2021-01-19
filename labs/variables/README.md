@@ -241,6 +241,6 @@ Note that when $`\theta = \pi / 2`$ radians we have a right angled triangle. Use
 
 ## Submission
 
-Ensure your Declarations.java compiles and make `currentWeight = 122.5` and `newWeight = 60`. In FPTestApp, update `x = 1.0/20` and `y` when `$n=20$`, and for `Pythagoras.java` and `Cosines.java` ensure these return the values specified above, and submit these with check50 via:
+Ensure your Declarations.java compiles and make `currentWeight = 122.5` and `newWeight = 60`. In FPTestApp, update `x = 1.0/20` and `y` when `n=20`, and for `Pythagoras.java` and `Cosines.java` ensure these return the values specified above, and submit these with check50 via:
 
 check50 liv-ac-uk/comp122/2021/labs/variables
