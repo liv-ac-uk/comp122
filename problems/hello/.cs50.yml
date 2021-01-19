@@ -4,7 +4,6 @@ check50:
 
   files: &check50_files
     - !exclude "*"
-    - !include Terminal.class
     - !require Hello.java
     
 
