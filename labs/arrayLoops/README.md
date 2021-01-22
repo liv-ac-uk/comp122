@@ -35,6 +35,8 @@ We calculate the factorial of a positive integer $`n`$ by taking the product of 
 
 $`n! = n \times (n-1) \times (n-2) ... \times 3 \times 2 \times 1`$
 
+{% next %}
+
 ## Making Arrangements
 
 Take a standard deck of cards, and select all of the spade, non face cards (ace of spades to the ten of spades).
@@ -44,6 +46,8 @@ How many unique permutations can we get if we shuffle these cards completely ran
 We could get a deck of cards, and spend a long afternoon shuffling until we are sure we have found every permutation. Or we could use factorials.
 
 There are $`10`$ possible cards for the top card in our shuffled deck to take. Once we have remove this, there are $`9`$ possible card values the second card could take. Carrying this forward we can see that there there must be $`10!`$ permutations in total.
+
+{% next %}
 
 ## Computing Permuting
 
@@ -64,6 +68,8 @@ $ java Factorial
 When defining the starting and ending conditions of your for loop, you aren't forced to make your iterating variable start from 0, nor do we have to use `<` for our final value. You could start this from $`1`$ and use `<=` for example...
 
 {% endspoiler %}
+
+{% next %}
 
 ## Improving Our Program
 
@@ -88,6 +94,8 @@ Fix your program so that it will correctly output the factorial of integers up t
 Use an online [decimal to binary](https://www.rapidtables.com/convert/number/decimal-to-binary.html) calculator to see what is $`12!`$ in binary? How about $`13!`$? If we count the number of bits can we use a 32-bit integer to store this value?
 
 {% endspoiler %}
+
+{% next %}
 
 # Arrays
 
