@@ -59,7 +59,7 @@ $ java Factorial
 24
 ```
 
-{% spoiiler "Hint" %}
+{% spoiler "Hint" %}
 
 When defining the starting and ending conditions of your for loop, you aren't forced to make your iterating variable start from 0, nor do we have to use `<` for our final value. You could start this from $`1`$ and use `<=` for example...
 
@@ -83,7 +83,7 @@ Now let's add the king of spades into our pile and use your program to compute t
 
 Fix your program so that it will correctly output the factorial of integers up to $`20!`$.
 
-{% spoiiler "Hint" %}
+{% spoiler "Hint" %}
 
 Use an online [decimal to binary](https://www.rapidtables.com/convert/number/decimal-to-binary.html) calculator to see what is $`12!`$ in binary? How about $`13!`$? If we count the number of bits can we use a 32-bit integer to store this value?
 
