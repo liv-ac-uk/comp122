@@ -13,25 +13,25 @@ def helloCompiles():
 
 @check50.check(helloCompiles)
 def helloPrintsTwo():
-    """Ensures Hello is returning the specified value"""
-    check50_java.run("Hello").stdin(3).stdout("I've said 'Hello there' 0 times previously!\nI've said 'Hello there' 1 times previously!\n").exit()
+    """Ensures Hello is print twice"""
+    check50_java.run("Hello").stdin("2").stdout("I've said 'Hello there' 0 times previously!\nI've said 'Hello there' 1 times previously!\n").exit()
 
 @check50.check(helloCompiles)
 def helloPrintsThree():
-    """Ensures Hello is returning the specified value"""
-    check50_java.run("Hello").stdin(3).stdout("I've said 'Hello there' 0 times previously!\nI've said 'Hello there' 1 times previously!\nI've said 'Hello there' 2 times previously!\n").exit()
+    """Ensures Hello is printing thrice"""
+    check50_java.run("Hello").stdin("3").stdout("I've said 'Hello there' 0 times previously!\nI've said 'Hello there' 1 times previously!\nI've said 'Hello there' 2 times previously!\n").exit()
 
 
 
 
 @check50.check()
 def factorialExists():
-    """factorial.java exists."""
+    """Factorial.java exists."""
     check50.exists("Factorial.java")
 
 @check50.check(factorialExists)
 def factorialCompiles():
-    """FPTestApp.java compiles."""
+    """Factorial.java compiles."""
     check50_java.compile("Factorial.java")
 
 @check50.check(factorialCompiles)
