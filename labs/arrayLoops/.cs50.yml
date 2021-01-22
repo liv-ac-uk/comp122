@@ -1,0 +1,10 @@
+lab50:
+  files:
+    - !exclude "*"
+    - !include "Factorial.java"
+    - !include "Hello.java"
+    
+  window:
+    - editor
+    - readme
+    - terminal
