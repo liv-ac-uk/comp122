@@ -1,6 +1,8 @@
 lab50:
   files:
     - !exclude "*"
+    - !include "Terminal.class"
+    - !include "Largest.java"
     - !include "Factorial.java"
     - !include "Hello.java"
     
