@@ -1,7 +1,7 @@
 public class Factorial {
     public static void main() {
         int n = ?;
-        int factorial = ?;
+        ? factorial = ?;
 
         for(? ; ? ; ?) {
 

@@ -14,12 +14,12 @@ def helloCompiles():
 @check50.check(helloCompiles)
 def helloPrintsTwo():
     """Ensures Hello is print twice"""
-    check50_java.run("Hello").stdin("2").stdout("I've said 'Hello there' 0 times previously!\nI've said 'Hello there' 1 times previously!\n").exit()
+    check50_java.run("Hello").stdin("2").stdout("I've said 'Hello' 0 times previously!\nI've said 'Hello there' 1 times previously!\n").exit()
 
 @check50.check(helloCompiles)
 def helloPrintsThree():
     """Ensures Hello is printing thrice"""
-    check50_java.run("Hello").stdin("3").stdout("I've said 'Hello there' 0 times previously!\nI've said 'Hello there' 1 times previously!\nI've said 'Hello there' 2 times previously!\n").exit()
+    check50_java.run("Hello").stdin("3").stdout("I've said 'Hello' 0 times previously!\nI've said 'Hello there' 1 times previously!\nI've said 'Hello there' 2 times previously!\n").exit()
 
 
 

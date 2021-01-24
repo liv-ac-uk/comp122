@@ -2,7 +2,7 @@
 
 In almost all imperative programs of any complexity we must repeat a section of code a fixed number of times.
 
-The most usual method of doing this in C like languages (such as Java) is with a `for` loop.
+The most common method of doing this in C like languages (such as Java) is with a `for` loop.
 
 {% next %}
 
@@ -16,7 +16,7 @@ for(int i = 0; i < 5; i++) {
 }
 ```
 
-Complete the program Hello.java so that it prompts the user for an integer, $`n`$, and then print the phrase to the terminal $`n`$ times. The output of your program should be as below:
+Complete the program Hello.java so that it prompts the user for an integer, `n`, and then print the phrase to the terminal `n` times. The output of your program should be as below:
 
 ```
 $ java Hello
@@ -31,9 +31,9 @@ I've said 'Hello there' 1 times previously!
 
 Factorials are a useful tool in combinatorics, algebra, calculus, probability theory, and number theory. They're pretty neat.
 
-We calculate the factorial of a positive integer $`n`$ by taking the product of all integers from $`1`$ to $`n`$, denoted by $`n!`$.
+We calculate the factorial of a positive integer `n`by taking the product of all integers from `1` to `n`, denoted by `n!`.
 
-$`n! = n \times (n-1) \times (n-2) ... \times 3 \times 2 \times 1`$
+`n! = n \times (n-1) \times (n-2) ... \times 3 \times 2 \times 1`
 
 {% next %}
 
@@ -103,10 +103,12 @@ As covered in previous labs, we have a range of primitive data types for the fun
 
 As we often deal with lists of values of the same type, these are built into the language directly as arrays.
 
-We specify these with square brackets, and we must specify the type and size of the array when we create it.
+We declare these using square brackets, and we must specify the type and size of the array when we create it.
 
 ```java
-long[] numbers = new long[10]
+String[] meAlong = new String[7];
+long[] johnSilver = new long[10];
+int[] niceUpNorth = new int[5]; 
 ```
 {% next %}
 
