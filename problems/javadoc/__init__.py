@@ -31,7 +31,6 @@ def checkstyle_javadoc_methods():
 def checkstyle_javadoc_tags():
     """all javadoc strings have @param and @return tags"""
     stylefile = "styles/javadoc-tags.xml"
-    check50.include("styles")
     check50_checkstyle.run_and_interpret_checkstyle(
         checks_file=stylefile,
         rationale="{report}",
@@ -42,7 +41,6 @@ def checkstyle_javadoc_tags():
 def checkstyle_javadoc_all():
     """extra javadoc styling feedback"""
     stylefile = "styles/javadoc-all.xml"
-    check50.include("styles")
     check50_checkstyle.run_and_interpret_checkstyle(
         checks_file=stylefile,
         rationale="{report}",
