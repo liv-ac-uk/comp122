@@ -23,6 +23,7 @@ def checkstyle_javadoc_methods():
     check50.include("styles")
     check50_checkstyle.run_and_interpret_checkstyle(
         checks_file=stylefile,
+        rationale="{report}",
         target='StringTools.java')
 
 
@@ -33,4 +34,5 @@ def checkstyle_javadoc_all():
     check50.include("styles")
     check50_checkstyle.run_and_interpret_checkstyle(
         checks_file=stylefile,
+        rationale="{report}",
         target='StringTools.java')
