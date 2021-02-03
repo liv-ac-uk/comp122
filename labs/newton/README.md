@@ -44,7 +44,7 @@ You may want to use a `while` loop to compute ![equation](https://latex.codecogs
 
 {% spoiler "Hint" %}
 
-You can access your command line arguments after calling `main(String args[])` with `args[0]`, `args[1]` etc.
+You can access your command line arguments after calling `main(String[] args)` with `args[0]`, `args[1]` etc.
 
 {% endspoiler %}
 
