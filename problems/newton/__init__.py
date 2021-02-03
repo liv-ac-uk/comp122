@@ -34,7 +34,7 @@ def root_inf():
 
 @check50.check(newt_compiles)
 def root_9_001():
-    """Ensures Newton is returning the specified value for 9.0 3.0"""
+    """Ensures Newton is returning the specified value for 9.0 3.0 0.01"""
     check50_java.run("Newton 9.0 3.0 0.01").stdout("1\n3.0").exit()
 
 @check50.check(newt_compiles)
