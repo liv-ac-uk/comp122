@@ -33,7 +33,7 @@ Factorials are a useful tool in combinatorics, algebra, calculus, probability th
 
 We calculate the factorial of a positive integer `n`by taking the product of all integers from `1` to `n`, denoted by `n!`.
 
-`n! = n \times (n-1) \times (n-2) ... \times 3 \times 2 \times 1`
+![](img/21.gif)
 
 {% next %}
 
@@ -45,7 +45,7 @@ How many unique permutations can we get if we shuffle these cards completely ran
 
 We could get a deck of cards, and spend a long afternoon shuffling until we are sure we have found every permutation. Or we could use factorials.
 
-There are $`10`$ possible cards for the top card in our shuffled deck to take. Once we have remove this, there are $`9`$ possible card values the second card could take. Carrying this forward we can see that there there must be $`10!`$ permutations in total.
+There are `10` possible cards for the top card in our shuffled deck to take. Once we have remove this, there are `9` possible card values the second card could take. Carrying this forward we can see that there there must be `10!` permutations in total.
 
 {% next %}
 
@@ -53,7 +53,7 @@ There are $`10`$ possible cards for the top card in our shuffled deck to take. O
 
 Instead of calculating this in our heads, let's write a quick program to do the work for us.
 
-Open the file `Factorial.java` and complete the rest of the code to ensure that it compiles, reads in a value of the integer $`n`$ from the user, and prints the value of $`n!`$.
+Open the file `Factorial.java` and complete the rest of the code to ensure that it compiles, reads in a value of the integer `n` from the user, and prints the value of `n!`.
 
 The correct output should be as follows.
 
@@ -65,7 +65,7 @@ $ java Factorial
 
 {% spoiler "Hint" %}
 
-When defining the starting and ending conditions of your for loop, you aren't forced to make your iterating variable start from 0, nor do we have to use `<` for our final value. You could start this from $`1`$ and use `<=` for example...
+When defining the starting and ending conditions of your for loop, you aren't forced to make your iterating variable start from 0, nor do we have to use `<` for our final value. You could start this from `1` and use `<=` for example...
 
 {% endspoiler %}
 
@@ -85,13 +85,13 @@ $ java Factorial
 479001600
 ```
 
-Now let's add the king of spades into our pile and use your program to compute the new number of permutations. Now use your calculator to calculate $`13!`$...
+Now let's add the king of spades into our pile and use your program to compute the new number of permutations. Now use your calculator to calculate `13!`...
 
-Fix your program so that it will correctly output the factorial of integers up to $`20!`$.
+Fix your program so that it will correctly output the factorial of integers up to `20!`.
 
 {% spoiler "Hint" %}
 
-Use an online [decimal to binary](https://www.rapidtables.com/convert/number/decimal-to-binary.html) calculator to see what is $`12!`$ in binary? How about $`13!`$? If we count the number of bits can we use a 32-bit integer to store this value?
+Use an online [decimal to binary](https://www.rapidtables.com/convert/number/decimal-to-binary.html) calculator to see what is `12!` in binary? How about `13!`? If we count the number of bits can we use a 32-bit integer to store this value?
 
 {% endspoiler %}
 
