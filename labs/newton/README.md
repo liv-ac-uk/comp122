@@ -25,13 +25,12 @@ These last two numbers differ by less than ![equation](https://latex.codecogs.co
 {% next %}
 
 ## Newtons Method
-Your code will take in two positive numbers ![equation](https://latex.codecogs.com/gif.latex?n) and ![equation](https://latex.codecogs.com/gif.latex?guess) as input using `Scanner.nextDouble()`. It should calculate an ![equation](https://latex.codecogs.com/gif.latex?%5Cepsilon)-approximation of the square root of ![equation](https://latex.codecogs.com/gif.latex?n), when ![equation](https://latex.codecogs.com/gif.latex?%5Cepsilon%3D0.0000001).
+Your code will take in two positive numbers as commandline arguments ![equation](https://latex.codecogs.com/gif.latex?n) and ![equation](https://latex.codecogs.com/gif.latex?guess). It should calculate an ![equation](https://latex.codecogs.com/gif.latex?%5Cepsilon)-approximation of the square root of ![equation](https://latex.codecogs.com/gif.latex?n), when ![equation](https://latex.codecogs.com/gif.latex?%5Cepsilon%3D0.0000001).
 
-Your function should print the square root of ![equation](https://latex.codecogs.com/gif.latex?n) and the total number of guesses taken (including the initial guess).
+Your function should print the total number of guesses taken (including the initial guess), and the square root of ![equation](https://latex.codecogs.com/gif.latex?n).
 
 ```
-java Newton
-2.0 1.0
+java Newton 2.0 1.0
 6
 1.414213562373095
 ```
@@ -39,6 +38,27 @@ java Newton
 {% spoiler "Hint" %}
 
 You may want to use a `while` loop to compute ![equation](https://latex.codecogs.com/gif.latex?new%5C%20guess) and compare it to your previous guess. You can use the function Math.abs() when testing the difference between successive guesses.
+
+{% endspoiler %}
+
+
+{% spoiler "Hint" %}
+
+You can access your command line arguments after calling `main(String args[])` with `args[0]`, `args[1]` etc.
+
+{% endspoiler %}
+
+## Extending Your Program
+
+When calculating the square root, we may want to specify how many decimal places of accuracy we should compute our final answer to. 
+
+Modify your program so that it may *also* take in three floats. It will then call a method to compute the square root to the specified number of decimal places, and print the number of iterations and final value as before. 
+
+Make sure that your program still works if we only input two numbers.
+
+{% spoiler "Hint" %}
+
+You can check the number of commandline arguments given with `args.length`
 
 {% endspoiler %}
 
