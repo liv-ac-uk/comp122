@@ -1,6 +1,6 @@
 public class LeapYear {
     public static void main(String[] args) {
-        int year = Terminal.nextInt("Please enter a year");
+        int year = Comp122.getInt("Please enter a year");
         System.out.println(isLeapYear(year));
     }
 
