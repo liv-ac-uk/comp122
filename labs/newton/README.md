@@ -48,6 +48,8 @@ You can access your command line arguments after calling `main(String args[])` w
 
 {% endspoiler %}
 
+{% next %}
+
 ## Extending Your Program
 
 When calculating the square root, we may want to specify how many decimal places of accuracy we should compute our final answer to. 
@@ -62,6 +64,7 @@ You can check the number of commandline arguments given with `args.length`
 
 {% endspoiler %}
 
+{% next %}
 
 ## Submission
 
