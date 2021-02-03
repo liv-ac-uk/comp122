@@ -50,13 +50,13 @@ def root_inf_00001():
 @check50.check(newt_compiles)
 def too_few_parameters():
     """Ensures Newton is returning the correct error message for 25"""
-    check50_java.run("Newton 25").stdout("Incorrect Number of Parameters\nUsage: java Newton number initial_guess (optional)epsilon\n").exit()
+    check50_java.run("Newton 25").stdout("Incorrect Number of Parameters\nUsage: java Newton number initial_guess (optional)epsilon").exit()
 
 
 @check50.check(newt_compiles)
 def too_many_parameters():
     """Ensures Newton is returning the correct error message for 25 0 3 4"""
-    check50_java.run("Newton 25 0 3 4").stdout("Incorrect Number of Parameters\nUsage: java Newton number initial_guess (optional)epsilon\n").exit()
+    check50_java.run("Newton 25 0 3 4").stdout("Incorrect Number of Parameters\nUsage: java Newton number initial_guess (optional)epsilon").exit()
 
     
 
