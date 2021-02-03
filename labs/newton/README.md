@@ -46,6 +46,8 @@ You may want to use a `while` loop to compute ![equation](https://latex.codecogs
 
 You can access your command line arguments after calling `main(String[] args)` with `args[0]`, `args[1]` etc.
 
+You can convert these to doubles with `Double.parseDouble(string);`
+
 {% endspoiler %}
 
 {% next %}
