@@ -9,6 +9,7 @@ def ly_exists():
 @check50.check(ly_exists)
 def ly_compiles():
     """LeapYear.java compiles."""
+    check50.include("Comp122.class")  # copy over input helper
     check50_java.compile("LeapYear.java")
 
 @check50.check(ly_compiles)
@@ -48,7 +49,7 @@ def condensed_boolean():
 
     if "||" not in fileString and "&&" not in fileString:
         raise check50.Mismatch("", "&&, ||", help="You have not included condensed logic")
-    
+
 @check50.check(condensed_boolean)
 def condensed1980():
     check50_java.run("LeapYear").stdin("1980").stdout("true\n").exit()
@@ -64,7 +65,7 @@ def condensed2016():
 @check50.check(condensed_boolean)
 def condensed1900():
     check50_java.run("LeapYear").stdin("1900").stdout("false\n").exit()
-    
+
 @check50.check(condensed_boolean)
 def condensed2001():
     check50_java.run("LeapYear").stdin("2001").stdout("false\n").exit()
@@ -72,4 +73,4 @@ def condensed2001():
 @check50.check(condensed_boolean)
 def condensed2018():
     check50_java.run("LeapYear").stdin("2018").stdout("false\n").exit()
-    
+
