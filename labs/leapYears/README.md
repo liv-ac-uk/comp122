@@ -57,18 +57,21 @@ Use the modulo operator `%` to test if a number divides perfectly by another. `n
 
 {% next %}
 
-## Condensing our code
+## Condensing our code using Boolean logic
 
 Often we do not need long chains of `if-else` if we are testing simple values, and it improves code readability to condense simple functions (don't overdo this though).
 
-Uncomment and complete the second method `isLeapYearCondensed()` which will take in a single integer and return a boolean value. This method should contain only one statement, `return(...);`. Use Boolean logical operators, `&&` (and), `||` (or), `!x` (not X), and divisibility checks as before to write a condensed function.
+Uncomment and complete the second method `isLeapYearCondensed()` 
+and make sure it is called from the main method (line 4).
+Just like the `isLeapYear` method, this will take in a single integer and return a boolean value.
+But this method should contain only one statement, `return(...);`. Use Boolean logical operators, `&&` (and), `||` (or), `!x` (not X), and divisibility checks as before to write a condensed function.
 
 Ensure your code returns the correct values when compiled, as so:
 
 ```
 $ java LeapYear
-2001     // input
-false    // output
+2001
+false
 ```
 
 {% next %}
@@ -82,7 +85,7 @@ Once you have completed these exercises check your code using
 check50 liv-ac-uk/comp122/2021/problems/leapYears
 ```
 
-Submit via
+and submit via
 
 ```
 submit50 liv-ac-uk/comp122/2021/problems/leapYears
