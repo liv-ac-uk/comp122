@@ -66,6 +66,14 @@ You can check the number of commandline arguments given with `args.length`
 
 {% next %}
 
+## Helping the user
+What happens if someone doesn't enter two parameters? They may get a nasty exception... 
+
+Edit your code so that if the user enters fewer than 2, or more than 3 parameters it will print the following message
+
+```Incorrect Number of Parameters\nUsage: java Newton number initial_guess (optional)epsilon```
+
+{% next %}
 ## Submission
 
 These programs will be tested automatically against a range of test cases, so ensure that the output matches the examples given otherwise these are guaranteed to fail.
