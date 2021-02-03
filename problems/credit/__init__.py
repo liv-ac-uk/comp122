@@ -19,6 +19,7 @@ def exists():
 @check50.check(exists)
 def compiles():
     """Credit.java compiles"""
+    check50.include("Comp122.class")
     check50_java.compile("Credit.java")
 
 

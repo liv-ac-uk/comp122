@@ -2,7 +2,7 @@ lab50:
   files:
     - !exclude "*"
     - !include Hello.java
-    - !include Terminal.class
+    - !include Comp122.class
     
   window:
     - editor

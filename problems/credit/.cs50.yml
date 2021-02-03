@@ -4,7 +4,6 @@ check50:
   files: &check50_files
     - !exclude "*"
     - !include "Credit.java"
-    - !include Terminal.class
 
 submit50:
   slug: "liv-ac-uk/comp122/2021/credit"

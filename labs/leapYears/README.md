@@ -48,7 +48,7 @@ else {
 
 In our Gregorian calendar, a leap year is a year that is divisible by `4`, except if it is also divisible by `100`, in which case it's a leap year only if it's divisible by `400`. So `1980`, `2000`, and `2016` are all leap years, while `1900`, `2001`, and `2018` are not.
 
-Initial code for the program LeapYear.java has been given. When run the user will input a year, which will be read in as an integer (`myScanner.nextInt();`). Implement the rest of the function isLeapYear which will use Java's `if-then-else` construct to return a boolean value from the function and print this to the console. Do not modify the `main()` method.
+Initial code for the program LeapYear.java has been given. When run the user will input a year, which will be read in as an integer (`int year = Comp122.getInt();`). Implement the rest of the function isLeapYear which will use Java's `if-then-else` construct to return a boolean value from the function and print this to the console. Do not modify the `main()` method.
 
 {% spoiler "Hint" %}
 Use the modulo operator `%` to test if a number divides perfectly by another. `n % 400` returns the remainder when `n` is divided by `400`, so `(n % 400 == 0)` evaluates to `true` if and only if `n` is exactly divisible by `400`.
@@ -57,18 +57,21 @@ Use the modulo operator `%` to test if a number divides perfectly by another. `n
 
 {% next %}
 
-## Condensing our code
+## Condensing our code using Boolean logic
 
 Often we do not need long chains of `if-else` if we are testing simple values, and it improves code readability to condense simple functions (don't overdo this though).
 
-Uncomment and complete the second method `isLeapYearCondensed()` which will take in a single integer and return a boolean value. This method should contain only one statement, `return(...);`. Use Boolean logical operators, `&&` (and), `||` (or), `!x` (not X), and divisibility checks as before to write a condensed function.
+Uncomment and complete the second method `isLeapYearCondensed()` 
+and make sure it is called from the main method (line 4).
+Just like the `isLeapYear` method, this will take in a single integer and return a boolean value.
+But this method should contain only one statement, `return(...);`. Use Boolean logical operators, `&&` (and), `||` (or), `!x` (not X), and divisibility checks as before to write a condensed function.
 
 Ensure your code returns the correct values when compiled, as so:
 
 ```
 $ java LeapYear
-2001     // input
-false    // output
+2001
+false
 ```
 
 {% next %}
@@ -82,7 +85,7 @@ Once you have completed these exercises check your code using
 check50 liv-ac-uk/comp122/2021/problems/leapYears
 ```
 
-Submit via
+and submit via
 
 ```
 submit50 liv-ac-uk/comp122/2021/problems/leapYears
