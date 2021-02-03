@@ -106,9 +106,9 @@ As we often deal with lists of values of the same type, these are built into the
 We declare these using square brackets, and we must specify the type and size of the array when we create it.
 
 ```java
+int[] niceUpNorth = new int[5]; 
 String[] meAlong = new String[7];
 long[] johnSilver = new long[10];
-int[] niceUpNorth = new int[5]; 
 ```
 {% next %}
 

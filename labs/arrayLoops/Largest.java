@@ -4,7 +4,7 @@ public class Largest {
         int[] myArray = ?
 
         for (;;) {
-            ? = Terminal.nextInt("");
+            ? = Comp122.nextInt("");
         }
 
         int largestValue = ?
