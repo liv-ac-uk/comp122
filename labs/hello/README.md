@@ -4,7 +4,7 @@
 
 Hello, world! On the right you should see two windows: the *text editor* that shows our very first Java program named `Hello.java`, and right below that there is a *terminal window*.
 
-Click the folder icon, and you'll see two files, `Hello.java` and one called `Terminal.class`, which we will use later. Click the folder icon again to hide all that.
+Click the folder icon, and you'll see two files, `Hello.java` and one called `Comp122.class`, which we will use later. Click the folder icon again to hide all that.
 
 
 Next, in the terminal window, immediately to the right of the dollar sign (`$`), type precisely the below (in lowercase), then hit Enter:
@@ -102,11 +102,12 @@ Suffice it to say, our program is boring because it only ever prints `hello, wor
 
 Modify this program in such a way that it first prompts the user for their name and then prints "hello, so-and-so", where `so-and-so` is their actual name.
 
-To do this we can use the Terminal class which has been given in the current folder as so.
+To do this we can use the Comp122 class which has been given in the current folder as so.
 
 ```java
 
-String name = Terminal.getLine("Please enter your name");
+System.out.println("Please enter your name");
+String name = Comp122.getString()
 System.out.println("Hello, " +  name);
 ```
 
@@ -114,9 +115,9 @@ As before, be sure to compile your program with:
 `javac Hello.java`
 and execute your program, testing it a few times with different inputs, with `java Hello`.
 
-Just FYI, the `Terminal` class is not the standard way to get user input in Java but a utility we made for COMP122 so that you don't yet have to see all the scary details.
+Just FYI, the `Comp122` class is not the standard way to get user input in Java but a utility we made for COMP122 so that you don't yet have to see all the scary details.
 We will look into input and output (I/O) later in the semester.
-Notice that you are using this class although you do not have it's source code (`Terminal.java`) file.
+Notice that you are using this class although you do not have it's source code (`Comp122.java`) file.
 This is an early example of the *information hiding* principle: You can use this piece of code without knowing it's internals.
 
 ### Staff's Solution
