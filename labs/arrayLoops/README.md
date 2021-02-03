@@ -16,6 +16,7 @@ for(int i = 0; i < 5; i++) {
 }
 ```
 
+{% next %}
 ## Objected Oriented Piracy
 
 Sea shanties are historically well-tested applications have proven efficacy when hauling tall ships, wooing potential partners, and preserving maritime history. These have a repetitive mitre which can be generated using for loops. Complete the program CShanty.java so that it prompts the user for an integer, `n`, and then sings the song to the terminal `n` times. The output of your program should be as below:
