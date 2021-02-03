@@ -44,8 +44,8 @@ def root_25_0001():
 
 @check50.check(newt_compiles)
 def root_inf_00001():
-    """Ensures Newton is returning the correct (but incorrect) value for 25 0 0.1"""
-    check50_java.run("Newton 25 0 0.00001").stdout("9\n5.000356653832537").exit()
+    """Ensures Newton is returning the correct (but incorrect) value for 25 0.1 0.1"""
+    check50_java.run("Newton 25 0.1 0.1").stdout("9\n5.000356653832537").exit()
 
 @check50.check(newt_compiles)
 def too_few_parameters():
