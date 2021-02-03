@@ -16,13 +16,18 @@ for(int i = 0; i < 5; i++) {
 }
 ```
 
-Complete the program Hello.java so that it prompts the user for an integer, `n`, and then print the phrase to the terminal `n` times. The output of your program should be as below:
+## Objected Oriented Piracy
+
+Sea shanties are historically well-tested applications have proven efficacy when hauling tall ships, wooing potential partners, and preserving maritime history. These have a repetitive mitre which can be generated using for loops. Complete the program CShanty.java so that it prompts the user for an integer, `n`, and then sings the song to the terminal `n` times. The output of your program should be as below:
 
 ```
-$ java Hello
+$ java CShanty
 2                                               // User Input
-I've said 'Hello there' 0 times previously!     // Console Output
-I've said 'Hello there' 1 times previously!
+Oh I like to code and OOP sets me free!     // Console Output
+For reliable code, Java is for me
+Oh I like to code and OOP sets me free!     
+For reliable code, Java is for me
+But, my first love is the C!
 ```
 
 {% next %}
@@ -167,8 +172,6 @@ while (lessThanTen) {
 }
 ...
 ```
-
-{% next %}
 
 ## When to while
 

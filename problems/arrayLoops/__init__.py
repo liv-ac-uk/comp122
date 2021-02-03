@@ -2,24 +2,24 @@ import check50
 import check50_java
 
 @check50.check()
-def helloExists():
-    """Hello.java exists."""
-    check50.exists("Hello.java")
+def CShantyExists():
+    """CShanty.java exists."""
+    check50.exists("CShanty.java")
 
-@check50.check(helloExists)
-def helloCompiles():
-    """Hello.java compiles."""
-    check50_java.compile("Hello.java")
+@check50.check(CShantyExists)
+def CShantyCompiles():
+    """CShanty.java compiles."""
+    check50_java.compile("CShantyExists.java")
 
-@check50.check(helloCompiles)
-def helloPrintsTwo():
-    """Ensures Hello is print twice"""
-    check50_java.run("Hello").stdin("2").stdout("I've said 'Hello' 0 times previously!\nI've said 'Hello' 1 times previously!\n").exit()
+@check50.check(CShantyExists)
+def CShantyPrintsTwo():
+    """Ensures CShantyExists is print twice"""
+    check50_java.run("CShantyExists").stdin("2").stdout("Oh I like to code and OOP sets me free!\nFor reliable code, Java is for me\nOh I like to code and OOP sets me free!\nFor reliable code, Java is for me\nBut, my first love is the C!\n").exit()
 
-@check50.check(helloCompiles)
-def helloPrintsThree():
-    """Ensures Hello is printing thrice"""
-    check50_java.run("Hello").stdin("3").stdout("I've said 'Hello' 0 times previously!\nI've said 'Hello' 1 times previously!\nI've said 'Hello' 2 times previously!\n").exit()
+@check50.check(CShantyExists)
+def CShantyPrintsThree():
+    """Ensures CShanty is printing thrice"""
+    check50_java.run("Hello").stdin("3").stdout("Oh I like to code and OOP sets me free!\nFor reliable code, Java is for me\nOh I like to code and OOP sets me free!\nFor reliable code, Java is for me\nOh I like to code and OOP sets me free!\nFor reliable code, Java is for me\nBut, my first love is the C!\n").exit()
 
 
 
