@@ -1,0 +1,12 @@
+lab50:
+  files:
+    - !exclude "*"
+    - !include "Comp122.class"
+    - !include "Largest.java"
+    - !include "Factorial.java"
+    - !include "CShanty.java"
+    
+  window:
+    - editor
+    - readme
+    - terminal

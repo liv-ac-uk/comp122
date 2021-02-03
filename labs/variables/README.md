@@ -238,6 +238,7 @@ Complete the program Cosines.java which will compute `c` given the values of ![]
 
 ## Submission
 
+<<<<<<< HEAD
 Ensure your `Declarations.java` compiles and make `currentWeight = 122.5` and `newWeight = 60`. In FPTestApp, update `x = 1.0/20` and `y` when ![](img/24.gif), and for `Pythagoras.java` and `Cosines.java` ensure these return the values specified above.
 
 You can check your code with:
@@ -251,3 +252,6 @@ and submit via:
 ```
 submit50 liv-ac-uk/comp122/2021/problems/variables
 ```
+=======
+
+>>>>>>> 114f67fbf874c06e2ed7183fd0c74c0beab6a255
