@@ -4,7 +4,7 @@ lab50:
     - !include "Comp122.class"
     - !include "Largest.java"
     - !include "Factorial.java"
-    - !include "Hello.java"
+    - !include "CShanty.java"
     
   window:
     - editor
