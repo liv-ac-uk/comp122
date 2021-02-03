@@ -158,7 +158,7 @@ boolean lessThanTen = true;
 System.out.println("Enter an integer greater than or equal to ten")
 
 while (lessThanTen) {
-    myInt = myScanner.nextInt();
+    myInt = Comp122.nextInt();
     lessThanTen = myInt < 10;
 
     if lessThanTen {
