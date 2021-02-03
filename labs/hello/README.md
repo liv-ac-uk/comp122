@@ -120,11 +120,15 @@ We will look into input and output (I/O) later in the semester.
 Notice that you are using this class although you do not have it's source code (`Comp122.java`) file.
 This is an early example of the *information hiding* principle: You can use this piece of code without knowing it's internals.
 
+{% next %}
+
 ### Staff's Solution
 
 You can try out our demo implementation of this problem to see how we expect the program to behave.
 Just execute `java Hello` within
 [this sandbox](https://bit.ly/3jYk0RQ).
+
+{% next %}
 
 ### How to Test Your Code
 
