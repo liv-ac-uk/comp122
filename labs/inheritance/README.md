@@ -61,13 +61,7 @@ We could describe this relationship through the following diagram:
 
 ![](img/PersonStudentLec.PNG)
 
-{% next %}
-
-## Coding It Up
-
 Your task for this lab is to implement this class hierarchy
-
-![](img/PersonStudentLec.PNG)
 
 Make very careful note of each of the private and public variables, and additionally make sure that you follow each of the method names and types closely!
 
