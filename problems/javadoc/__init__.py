@@ -18,19 +18,30 @@ def exists():
 
 @check50.check()
 def checkstyle_javadoc_methods():
-    """methods `swap` and `main` documented?"""
-    stylefile = "styles/javadoc-method.xml"
+    """all methods have javadoc strings"""
+    stylefile = "styles/javadoc-missing-methods.xml"
     check50.include("styles")
     check50_checkstyle.run_and_interpret_checkstyle(
         checks_file=stylefile,
+        rationale="{report}",
         target='StringTools.java')
 
 
-@check50.check()
-def checkstyle_javadoc_all():
-    """javadoc being extra picky"""
-    stylefile = "styles/javadoc-all.xml"
-    check50.include("styles")
+@check50.check(checkstyle_javadoc_methods)
+def checkstyle_javadoc_tags():
+    """all javadoc strings have @param and @return tags"""
+    stylefile = "styles/javadoc-tags.xml"
     check50_checkstyle.run_and_interpret_checkstyle(
         checks_file=stylefile,
+        rationale="{report}",
+        target='StringTools.java')
+
+
+@check50.check(checkstyle_javadoc_methods)
+def checkstyle_javadoc_all():
+    """extra javadoc styling feedback"""
+    stylefile = "styles/javadoc-all.xml"
+    check50_checkstyle.run_and_interpret_checkstyle(
+        checks_file=stylefile,
+        rationale="{report}",
         target='StringTools.java')

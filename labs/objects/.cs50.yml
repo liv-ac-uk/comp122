@@ -1,0 +1,11 @@
+lab50:
+  files:
+    - !exclude "*"
+    - !include Terminal.class
+    - !include Student.java
+    - !include Largest.java
+
+  window:
+    - editor
+    - readme
+    - terminal

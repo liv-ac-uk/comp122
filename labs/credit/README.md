@@ -83,20 +83,16 @@ The following may help you. Ignore everything related to user input (that's alre
 {% video https://www.youtube.com/watch?v=dF7wNjsRBjI %}
 
 
-### How to Test Your Code
 
-You can also execute the below to evaluate the correctness of your code using `check50`, but be sure to compile and test it yourself as well!
+## Test and submit your code
+
+Once you have completed these exercises check your code using
 
 ```
 check50 liv-ac-uk/comp122/2021/problems/credit
 ```
 
-
-{% next %}
-
-## How to Submit
-
-Execute the below, logging in with your GitHub username and password when prompted. For security, you'll see asterisks (`*`) instead of the actual characters in your password.
+and submit via
 
 ```
 submit50 liv-ac-uk/comp122/2021/problems/credit
