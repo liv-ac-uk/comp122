@@ -1,4 +1,4 @@
-# Lab 2. Variable Declarations and Types
+# Variable Declarations and Types
 
 ## Declaring Variables
 
@@ -114,7 +114,7 @@ As you may have covered in the previous semester, when programming with numbers 
 
 As a consequence we will not be able to represent all numbers with the numeric Java data types, and this may lead to rounding issues in our code. 
 
-Open the file explorer (by clicking on the home button in the upper left corner of the text editor) and open FPTestApp.java.
+Open the file explorer (by clicking on the home button in the upper left corner of the text editor) and open `FPTestApp.java`.
 
 {% next %}
 
@@ -161,11 +161,11 @@ Math.abs(double_1 - double_2) < 0.000001; // Returns True
 
 ## Dealing With Floating Point
 
-One take-home lesson here is that floating point arithmetic on a computer is not necessarily what you want it to be or expect it to be (although this can depend upon the programming language you are using). For the mathematically inclined, some recommended reading is David Goldberg's [What Every Computer Scientist Should Know About Floating-Point Arithmetic](https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html)
+One take-home lesson here is that floating point arithmetic on a computer is not necessarily what you want it to be or expect it to be (although this can depend upon the programming language you are using).
 
-{% spoiler %}
 There is a [commonly retold urban legend](https://www.snopes.com/fact-check/the-salami-technique/) of programmers in large corporations surreptitiously stealing huge sums of money by diverting these small rounding errors to their personal accounts. Please do not attempt to embezzle money with this technique. This is against university policy.
-{% endspoiler %}
+
+For the mathematically inclined, some recommended reading is David Goldberg's [What Every Computer Scientist Should Know About Floating-Point Arithmetic](https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html)
 
 {% next %}
 
@@ -179,9 +179,7 @@ Rather than redefining our own value of ![](img/12.gif) which is guaranteed to i
 
 ## Importing Pi
 
-In the previous lab we imported the `Scanner` class from the  `java.util` package, which contains a large number of widely used utility functions. 
-
-We often wish to perform mathematical operations in our code, and unsurprisingly java comes with lots of helpful functions in the [Math package](https://docs.oracle.com/javase/9/docs/api/java/lang/Math.html), which can be imported with:
+We often wish to perform mathematical operations in our code, and unsurprisingly Java comes with lots of helpful functions in the [Math package](https://docs.oracle.com/javase/9/docs/api/java/lang/Math.html), which can be imported with:
 
 ```java
 import java.lang.Math
@@ -212,7 +210,7 @@ Recall that the area of a circle is ![](img/14.gif), and the circumference is ![
 
 Recall the Pythagorean theorem which states that the sides of a right angled triangle labelled ![](img/16.gif) and ![](img/17.gif) in the diagram (where ![](img/17.gif) is the length of the side opposite the right angle), satisfy the relationship ![](img/18.gif).
 
-[Pythagoras](https://i.imgur.com/4KZ1nDX.png)
+![Pythagoras](img/pythagoras.png)
 
 Complete the program `Pythagoras.java` which will compute and display the value of ![](img/17.gif) when `a=3` and `b=5`.
 
@@ -230,14 +228,14 @@ When we do not have a right angled triangle, but we do have the values of ![](im
 
 ![](img/21.gif)
 
-![Cosines](https://i.imgur.com/5gpfSg8.png)
+![Cosines](img/loc.png)
 
 Complete the program Cosines.java which will compute `c` given the values of ![](img/22.gif), and ![](img/23.gif) (in radians). 
 
 ## Submission
 
-Ensure your Declarations.java compiles and make `currentWeight = 122.5` and `newWeight = 60`. In FPTestApp, update `x = 1.0/20` and `y` when ![](img/24.gif), and for `Pythagoras.java` and `Cosines.java` ensure these return the values specified above, and submit these with check50 via:
+Ensure your `Declarations.java` compiles and make `currentWeight = 122.5` and `newWeight = 60`. In FPTestApp, update `x = 1.0/20` and `y` when ![](img/24.gif), and for `Pythagoras.java` and `Cosines.java` ensure these return the values specified above, and submit these via:
 
 ```
-check50 liv-ac-uk/comp122/2021/problems/variables
+submit50 liv-ac-uk/comp122/2021/problems/variables
 ```
