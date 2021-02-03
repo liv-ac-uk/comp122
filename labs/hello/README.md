@@ -2,17 +2,18 @@
 
 ## Listing Files
 
-Hello, world! At right, in the *text editor*, is the very first program we wrote in Java, in a file called `Hello.java`.
+Hello, world! On the right you should see two windows: the *text editor* that shows our very first Java program named `Hello.java`, and right below that there is a **terminal window**.
 
-Click the folder icon, and you'll see that `Hello.java` is the only file that's present at the moment. Click the folder icon again to hide all that.
+Click the folder icon, and you'll see two files, `Hello.java` and one called `Terminal.class`, which we will use later. Click the folder icon again to hide all that.
 
-Next, in the *terminal window* at right, immediately to the right of the dollar sign (`$`), otherwise known as a *prompt*, type precisely the below (in lowercase), then hit Enter:
+
+Next, in the *terminal window* at right, immediately to the right of the dollar sign (`$`), type precisely the below (in lowercase), then hit Enter:
 
 ```
 ls
 ```
 
-You should see just `Hello.java`? That's because you've just listed the files in that same folder, this time using a command-line interface (CLI), using just your keyboard, rather than the graphical user interface (GUI) represented by that folder icon. In particular, you *executed* (i.e., ran) a command called `ls`, which is shorthand for "list" (it's such a frequently used command that its authors called it just `ls` to save keystrokes). Make sense?
+You should see two files again. That's because you've just listed the files in that same folder, this time using a command-line interface (CLI), using just your keyboard, rather than the graphical user interface (GUI) represented by that folder icon. In particular, you *executed* (i.e., ran) a command called `ls`, which is shorthand for "list" (it's such a frequently used command that its authors called it just `ls` to save keystrokes). Make sense?
 
 Here on out, to execute (i.e., run) a command means to type it into a terminal window and then hit Enter. Commands are "case-sensitive," so be sure not to type in uppercase when you mean lowercase or vice versa.
 
@@ -33,7 +34,7 @@ And then execute this one again:
 ls
 ```
 
-This time, you should see not only `Hello.java` but `Hello.class` listed as well (you can see the same graphically if you click that folder icon again)? That's because `javac` has translated the source code in `Hello.java` into java *bytecode* in `Hello.class`.
+This time, you should also see a file named `Hello.class` listed as well (you can see the same graphically if you click that folder icon again)? That's because `javac` has translated the source code in `Hello.java` into java *bytecode* in `Hello.class`.
 Bytecode can be interpreted by the Java Virtual Machine (JVM).
 
 Now run the program by executing the below. Notice that the parameter is just the name of the class, so not `Hello.class` nor `Hello.java`.
@@ -71,7 +72,7 @@ Take care not to overlook any of those spaces therein! Then execute this one aga
 ls
 ```
 
-You should now see not only `Hello.java` but also a directory `build/` listed as well? That's because `-d` is a *command-line argument*, sometimes known as a *flag* or a *switch*, that tells `javac` where to output its result. In this case we gave it the parameter `build`, causing it to create that directory and the bytecode file `build/Hello.class`.
+You should now see a directory `build/` listed as well? That's because `-d` is a *command-line argument*, sometimes known as a *flag* or a *switch*, that tells `javac` where to output its result. In this case we gave it the parameter `build`, causing it to create that directory and the bytecode file `build/Hello.class`.
 
 Let's try to execute our program once more.
 
@@ -97,7 +98,7 @@ Hello there again!
 
 ## Getting User Input
 
-Suffice it to say, our program is boring because it only ever prints `hello, world`. Let's personalize it a bit, just as we did in class.
+Suffice it to say, our program is boring because it only ever prints `hello, world!`. Let's personalize it a bit.
 
 Modify this program in such a way that it first prompts the user for their name and then prints "hello, so-and-so", where `so-and-so` is their actual name.
 
@@ -113,6 +114,9 @@ As before, be sure to compile your program with:
 `javac Hello.java`
 and execute your program, testing it a few times with different inputs, with `java Hello`.
 
+Just FYI, the `Terminal` class is not the standard way to get user input in Java but a utility we made for COMP122 so that you don't yet have to see all the scary details.
+We will look into input and output (I/O) later in the semester.
+
 ### Staff's Solution
 
 You can try out our demo implementation of this problem to see how we expect the program to behave.
@@ -127,11 +131,7 @@ Execute the below to evaluate the correctness of your code using `check50`, but 
 check50 liv-ac-uk/comp122/2021/problems/hello
 ```
 
-Execute the below to evaluate the style of your code using `style50`.
-
-```
-style50 Hello.java
-```
+You can run checks as often as you like to get feedback on your code.
 
 {% next %}
 
@@ -142,3 +142,10 @@ Execute the below, logging in with your GitHub username and password when prompt
 ```
 submit50 liv-ac-uk/comp122/2021/problems/hello
 ```
+
+You do not need to perfectly solve or submit every exercise and we will not manually grade these exercises.
+
+However, attendance is worth 10% of the final module grade,
+and we use submissions to lab exercises as a proxy for your participation.
+You gain one percentage point per week if you submit a reasonable attempt to one of the exercises by Friday 5pm, each week. 
+
