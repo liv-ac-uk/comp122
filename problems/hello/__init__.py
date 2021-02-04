@@ -5,7 +5,7 @@ import check50_java
 def exists():
     """Hello.java exists."""
     check50.exists("Hello.java")
-    check50.include("Terminal.class")  # copy over input helper
+    check50.include("Comp122.class")  # copy over input helper
 
 @check50.check(exists)
 def compiles():
