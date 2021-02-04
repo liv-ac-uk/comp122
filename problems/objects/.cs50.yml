@@ -1,13 +1,13 @@
 check50:
   dependencies:
     - check50-java
-    - check50-junit    
+    - check50-junit
   files:
     - !exclude "*"
     - !include "*.java"
 
 submit50:
-  slug: "liv-ac-uk/comp122/2021/newton"
+  slug: "liv-ac-uk/comp122/2021/objects"
   files:
     - !exclude "*"
     - !include "*.java"

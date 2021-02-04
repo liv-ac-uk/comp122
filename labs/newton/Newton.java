@@ -8,5 +8,5 @@ public class Newton {
 
     public static void sqRoot() {
         // Your code here
-    }
+    }   
 }

@@ -10,11 +10,11 @@ import org.junit.jupiter.api.Test;
 import java.lang.reflect.Modifier;
 import static org.hamcrest.CoreMatchers.*;
 
-class LecturerTest {
+class StudentTest {
     @Test
     public void testNameIsPrivate() {
         try {
-            if (!Modifier.isPrivate(Class.forName("Lecturer").getDeclaredField("name").getModifiers())) {
+            if (!Modifier.isPrivate(Class.forName("Student").getDeclaredField("name").getModifiers())) {
                 fail("attribute name is not private");
             }
         } catch (Exception e) {
@@ -26,7 +26,7 @@ class LecturerTest {
     @Test
     public void testEmailIsPrivate() {
         try {
-            if (!Modifier.isPrivate(Class.forName("Lecturer").getDeclaredField("email").getModifiers())) {
+            if (!Modifier.isPrivate(Class.forName("Student").getDeclaredField("email").getModifiers())) {
                 fail("attribute email is not private");
             }
         } catch (Exception e) {
@@ -37,30 +37,30 @@ class LecturerTest {
 
     @Test
     public void testInheritedPerson() {
-        Lecturer lecturer = new Lecturer();
-        assertThat(lecturer, instanceOf(Person.class));
+        Student student = new Student();
+        assertThat(student, instanceOf(Person.class));
     }
 
     @Test
     public void testNameSet() {
-        Lecturer lecturer = new Lecturer();
-        Lecturer.setName("Test");
-        assertThat(lecturer.getName(), is("Test"));
+        Student student = new Student();
+        student.setName("Test");
+        assertThat(student.getName(), is("Test"));
     }
 
     @Test
     public void testGreet() {
-        Lecturer lecturer = new Lecturer();
-        Lecturer.setName("Test");
-        Lecturer.setEmail("Test");
-        assertThat(lecturer.greet(), is("sendto: " + "Test" + "Hi " + "Test" + ",\n"));
+        Student student = new Student();
+        student.setName("Test");
+        student.setEmail("Test");
+        assertThat(student.greet(), is("sendto: " + "Test" + "Hi " + "Test" + ",\n"));
     }
 
     @Test
     public void testTimeTable() {
-        Lecturer Lecturer = new Lecturer();
-        Lecturer.setGrade(50);
+        Student student = new Student();
+        student.setGrade(50);
 
-        assertThat(Lecturer.getGrade(), is(50));
+        assertThat(student.getGrade(), is(50));
     }
 }

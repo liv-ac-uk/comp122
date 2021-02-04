@@ -1,11 +1,11 @@
 public class Student extends Person {
-      private Int grade;
+      private int grade;
 
-      public void setGrade(Int new_grade) {
+      public void setGrade(int new_grade) {
           grade = new_grade;
       }
 
-      public Int getGrade() {
+      public int getGrade() {
           return grade;
       }
   }
