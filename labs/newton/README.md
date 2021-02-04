@@ -1,36 +1,3 @@
-# Whiling away the hours
-
-`while` loops are a core part of controlling the flow of our programs. These will repeatedly execute a block of code _while_ some condition is true.
-
-```
-...
-boolean lessThanTen = true;
-
-System.out.println("Enter an integer greater than or equal to ten")
-
-while (lessThanTen) {
-    myInt = myScanner.nextInt();
-    lessThanTen = myInt < 10;
-
-    if lessThanTen {
-        System.out.println("That should have been greater than ten, try again...")
-    }
-}
-...
-```
-
-## When to while
-
-We should use `while` statements when we do not know how many times a loop will need to run before terminating.
-
-{% spoiler "Hint" %}
-
-We can introduce bugs into our code if we forget to change the condition which is being tested, meaning that the loop runs forever. Infinite while loops can appear as if your program has frozen, when in reality it is executing the same code repeatedly
-
-{% endspoiler %}
-
-{% next %}
-
 ## Newtons Method
 
 In `Newton.java`, implement [Newton's method](https://www.wikipedia.com/en/Newton's_method#/Square_root_of_a_number) in the given function `sqRoot()` to give an approximation of the square root of an inputted value of ![equation](https://latex.codecogs.com/gif.latex?n).
@@ -58,13 +25,12 @@ These last two numbers differ by less than ![equation](https://latex.codecogs.co
 {% next %}
 
 ## Newtons Method
-Your code will take in two positive numbers ![equation](https://latex.codecogs.com/gif.latex?n) and ![equation](https://latex.codecogs.com/gif.latex?guess) as input using `Scanner.nextDouble()`. It should calculate an ![equation](https://latex.codecogs.com/gif.latex?%5Cepsilon)-approximation of the square root of ![equation](https://latex.codecogs.com/gif.latex?n), when ![equation](https://latex.codecogs.com/gif.latex?%5Cepsilon%3D0.0000001).
+Your code will take in two positive numbers as commandline arguments ![equation](https://latex.codecogs.com/gif.latex?n) and ![equation](https://latex.codecogs.com/gif.latex?guess). It should calculate an ![equation](https://latex.codecogs.com/gif.latex?%5Cepsilon)-approximation of the square root of ![equation](https://latex.codecogs.com/gif.latex?n), when ![equation](https://latex.codecogs.com/gif.latex?%5Cepsilon%3D0.0000001).
 
-Your function should print the square root of ![equation](https://latex.codecogs.com/gif.latex?n) and the total number of guesses taken (including the initial guess).
+Your function should print the total number of guesses taken (including the initial guess), and the square root of ![equation](https://latex.codecogs.com/gif.latex?n).
 
 ```
-java Newton
-2.0 1.0
+java Newton 2.0 1.0
 6
 1.414213562373095
 ```
@@ -76,6 +42,40 @@ You may want to use a `while` loop to compute ![equation](https://latex.codecogs
 {% endspoiler %}
 
 
+{% spoiler "Hint" %}
+
+You can access your command line arguments after calling `main(String[] args)` with `args[0]`, `args[1]` etc.
+
+You can convert these to doubles with `Double.parseDouble(string);`
+
+{% endspoiler %}
+
+{% next %}
+
+## Extending Your Program
+
+When calculating the square root, we may want to specify how many decimal places of accuracy we should compute our final answer to. 
+
+Modify your program so that it may *also* take in three floats. It will then call a method to compute the square root to the specified number of decimal places, and print the number of iterations and final value as before. 
+
+Make sure that your program still works if we only input two numbers.
+
+{% spoiler "Hint" %}
+
+You can check the number of commandline arguments given with `args.length`
+
+{% endspoiler %}
+
+{% next %}
+
+## Helping the user
+What happens if someone doesn't enter two parameters? They may get a nasty exception... 
+
+Edit your code so that if the user enters fewer than 2, or more than 3 parameters it will print the following message
+
+```Incorrect Number of Parameters\nUsage: java Newton number guess epsilon```
+
+{% next %}
 ## Submission
 
 These programs will be tested automatically against a range of test cases, so ensure that the output matches the examples given otherwise these are guaranteed to fail.
@@ -83,11 +83,11 @@ These programs will be tested automatically against a range of test cases, so en
 Once you have completed these exercises submit these in the usual way
 
 ```
-check50 liv-ac-uk/comp122/2021/labs/newton
+check50 liv-ac-uk/comp122/2021/problems/newton
 ```
 
 and submit via
 
 ```
-submit50 liv-ac-uk/comp122/2021/labs/newton
+submit50 liv-ac-uk/comp122/2021/problems/newton
 ```
