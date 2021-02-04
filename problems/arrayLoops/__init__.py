@@ -1,9 +1,11 @@
 import check50
 import check50_java
 
+check50.include("Comp122.class")  # copy over input helper
+
 @check50.check()
 def CShantyExists():
-    """CShanty.java exists."""
+    """Hello.java exists."""    
     check50.exists("CShanty.java")
 
 @check50.check(CShantyExists)
