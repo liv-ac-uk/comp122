@@ -107,7 +107,7 @@ To do this we can use the Comp122 class which has been given in the current fold
 ```java
 
 System.out.println("Please enter your name");
-String name = Comp122.getString()
+String name = Comp122.getString();
 System.out.println("Hello, " +  name);
 ```
 
