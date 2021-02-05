@@ -23,7 +23,7 @@ def student_has_submitted_is_private():
 
 @check50.check(student_compiles)
 def student_has_grade_is_private():
-    """Student has a private attribute called \"allGrades\""""
+    """Student has a private attribute called \"finalGrades\""""
     check50_junit.run_and_interpret_test(
         classpaths=['tests/'],
         args=['--select-method', 'StudentTest#testGradeIsPrivate'])
