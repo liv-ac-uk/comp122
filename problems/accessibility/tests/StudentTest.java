@@ -8,6 +8,10 @@ import java.lang.reflect.Method;
 import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.Modifier;
+// import org.junit.jupiter.api.Assert.*;
+import java.io.StringWriter;
+import java.io.PrintWriter;
+
 
 class StudentTest {
     @Test
@@ -37,12 +41,15 @@ class StudentTest {
     @Test
     public void testUpdateGradeIsPublic() {
         try {
-            if (!Modifier.isPublic(Class.forName("Student").getDeclaredMethod("updateGrade").getModifiers())) {
+            if (!Modifier.isPublic(Class.forName("Student").getDeclaredMethod("updateGrade", int.class, int.class).getModifiers())) {
                 fail("method updateGrade is not public");
             }
         } catch (Exception e) {
-            fail("could not find a public method \"updateGrade\".");
-            e.printStackTrace();
+            StringWriter sw = new StringWriter();
+            PrintWriter pw = new PrintWriter(sw);
+            e.printStackTrace(pw);
+            fail("Ensure you have a public updateGrade(int, int) method");
+
         }
     }
 
@@ -90,13 +97,13 @@ class StudentTest {
     @Test
     public void testGetBaseGrades() {
         Student s = new Student();
-        assertEquals(new int[] {0, 0, 0}, s.getGrades());
+        assertArrayEquals(new int[] {0, 0, 0}, s.getGrades());
     }
 
     @Test
     public void testGetBaseSubmitted() {
         Student s = new Student();
-        assertEquals(new boolean[] {false, false, false}, s.getHasSubmitted());
+        assertArrayEquals(new boolean[] {false, false, false}, s.getHasSubmitted());
     }
 
     @Test
@@ -127,14 +134,14 @@ class StudentTest {
         s.updateGrade(0, 23);
         s.updateGrade(1, 20);
         s.updateGrade(2, 19);
-        assertEquals(new int[] {23, 20, 19}, s.getGrades());
+        assertArrayEquals(new int[] {23, 20, 19}, s.getGrades());
     }
 
     @Test
     public void testAssignment0Updates() {
         Student s = new Student();
         s.updateGrade(0, 23);
-        assertEquals(new boolean[] {true, false, false, false}, s.getHasSubmitted());
+        assertArrayEquals(new boolean[] {true, false, false}, s.getHasSubmitted());
     }
 
     @Test
@@ -143,38 +150,38 @@ class StudentTest {
         s.updateGrade(0, 23);
         s.updateGrade(1, 20);
         s.updateGrade(2, 19);
-        assertEquals(new boolean[] {true, true, true}, s.getHasSubmitted());
+        assertArrayEquals(new boolean[] {true, true, true}, s.getHasSubmitted());
     }
 
     @Test
     public void testOutOfBoundsLower() {
         Student s = new Student();
         s.updateGrade(-1, 23);
-        assertEquals(new int[] {0, 0, 0}, s.getGrades());
-        assertEquals(new boolean[] {false, false, false}, s.getHasSubmitted());
+        assertArrayEquals(new int[] {0, 0, 0}, s.getGrades());
+        assertArrayEquals(new boolean[] {false, false, false}, s.getHasSubmitted());
     }
 
     @Test
     public void testOutOfBoundsUpper() {
         Student s = new Student();
         s.updateGrade(4, 23);
-        assertEquals(new int[] {0, 0, 0}, s.getGrades());
-        assertEquals(new boolean[] {false, false, false}, s.getHasSubmitted());
+        assertArrayEquals(new int[] {0, 0, 0}, s.getGrades());
+        assertArrayEquals(new boolean[] {false, false, false}, s.getHasSubmitted());
     }
 
     @Test
     public void testNegativeGrade() {
         Student s = new Student();
         s.updateGrade(0, -1);
-        assertEquals(new int[] {0, 0, 0}, s.getGrades());
-        assertEquals(new boolean[] {false, false, false}, s.getHasSubmitted());
+        assertArrayEquals(new int[] {0, 0, 0}, s.getGrades());
+        assertArrayEquals(new boolean[] {false, false, false}, s.getHasSubmitted());
     }
 
     @Test
     public void testTooLargeGrade() {
         Student s = new Student();
         s.updateGrade(0, 57);
-        assertEquals(new int[] {0, 0, 0}, s.getGrades());
-        assertEquals(new boolean[] {false, false, false}, s.getHasSubmitted());
+        assertArrayEquals(new int[] {0, 0, 0}, s.getGrades());
+        assertArrayEquals(new boolean[] {false, false, false}, s.getHasSubmitted());
     }
 }
