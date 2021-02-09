@@ -105,9 +105,7 @@ Modify this program in such a way that it first prompts the user for their name 
 To do this we can use the Comp122 class which has been given in the current folder as so.
 
 ```java
-
-System.out.println("Please enter your name");
-String name = Comp122.getString();
+String name = Comp122.getString("Please enter your name");
 System.out.println("Hello, " +  name);
 ```
 
