@@ -11,7 +11,7 @@ def declarations_compiles():
     """Declarations.java compiles."""
     check50_java.compile("Declarations.java")
 
-@check50.check(compiles)
+@check50.check(declarations_compiles)
 def declarations_returnsFloat():
     """Ensures declarations is returning the specified value"""
     check50_java.run("Declarations").stdout("-62.5").exit()
@@ -45,7 +45,6 @@ def pythag_compiles():
 def returnsFloat():
     """Ensures Pythagoras is printing the specified value"""
     check50_java.run("Pythagoras").stdout("5.830951894845301").exit()
-
 
 @check50.check()
 def cosines_compiles():
