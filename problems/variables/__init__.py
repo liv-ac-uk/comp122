@@ -22,7 +22,7 @@ def fp_compiles():
     check50_java.compile("FPTestApp.java")
 
 @check50.check(fp_compiles)
-def returnsFloat():
+def fp_working():
     """Ensures FPTestApp is printing the specified value"""
     check50_java.run("FPTestApp").stdout("1.0000000000000002").exit()
 
@@ -32,7 +32,7 @@ def circle_compiles():
     check50_java.compile("SimpleCircle.java")
 
 @check50.check(circle_compiles)
-def returnsFloat():
+def circle_working():
     """Ensures SimpleCircle is printing the specified value"""
     check50_java.run("SimpleCircle").stdout("2.5\n19.634954084936208\n15.707963267948966").exit()
 
