@@ -51,11 +51,11 @@ Are `private` variables useless then? No, because these *can* be changed within 
 
 You've been called in to streamline the system. Going forward the module will have three assignments, each worth 33% of the total grade.
 
-We want there to be two array attributes for our student classes, `hasSubmitted` and `grade`. These *should not* be changeable manually, but will enable us to tell quickly how many of the students have submitted an assignment.
+We want there to be two `array` attributes for our student classes, `hasSubmitted` and `finalGrades`. These *should not* be changeable manually, but will enable us to tell quickly how many of the students have submitted an assignment.
 
 Having learned from the past mistakes, once we have created a student, there should only be a single method we can call to change the attributes of the student.
 
-This method will take the assignment number and grade from the user, and update the appropriate entry in the `private grade;` array, as well as marking the assignment as complete in `hasSubmitted`.
+This method will take the assignment number and grade from the user, and update the appropriate entry in `private finalGrades[i]`, as well as marking the assignment as complete in `hasSubmitted[i]`.
 
 {% next %}
 

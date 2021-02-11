@@ -1,41 +1,31 @@
 public class Student {
     // Replace the question marks with working code
-    private boolean[] hasSubmitted = new boolean[3];
-    private int[] finalGrades = new int[3];
+    ? hasSubmitted = ?;
+    ? = ?;
 
-    public boolean[] getHasSubmitted() {
-        return hasSubmitted;
+    ? getHasSubmitted() {
+        return ?
     }
 
-    public int[] getGrades() {
-        return finalGrades;
+    ? getGrades() {
+        ?
     }
 
-    public int getTotalGrade() {
-           int total = 0;
-           for (int i=0;i<finalGrades.length;i++) {
-               total += finalGrades[i];
-           }
-         return total;
+    ? getTotalGrade() {
+        // Your code to sum up each grade and return these as an int
+        ?
     }
 
     public void updateGrade(int assignment, int grade) {
          // ensure a valid index has been inputted by the user
 
-        if (assignment < 0 || assignment > 3) {
-            System.out.println("Enter an assignment number from 0-2");
-            return;
-        }
+        ?
 
         // ensure a valid grade has been entered
-        if (grade < 0 || grade > 30) {
-            System.out.println("Enter a grade from 0-30");
-            return;
-        }
+        ?
 
         // Update grade
-        hasSubmitted[assignment] = true;
-        finalGrades[assignment] = grade;
+        ?
 
         return;
      }
