@@ -18,7 +18,7 @@ Hmm, that doesn't seem to work quite as we were expecting...
 
 We can see that the compiler has found three errors in our code, which are given to us in the order in which the compiler has found them.
 
-```java
+```
 Declarations.java:7: error: cannot find symbol
         weightDifference = newWeight - curentWeight;
         ^
@@ -177,8 +177,6 @@ We can use approximations of ![](img/12.gif), and the division ![](img/13.gif) l
 
 Rather than redefining our own value of ![](img/12.gif) which is guaranteed to introduce some error, it is preferable to use a more precise value. Luckily there is one built into the Java standard library.
 
-{% next %}
-
 ## Importing Pi
 
 We often wish to perform mathematical operations in our code, and unsurprisingly Java comes with lots of helpful functions in the [Math package](https://docs.oracle.com/javase/9/docs/api/java/lang/Math.html), which can be imported with:
@@ -238,7 +236,6 @@ Complete the program Cosines.java which will compute `c` given the values of ![]
 
 ## Submission
 
-<<<<<<< HEAD
 Ensure your `Declarations.java` compiles and make `currentWeight = 122.5` and `newWeight = 60`. In FPTestApp, update `x = 1.0/20` and `y` when ![](img/24.gif), and for `Pythagoras.java` and `Cosines.java` ensure these return the values specified above.
 
 You can check your code with:
@@ -252,6 +249,3 @@ and submit via:
 ```
 submit50 liv-ac-uk/comp122/2021/problems/variables
 ```
-=======
-
->>>>>>> 114f67fbf874c06e2ed7183fd0c74c0beab6a255
