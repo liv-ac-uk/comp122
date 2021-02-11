@@ -42,7 +42,7 @@ def pythag_compiles():
     check50_java.compile("Pythagoras.java")
 
 @check50.check(pythag_compiles)
-def returnsFloat():
+def pythag_working():
     """Ensures Pythagoras is printing the specified value"""
     check50_java.run("Pythagoras").stdout("5.830951894845301").exit()
 
@@ -52,7 +52,7 @@ def cosines_compiles():
     check50_java.compile("Cosines.java")
 
 @check50.check(cosines_compiles)
-def returnsFloat():
+def cosines_working():
     """Ensures Cosines is printing the specified value"""
     check50_java.run("Cosines").stdout("5.830951894845301").exit()
 
