@@ -132,7 +132,7 @@ Make ![](img/07.gif) and add this together 3 times.
 
 Is this equal to 1?
 
-What happens if we change `x = 1 / 3`? Does this sum to 1?
+For your final submission change `x = 0.05` and add this together 20 times.
 
 {% next %}
 
@@ -208,7 +208,7 @@ Recall that the area of a circle is ![](img/14.gif), and the circumference is ![
 
 ## Pythagoras's Theorem
 
-Recall the Pythagorean theorem which states that the sides of a right angled triangle labelled ![](img/16.gif) and ![](img/17.gif) in the diagram (where ![](img/17.gif) is the length of the side opposite the right angle), satisfy the relationship ![](img/18.gif).
+Recall the Pythagorean theorem which states that the sides of a right angled triangle labelled `a` and `b` in the diagram (where `c`) is the length of the side opposite the right angle), satisfy the relationship ![](img/16.gif).
 
 ![Pythagoras](img/pythagoras.png)
 
@@ -224,19 +224,23 @@ There is a square root function in the Math package which it would be wise to us
 
 ## The Law of Cosines
 
-When we do not have a right angled triangle, but we do have the values of ![](img/16.gif) and the angle between these ![](img/19.gif), we can see that the relationship between ![](img/20.gif) and ![](img/19.gif) is given by the [Law of Cosines](https://www.wikipedia.org/wiki/Law_of_cosines)
+When we do not have a right angled triangle, but we do have the values of `a`, `b`, and the angle between these ![](img/17.gif), we can see that the relationship between `c` and these values is given by the [Law of Cosines](https://www.wikipedia.org/wiki/Law_of_cosines)
 
-![](img/21.gif)
+![](img/18.gif)
 
 ![Cosines](img/loc.png)
 
-Complete the program Cosines.java which will compute `c` given the values of ![](img/22.gif), and ![](img/23.gif) (in radians). 
+Complete the program Cosines.java which will compute `c` given the values of `a=3`, `b=5`, and `theta = (2 * Math.PI) / 3` (in radians). 
 
 {% next %}
 
 ## Submission
 
-Ensure your `Declarations.java` compiles and make `currentWeight = 122.5` and `newWeight = 60`. In FPTestApp, update `x = 1.0/20` and `y` when ![](img/24.gif), and for `Pythagoras.java` and `Cosines.java` ensure these return the values specified above.
+Ensure your `Declarations.java` compiles and make `currentWeight = 122.5` and `newWeight = 60`. 
+
+In FPTestApp, update `x = 0.05` and `y` to sum up to `1`.
+
+For `Pythagoras.java` and `Cosines.java` ensure these return the correct values when `a=3`, `b=5` and `theta = (2 * Math.PI) / 3` for `Cosines.java`.
 
 You can check your code with:
 
