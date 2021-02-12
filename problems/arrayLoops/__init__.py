@@ -21,7 +21,7 @@ def CShantyPrintsTwo():
 @check50.check(CShantyCompiles)
 def CShantyPrintsThree():
     """Ensures CShanty is printing thrice"""
-    check50_java.run("Hello").stdin("3").stdout("Soon may the compiler come,\nTo bring class files and exceptions\nSoon may the compiler come,\nTo bring class files and exceptions\nSoon may the compiler come,\nTo bring class files and exceptions\nHigh level languages earn my rum\nBut my first love is the C!\n").exit()
+    check50_java.run("CShanty").stdin("3").stdout("Soon may the compiler come,\nTo bring class files and exceptions\nSoon may the compiler come,\nTo bring class files and exceptions\nSoon may the compiler come,\nTo bring class files and exceptions\nHigh level languages earn my rum\nBut my first love is the C!\n").exit()
 
 @check50.check()
 def factorialExists():
