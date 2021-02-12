@@ -16,7 +16,7 @@ def CShantyCompiles():
 @check50.check(CShantyCompiles)
 def CShantyPrintsTwo():
     """Ensures CShanty can print twice"""
-    check50_java.run("CShanty").stdin("2").stdout(" Soon may the compiler come,\nTo bring class files and exceptions\nSoon may the compiler come,\nTo bring class files and exceptions\nHigh level languages earn my rum\nBut my first love is the C!\n").exit()
+    check50_java.run("CShanty").stdin("2").stdout("Soon may the compiler come,\nTo bring class files and exceptions\nSoon may the compiler come,\nTo bring class files and exceptions\nHigh level languages earn my rum\nBut my first love is the C!\n").exit()
 
 @check50.check(CShantyCompiles)
 def CShantyPrintsThree():
