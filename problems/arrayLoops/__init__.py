@@ -15,7 +15,7 @@ def CShantyCompiles():
 
 @check50.check(CShantyCompiles)
 def CShantyPrintsTwo():
-    """Ensures CShanty is print twice"""
+    """Ensures CShanty can print twice"""
     check50_java.run("CShanty").stdin("2").stdout(" Soon may the compiler come,\nTo bring class files and exceptions\nSoon may the compiler come,\nTo bring class files and exceptions\nHigh level languages earn my rum\nBut my first love is the C!\n").exit()
 
 @check50.check(CShantyCompiles)
@@ -35,23 +35,23 @@ def factorialCompiles():
 
 @check50.check(factorialCompiles)
 def factorialFour():
-    """Ensures Factorial is printing the specified value"""
+    """Ensures Factorial is printing 4!"""
     check50_java.run("Factorial").stdin("4").stdout("24\n").exit()
 
 
 @check50.check(factorialCompiles)
 def factorialTen():
-    """Ensures Factorial is printing the specified value"""
+    """Ensures Factorial is printing 10!"""
     check50_java.run("Factorial").stdin("10").stdout("3628800\n").exit()
 
 @check50.check(factorialCompiles)
 def factorialThirteen():
-    """Ensures Factorial is printing the specified value"""
+    """Ensures Factorial is printing 13!"""
     check50_java.run("Factorial").stdin("13").stdout("6227020800\n").exit()
 
 @check50.check(factorialCompiles)
 def factorialNineteen():
-    """Ensures Factorial is printing the specified value"""
+    """Ensures Factorial is printing 19!"""
     check50_java.run("Factorial").stdin("19").stdout("121645100408832000\n").exit()
 
 
