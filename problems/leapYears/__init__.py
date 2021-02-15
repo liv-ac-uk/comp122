@@ -48,7 +48,7 @@ def condensed_boolean():
         fileString = f.read().replace("\n", "")
 
     if "||" not in fileString and "&&" not in fileString:
-        raise check50.Mismatch("", "&&, ||", help="You have not included condensed logic")
+        raise check50.Failure("You did not use Boolean operators")
 
 @check50.check(condensed_boolean)
 def condensed1900():
