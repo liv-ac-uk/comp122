@@ -6,6 +6,7 @@ lab50:
     - !include "SimpleCircle.java"
     - !include "Pythagoras.java"
     - !include "Cosines.java"
+    - !include "Comp122.class"
     
   window:
     - editor

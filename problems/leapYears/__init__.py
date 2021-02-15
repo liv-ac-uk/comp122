@@ -13,6 +13,11 @@ def ly_compiles():
     check50_java.compile("LeapYear.java")
 
 @check50.check(ly_compiles)
+def test1900():
+    """Ensures LeapYear is returning the specified value for 1900"""
+    check50_java.run("LeapYear").stdin("1900").stdout("false\n").exit()
+
+@check50.check(ly_compiles)
 def test1980():
     """Ensures LeapYear is returning the specified value for 1980"""
     check50_java.run("LeapYear").stdin("1980").stdout("true\n").exit()
@@ -21,6 +26,7 @@ def test1980():
 def test2000():
     """Ensures LeapYear is returning the specified value for 2000"""
     check50_java.run("LeapYear").stdin("2000").stdout("true\n").exit()
+<<<<<<< HEAD
 
 @check50.check(ly_compiles)
 def test2016():
@@ -31,11 +37,18 @@ def test2016():
 def test1900():
     """Ensures LeapYear is returning the specified value for 1980"""
     check50_java.run("LeapYear").stdin("1900").stdout("false\n").exit()
+=======
+>>>>>>> f73f87d0a21d3dd44d08187eaf70b8ee90311f77
 
 @check50.check(ly_compiles)
 def test2001():
     """Ensures LeapYear is returning the specified value for 2001"""
     check50_java.run("LeapYear").stdin("2001").stdout("false\n").exit()
+
+@check50.check(ly_compiles)
+def test2016():
+    """Ensures LeapYear is returning the specified value for 2016"""
+    check50_java.run("LeapYear").stdin("2016").stdout("true\n").exit()
 
 @check50.check(ly_compiles)
 def test2018():
@@ -48,7 +61,11 @@ def condensed_boolean():
         fileString = f.read().replace("\n", "")
 
     if "||" not in fileString and "&&" not in fileString:
-        raise check50.Mismatch("", "&&, ||", help="You have not included condensed logic")
+        raise check50.Failure("You did not use Boolean operators")
+
+@check50.check(condensed_boolean)
+def condensed1900():
+    check50_java.run("LeapYear").stdin("1900").stdout("false\n").exit()
 
 @check50.check(condensed_boolean)
 def condensed1980():
@@ -56,21 +73,16 @@ def condensed1980():
 
 @check50.check(condensed_boolean)
 def condensed2000():
-    check50_java.run("LeapYear").stdin("2000").stdout("false\n").exit()
-
-@check50.check(condensed_boolean)
-def condensed2016():
-    check50_java.run("LeapYear").stdin("2016").stdout("true\n").exit()
-
-@check50.check(condensed_boolean)
-def condensed1900():
-    check50_java.run("LeapYear").stdin("1900").stdout("false\n").exit()
+    check50_java.run("LeapYear").stdin("2000").stdout("true\n").exit()
 
 @check50.check(condensed_boolean)
 def condensed2001():
     check50_java.run("LeapYear").stdin("2001").stdout("false\n").exit()
 
 @check50.check(condensed_boolean)
+def condensed2016():
+    check50_java.run("LeapYear").stdin("2016").stdout("true\n").exit()
+
+@check50.check(condensed_boolean)
 def condensed2018():
     check50_java.run("LeapYear").stdin("2018").stdout("false\n").exit()
-
