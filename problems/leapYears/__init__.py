@@ -20,7 +20,7 @@ def test1980():
 @check50.check(ly_compiles)
 def test2000():
     """Ensures LeapYear is returning the specified value for 2000"""
-    check50_java.run("LeapYear").stdin("2000").stdout("false\n").exit()
+    check50_java.run("LeapYear").stdin("2000").stdout("true\n").exit()
 
 @check50.check(ly_compiles)
 def test2016():
