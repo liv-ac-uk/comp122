@@ -54,5 +54,4 @@ def cosines_compiles():
 @check50.check(cosines_compiles)
 def cosines_working():
     """Ensures Cosines is printing the specified value"""
-    check50_java.run("Cosines").stdout("48.99999999999999").exit()
-
+    check50_java.run("Cosines").stdout("6.999999999999999").exit()
