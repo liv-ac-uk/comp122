@@ -23,12 +23,14 @@ Sea shanties are historically well-tested applications, with known efficacy in h
 
 ```
 $ java CShanty
+How many rounds we doin' mateys?
 2                                               // User Input
-Oh I like to code and OOP sets me free!     // Console Output
-For reliable code, Java is for me
-Oh I like to code and OOP sets me free!     
-For reliable code, Java is for me
-But, my first love is the C!
+Soon may the compiler come,
+To bring class files and exceptions
+Soon may the compiler come,
+To bring class files and exceptions
+High level languages earn my rum
+But my first love is the C!
 ```
 
 {% next %}
