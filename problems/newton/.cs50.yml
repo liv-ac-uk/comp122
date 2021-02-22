@@ -5,9 +5,11 @@ check50:
   files:
     - !exclude "*"
     - !include "*.java"
+    - !include "Comp122.class"
 
 submit50:
   slug: "liv-ac-uk/comp122/2021/newton"
   files:
     - !exclude "*"
     - !include "*.java"
+    - !include "Comp122.class"
