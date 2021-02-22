@@ -13,3 +13,4 @@ submit50:
   files:
     - !exclude "*"
     - !include "*.java"
+    - !include "Comp122.class"
