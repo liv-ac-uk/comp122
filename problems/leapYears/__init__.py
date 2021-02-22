@@ -1,7 +1,7 @@
 import check50
 import check50_java
 
-check50.include("Comp122.class")  # copy over input helper
+
 
 @check50.check()
 def ly_exists():
@@ -11,6 +11,7 @@ def ly_exists():
 @check50.check(ly_exists)
 def ly_compiles():
     """LeapYear.java compiles."""
+    check50.include("Comp122.class")  # copy over input helper
     check50_java.compile("LeapYear.java")
 
 @check50.check(ly_compiles)
