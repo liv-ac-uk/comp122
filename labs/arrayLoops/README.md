@@ -164,7 +164,7 @@ boolean lessThanTen = true;
 System.out.println("Enter an integer greater than or equal to ten")
 
 while (lessThanTen) {
-    myInt = Comp122.nextInt();
+    myInt = Comp122.getInt();
     lessThanTen = myInt < 10;
 
     if lessThanTen {
@@ -190,8 +190,12 @@ We can introduce bugs into our code if we forget to change the condition which i
 
 You can check your code with
 
-`check50 liv-ac-uk/comp122/2021/problems/arrayLoops`
+```
+check50 liv-ac-uk/comp122/2021/problems/arrayLoops
+```
 
 And submit with:
 
-`submit50 liv-ac-uk/comp122/2021/problems/arrayLoops`
+```
+submit50 liv-ac-uk/comp122/2021/problems/arrayLoops
+```
