@@ -40,7 +40,7 @@ public class StringTools {
   // TODO: add javadoc comment here
   public static void main(String[] arg)
   {
-    String str=Terminal.getString("Enter a string: ");
+    String str=Comp122.getString("Enter a string: ");
     System.out.println("It's length is " + length(str));
     System.out.println("It's swap is " + swap(str));
   }
