@@ -32,6 +32,7 @@ def factorialExists():
 @check50.check(factorialExists)
 def factorialCompiles():
     """Factorial.java compiles."""
+    check50.include("Comp122.class")  # copy over input helper
     check50_java.compile("Factorial.java")
 
 @check50.check(factorialCompiles)
@@ -67,6 +68,7 @@ def largest_exists():
 @check50.check(largest_exists)
 def largest_compiles():
     """Largest.java compiles"""
+    check50.include("Comp122.class")  # copy over input helper
     check50_java.compile("Largest.java")
 
 @check50.check(largest_compiles)
