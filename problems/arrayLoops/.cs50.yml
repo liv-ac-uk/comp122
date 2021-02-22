@@ -4,11 +4,17 @@ check50:
     - check50-junit
   files:
     - !exclude "*"
-    - !include "*.java"
+    - !include "CShanty.java"
+    - !include "Factorial.java"
+    - !include "Largest.java"
+    
 
 
 submit50:
   slug: "liv-ac-uk/comp122/2021/arrayLoops"
   files:
     - !exclude "*"
-    - !include "*.java"
+    - !include "CShanty.java"
+    - !include "Factorial.java"
+    - !include "Largest.java"
+    
