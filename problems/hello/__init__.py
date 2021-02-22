@@ -1,8 +1,6 @@
 import check50
 import check50_java
 
-check50.include("Comp122.class")  # copy over input helper
-
 @check50.check()
 def exists():
     """Hello.java exists."""
@@ -11,6 +9,8 @@ def exists():
 @check50.check(exists)
 def compiles():
     """Hello.java compiles."""
+    check50.include("Comp122.class")  # copy over input helper
+
     check50_java.compile("Hello.java")
 
 @check50.check(compiles)

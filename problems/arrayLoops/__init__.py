@@ -1,7 +1,6 @@
 import check50
 import check50_java
 
-check50.include("Comp122.class")  # copy over input helper
 
 @check50.check()
 def CShantyExists():
@@ -11,6 +10,8 @@ def CShantyExists():
 @check50.check(CShantyExists)
 def CShantyCompiles():
     """CShanty.java compiles."""
+    check50.include("Comp122.class")  # copy over input helper
+
     check50_java.compile("CShanty.java")
 
 @check50.check(CShantyCompiles)
