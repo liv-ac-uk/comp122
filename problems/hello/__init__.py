@@ -1,6 +1,8 @@
 import check50
 import check50_java
 
+check50.include("Comp122.class")  # copy over input helper
+
 @check50.check()
 def exists():
     """Hello.java exists."""

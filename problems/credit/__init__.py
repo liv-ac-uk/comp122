@@ -9,6 +9,8 @@ to Java via check50_java.
 import check50
 import check50_java
 
+check50.include("Comp122.class")  # copy over input helper
+
 
 @check50.check()
 def exists():

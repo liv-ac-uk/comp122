@@ -1,6 +1,8 @@
 import check50
 import check50_java
 
+check50.include("Comp122.class")  # copy over input helper
+
 @check50.check()
 def newt_exists():
     """Newton.java exists."""
@@ -13,7 +15,7 @@ def newt_compiles():
 
 @check50.check(newt_compiles)
 def root_2():
-    """Ensures LeapYear is returning the specified value for 2.0 1.0"""
+    """Ensures Newton is returning the specified value for 2.0 1.0"""
     check50_java.run("Newton 2.0 1.0").stdout("6\n1.414213562373095").exit()
 
 @check50.check(newt_compiles)
