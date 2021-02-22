@@ -63,24 +63,30 @@ def condensed_boolean():
 
 @check50.check(condensed_boolean)
 def condensed1900():
+    """Ensures LeapYear can run with condensed logic for 1900"""
     check50_java.run("LeapYear").stdin("1900").stdout("false\n").exit()
 
 @check50.check(condensed_boolean)
 def condensed1980():
+    """Ensures LeapYear can run with condensed logic for 1980"""
     check50_java.run("LeapYear").stdin("1980").stdout("true\n").exit()
 
 @check50.check(condensed_boolean)
 def condensed2000():
+    """Ensures LeapYear can run with condensed logic for 2000"""
     check50_java.run("LeapYear").stdin("2000").stdout("true\n").exit()
 
 @check50.check(condensed_boolean)
 def condensed2001():
+    """Ensures LeapYear can run with condensed logic for 2001"""
     check50_java.run("LeapYear").stdin("2001").stdout("false\n").exit()
 
 @check50.check(condensed_boolean)
 def condensed2016():
+    """Ensures LeapYear can run with condensed logic for 2016"""
     check50_java.run("LeapYear").stdin("2016").stdout("true\n").exit()
 
 @check50.check(condensed_boolean)
 def condensed2018():
+    """Ensures LeapYear can run with condensed logic for 2018"""
     check50_java.run("LeapYear").stdin("2018").stdout("false\n").exit()
