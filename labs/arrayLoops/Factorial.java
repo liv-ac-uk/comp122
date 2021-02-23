@@ -1,5 +1,5 @@
 public class Factorial {
-    public static void main() {
+    public static void main(Stringp[] args) {
         int n = ?;
         ? factorial = ?;
 
