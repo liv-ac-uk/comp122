@@ -34,17 +34,17 @@ def root_inf():
 
 @check50.check(newt_compiles)
 def root_9_001():
-    """Ensures Newton is returning the specified value for 9.0 3.0"""
+    """Ensures Newton is returning the specified value for 9.0 3.0 0.01"""
     check50_java.run("Newton 9.0 3.0 0.01").stdout("1\n3.0").exit()
 
 @check50.check(newt_compiles)
 def root_25_0001():
-    """Ensures Newton is returning the specified value for 25 0.1"""
+    """Ensures Newton is returning the specified value for 25 0.1 0.0001"""
     check50_java.run("Newton 25 0.1 0.0001").stdout("11\n5.0").exit()
 
 @check50.check(newt_compiles)
 def root_inf_00001():
-    """Ensures Newton is returning the correct (but incorrect) value for 25 0"""
+    """Ensures Newton is returning the correct (but incorrect) value for 25 0 0.00001"""
     check50_java.run("Newton 25 0 0.00001").stdout("3\nInfinity").exit()
 
 @check50.check(newt_compiles)
