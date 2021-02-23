@@ -10,8 +10,4 @@ submit50:
   slug: "liv-ac-uk/comp122/2021/newton"
   files:
     - !exclude "*"
-<<<<<<< HEAD
     - !include "Newton.java"
-=======
-    - !include "Newton.java"
->>>>>>> ca8cbd511f75491bce563c7ae89a51c634003c1b
