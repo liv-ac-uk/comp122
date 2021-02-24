@@ -1,7 +1,6 @@
 import check50
 import check50_java
 import check50_junit
-import check50_checkstyle
 
 
 # Caesar ##################################################################
@@ -18,30 +17,30 @@ def caesar_compiles():
 
 
 @check50.check(caesar_compiles)
-def caesar_has_rotate_is_public():
-    """Caesar has a public static methos called \"rotate\""""
+def caesar_rotate_char_exists():
+    """Caesar.rotate(int,char) exists"""
     check50_junit.run_and_interpret_test(
         classpaths=['tests/'],
-        args=['--select-method', 'CaesarTest#rotateExists'])
+        args=['--select-method', 'CaesarTest#rotateCharExists'])
 
 
-@check50.check(caesar_compiles)
-def caesar_rotate_signature():
-    """Caesar has the correct signature for \"rotate\""""
+@check50.check(caesar_rotate_char_exists)
+def caesar_rotate_char_is_public_static():
+    """Caesar.rotate(int,char) is public static"""
     check50_junit.run_and_interpret_test(
         classpaths=['tests/'],
         args=['--select-method', 'CaesarTest#rotateCharSignatureCorrect'])
 
 
-@check50.check(caesar_compiles)
+@check50.check(caesar_rotate_char_is_public_static)
 def caesar_rotate_lower_shift_5():
     """Caesar rotates lower case chars to the right values with a shift 5"""
     check50_junit.run_and_interpret_test(
         classpaths=['tests/'],
-        args=['--select-method', 'CaesarTest#testLowerCharShiftZero'])
+        args=['--select-method', 'CaesarTest#testLowerCharShiftFive'])
 
 
-@check50.check(caesar_compiles)
+@check50.check(caesar_rotate_char_is_public_static)
 def caesar_rotate_lower_shift_19():
     """Caesar rotates lower case chars to the right values with a shift 19"""
     check50_junit.run_and_interpret_test(
@@ -50,8 +49,8 @@ def caesar_rotate_lower_shift_19():
 
 
 @check50.check(caesar_compiles)
-def caesar_rotate_signature():
-    """Caesar has the correct signature for \"rotate\""""
+def caesar_rotate_string_signature():
+    """Caesar.rotate(int,String) is public static"""
     check50_junit.run_and_interpret_test(
         classpaths=['tests/'],
         args=['--select-method', 'CaesarTest#rotateStringSignatureCorrect'])
@@ -59,7 +58,7 @@ def caesar_rotate_signature():
 
 @check50.check(caesar_compiles)
 def caesar_main_exists():
-    """Test main exists"""
+    """Caesar.main exists"""
     check50_junit.run_and_interpret_test(
         classpaths=['tests/'],
         args=['--select-method', 'CaesarTest#mainExists'])
