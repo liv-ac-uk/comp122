@@ -71,6 +71,60 @@ The automarker will be using these terms, so make sure to follow this specificat
 
 {% next %}
 
+## Gather Round
+
+Lecturers typically store their students grades on an abacus, but some progressive types have started using software to do this for them. 
+
+We often deal with lots of objects of the same type when building real world software, and Java makes it easy for us to bundle these together into *Arrays*. Arrays in Java allow us to structure our code and saves us from creating lots of variables (which looks messy).
+
+Lets start creating some software to simulate a virtual classroom like the one you're virtually interacting with right now!
+
+{% next %}
+
+## I'm So Meta, Even This Acronym
+
+Create a new file called `VGather.Java` where we will store our virtual virtual classroom. 
+
+For now we'll keep it simple and write a `public static class VGather` with a single `public static void main(String[] args)` method to help the lecturer calculate the class average. 
+
+The Lecturer has all the students grades written down so needs to enter them one by one into the terminal, and will then expect to have the average returned to them.
+
+To do this use the `Comp122.getInt()` method to first read in the number of students, then use a `for` loop to read in the grade of each student.
+
+Once all the `Student`s have had their grades read in, use another `for` loop to compute the class average, and print this to the terminal.
+
+```
+$ java VGather 
+Number of Students:     \\ Output
+3                       \\ Input
+25 
+23
+27
+25                      \\ Output
+
+```
+
+{% spoiler "Hint" %}
+To read in an integer and create an array of size `n` the syntax is:
+
+```java
+int n = Comp122.getInt("");
+Student[] studentArray = new Student[n];
+```
+
+You can loop through this array and modify each object individually:
+
+```java
+for (int i = 0; i < n; i++) {
+    studentArray[i].setGrade(SOMETHING);
+}    
+    
+```
+
+
+{% endspoiler %}
+
+
 ## Submission
 
 These programs will be tested automatically against a range of test cases, so ensure that the output matches the examples given otherwise these are guaranteed to fail.
