@@ -3,6 +3,7 @@ lab50:
     - !exclude "*"
     - !include Comp122.class
     - !include Student.java
+    - !include VGather.java
     
 
   window:
