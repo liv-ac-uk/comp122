@@ -6,6 +6,8 @@ In Java however we have the option of creating more complex datatypes, classes!
 
 Programs of can get complex very quickly, in large pieces of software it is simply impossible to keep track of tens of thousands of lines of code when they are in a single file. To make life much easier for ourselves (honestly), we separate our code into separate functional classes.
 
+{% next %}
+
 ## Class Half Full
 
 You may have noticed that you have been using classes in every single Java program you have written in this course so far (nice job!).
@@ -15,6 +17,8 @@ We define a class using the `class` keyword, which you may note has been near th
 Each of our classes can contain a number of variables, as well as functions to operate on those variables.
 
 From now on, variables when they belong to a class will be referred to as attributes, and a function which belongs to a class is called a method.
+
+{% next %}
 
 ## Method in the Madness
 
@@ -34,6 +38,8 @@ public class Student {
 
 The body of this class defines the operations we can perform on this object.
 
+{% next %}
+
 ## My Body Is Not An Object
 
 To use classes we must first *instantiate* these as objects. We do this in exactly the same manner as we declared the arrays earlier in this lab e.g.
@@ -49,6 +55,8 @@ System.out.println("Alice Submitted Coursework: " + alice.hasSubmitted)
 
 This is a bit of a boring class currently, so let's add some functionality
 
+{% next %}
+
 ## What's in a Name?
 
 Most students have a name, so at the top of the class add a `public String` variable `name`.
@@ -60,3 +68,21 @@ Additionally add an `int` to the class to keep track of the students score, call
 After each of the assignments, the lecturer will update the students score with a method which will return a `void` called `updateGrade(int mark)`, which will add the students grade for that assignment to their `grade`.
 
 The automarker will be using these terms, so make sure to follow this specification closely!
+
+{% next %}
+
+## Submission
+
+These programs will be tested automatically against a range of test cases, so ensure that the output matches the examples given otherwise these are guaranteed to fail.
+
+Once you have completed these exercises submit these in the usual way
+
+```
+check50 liv-ac-uk/comp122/2021/problems/objects
+```
+
+and submit via
+
+```
+submit50 liv-ac-uk/comp122/2021/problems/objects
+```
