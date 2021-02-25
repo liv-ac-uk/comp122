@@ -21,7 +21,7 @@ class StudentTest {
         Student s = new Student();
         try {
             s.setName("Alice");
-        catch {
+        }catch (Exception e) {
             fail("Your setName method is faulty");
         }
     }
@@ -30,9 +30,9 @@ class StudentTest {
     public void testGetName() {
         Student s = new Student();
         try {
-            s.setName("Alice";
-            assertEquals("Alice", s.getName();)
-        catch {
+            s.setName("Alice");
+            assertEquals("Alice", s.getName());
+        }catch (Exception e) {
             fail("Your getName method is faulty");
         }
     }
@@ -42,7 +42,7 @@ class StudentTest {
         Student s = new Student();
         try {
             s.setGrade(10);
-        catch {
+        }catch (Exception e)  {
             fail("Your setGrade method is faulty");
         }
     }
@@ -53,7 +53,7 @@ class StudentTest {
         try {
             s.setGrade(10);
             assertEquals(10, s.getGrade());
-        catch {
+        }catch (Exception e) {
             fail("Your setGrade method is faulty");
         }
     }

@@ -10,6 +10,7 @@ def student_exists():
 @check50.check(student_exists)
 def student_compiles():
     """Student.java compiles"""
+    check50.include("Comp122.class")  # copy over input helper
     check50_java.compile("Student.java")
 
 @check50.check(student_compiles)
@@ -34,7 +35,7 @@ def student_getName():
         classpaths=['tests/'],
         args=['--select-method', 'StudentTest#testGetName'])
 
-        
+
 @check50.check(student_compiles)
 def student_getName():
     """Ensure that the student setGrade() method is working properly"""
@@ -42,7 +43,7 @@ def student_getName():
         classpaths=['tests/'],
         args=['--select-method', 'StudentTest#testSetGrade'])
 
-        
+
 @check50.check(student_compiles)
 def student_getName():
     """Ensure that the student getGrade() method is working properly"""
@@ -60,6 +61,7 @@ def vgather_exists():
 @check50.check(vgather_exists)
 def vgather_compiles():
     """VGather.java compiles"""
+    check50.include("Comp122.class")  # copy over input helper
     check50_java.compile("VGather.java")
 
 @check50.check(vgather_compiles)
@@ -74,7 +76,7 @@ def vgather_two():
     """ vgather runs with two students"""
     check50_java.run("VGather").stdin("2", prompt=False).stdin("5", prompt=False).stdin("15", prompt=False).stdout("10\n").exit()
 
-    
+
 @check50.check(vgather_compiles)
 def vgather_five():
     """ vgather runs with five students"""
