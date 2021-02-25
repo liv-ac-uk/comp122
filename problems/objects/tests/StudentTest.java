@@ -17,36 +17,44 @@ class StudentTest {
     }
 
     @Test
-    public void testFullConstructor() {
-        Student s = new Student("Alice", "aliceXtreme@aol.com", 1984, 2021, 1234567);
-        assertEquals("Alice", s.getName());
-        assertEquals("aliceXtreme@aol.com", s.getEmail());
-        assertEquals(1984, s.getYearOfBirth());
-        assertEquals(2021, s.getEnrolmentYear());
-        assertEquals(1234567, s.getStudentId());
+    public void testSetName() {
+        Student s = new Student();
+        try {
+            s.setName("Alice");
+        catch {
+            fail("Your setName method is faulty");
+        }
     }
 
     @Test
-    public void testPartialConstructor1() {
-        Student s = new Student("Alice", "aliceXtreme@aol.com", 1984);
-        assertEquals("Alice", s.getName());
-        assertEquals("aliceXtreme@aol.com", s.getEmail());
-        assertEquals(1984, s.getYearOfBirth());
+    public void testGetName() {
+        Student s = new Student();
+        try {
+            s.setName("Alice";
+            assertEquals("Alice", s.getName();)
+        catch {
+            fail("Your getName method is faulty");
+        }
     }
 
     @Test
-    public void testPartialConstructor2() {
-        Student s = new Student("Alice", "aliceXtreme@aol.com", "01/09/1984");
-        assertEquals("Alice", s.getName());
-        assertEquals("aliceXtreme@aol.com", s.getEmail());
-        assertEquals(1984, s.getYearOfBirth());
+    public void testSetGrade() {
+        Student s = new Student();
+        try {
+            s.setGrade(10);
+        catch {
+            fail("Your setGrade method is faulty");
+        }
     }
 
     @Test
-    public void testPartialConstructor3() {
-        Student s = new Student("Alice", "aliceXtreme@aol.com", "01/09/2001");
-        assertEquals("Alice", s.getName());
-        assertEquals("aliceXtreme@aol.com", s.getEmail());
-        assertEquals(2001, s.getYearOfBirth());
+    public void testGetGrade() {
+        Student s = new Student();
+        try {
+            s.setGrade(10);
+            assertEquals(10, s.getGrade());
+        catch {
+            fail("Your setGrade method is faulty");
+        }
     }
 }
