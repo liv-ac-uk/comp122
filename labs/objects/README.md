@@ -10,7 +10,7 @@ Programs of can get complex very quickly, in large pieces of software it is simp
 
 ## Class Half Full
 
-You may have noticed that you have been using classes in every single Java program you have written in this course so far (nice job!).
+You may have noticed that you have been using classes in every single Java program you have written in this course so far, nice job!
 
 We define a class using the `class` keyword, which you may note has been near the start of each of your submissions. Each of our programs have been quite short, so we haven't used many of the features apart from a single function where we have put all of our code.
 
@@ -40,7 +40,9 @@ public class Student {
 
 ## My Body Is Not An Object
 
-The body of this class defines the operations we can perform on this object. Once we have the class body written in a Java file, we can use it in any other code in the folder. To use classes we must first *instantiate* these as objects otherwise we will get an exception. We do this in exactly the same manner as we declared primitive types in previous labs e.g.
+The body of this class defines the operations we can perform on this object. Once we have the class body written in a Java file, we can use it in any other code in the folder. 
+
+To use classes we must first *instantiate* these as objects otherwise we will get an exception. We do this in exactly the same manner as we declared primitive types in previous labs e.g.
 
 ```java
 ...
@@ -99,6 +101,7 @@ Example Usage:
 $ java VGather 
 Number of Students:     \\ Output
 3                       \\ Input
+Please Enter 3 Grades:  \\ Output
 25 
 23
 27
