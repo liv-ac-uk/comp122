@@ -1,7 +1,6 @@
 import check50
 import check50_java
 import check50_junit
-import check50_checkstyle
 
 
 # Caesar ##################################################################
@@ -18,40 +17,40 @@ def caesar_compiles():
 
 
 @check50.check(caesar_compiles)
-def caesar_has_rotate_is_public():
-    """Caesar has a public static methos called \"rotate\""""
+def caesar_rotate_char_exists():
+    """Caesar.rotate(int,char) exists"""
     check50_junit.run_and_interpret_test(
         classpaths=['tests/'],
-        args=['--select-method', 'CaesarTest#rotateExists'])
+        args=['--select-method', 'CaesarTest#rotateCharExists'])
 
 
-@check50.check(caesar_compiles)
-def caesar_rotate_signature():
-    """Caesar has the correct signature for \"rotate\""""
+@check50.check(caesar_rotate_char_exists)
+def caesar_rotate_char_is_public_static():
+    """Caesar.rotate(int,char) is public static"""
     check50_junit.run_and_interpret_test(
         classpaths=['tests/'],
         args=['--select-method', 'CaesarTest#rotateCharSignatureCorrect'])
 
 
-@check50.check(caesar_compiles)
+@check50.check(caesar_rotate_char_is_public_static)
 def caesar_rotate_lower_shift_5():
-    """Caesar rotates lower case chars to the right values with a shift 5"""
+    """trying out Caesar(int,char) on "abc...z" with a shift 5"""
     check50_junit.run_and_interpret_test(
         classpaths=['tests/'],
-        args=['--select-method', 'CaesarTest#testLowerCharShiftZero'])
+        args=['--select-method', 'CaesarTest#testLowerCharShiftFive'])
 
 
-@check50.check(caesar_compiles)
+@check50.check(caesar_rotate_char_is_public_static)
 def caesar_rotate_lower_shift_19():
-    """Caesar rotates lower case chars to the right values with a shift 19"""
+    """trying out Caesar(int,char) on "abc...z" with a shift 19"""
     check50_junit.run_and_interpret_test(
         classpaths=['tests/'],
         args=['--select-method', 'CaesarTest#testLowerCharShiftNineteen'])
 
 
 @check50.check(caesar_compiles)
-def caesar_rotate_signature():
-    """Caesar has the correct signature for \"rotate\""""
+def caesar_rotate_string_signature():
+    """Caesar.rotate(int,String) is public static"""
     check50_junit.run_and_interpret_test(
         classpaths=['tests/'],
         args=['--select-method', 'CaesarTest#rotateStringSignatureCorrect'])
@@ -59,17 +58,30 @@ def caesar_rotate_signature():
 
 @check50.check(caesar_compiles)
 def caesar_main_exists():
-    """Test main exists"""
+    """Caesar.main exists"""
     check50_junit.run_and_interpret_test(
         classpaths=['tests/'],
         args=['--select-method', 'CaesarTest#mainExists'])
 
+@check50.check(caesar_main_exists)
+def caesar_many_args():
+    """See if we get the right error message whe run with too many arguments"""
+    out = "Too many parameters!\s*\n\s*Usage: java Caesar n \"cipher text\"\s*"
+    check50_java.run("Caesar 13 The ships hung in the sky in much the same way that bricks dont.").stdout(out,regex=True)
+
+
+@check50.check(caesar_main_exists)
+def caesar_one_arg():
+    """See if we get the right error message whe run with a single argument"""
+    out = "Too few parameters!\nUsage: java Caesar n \"cipher text\"\s*"
+    check50_java.run("Caesar 3").stdout(out, regex=True)
 
 @check50.check(caesar_main_exists)
 def caesar_first_example():
     """See if we get the right output for the first example and a shift of 3"""
-    check50_java.run("Caesar 3 \"The ships hung in the sky in much the same way that bricks don't.\"").stdout(
-        "Wkh vklsv kxqj lq wkh vnb lq pxfk wkh vdph zdb wkdw eulfnv grq'w.\n")
+    inp = "The ships hung in the sky in much the same way that bricks don't."
+    out = r'Wkh vklsv kxqj lq wkh vnb lq pxfk wkh vdph zdb wkdw eulfnv grq\'w.\s*'
+    check50_java.run("Caesar 3 \"" + inp + "\"").stdout(out, regex=True)
 
 
 
@@ -142,9 +154,6 @@ def brutus_main_exists():
 @check50.check(brutus_main_exists)
 def check_brutus_first_example():
     """See if we get the right output for the first example"""
-    check50_java.run("Brutus \"Vg vf n zvfgnxr gb guvax lbh pna fbyir nal znwbe ceboyrzf whfg jvgu cbgngbrf.\"").stdout("It is a mistake to think you can solve any major problems just with potatoes.\n")
-
-@check50.check(brutus_main_exists)
-def check_brutus_second_example():
-    """See if we get the right output for the second example"""
-    check50_java.run("Brutus").stdout("Too few parameters!\nUsage: java Brutus \"cipher text\"\n")
+    inp = "Vg vf n zvfgnxr gb guvax lbh pna fbyir nal znwbe ceboyrzf whfg jvgu cbgngbrf."
+    out = "It is a mistake to think you can solve any major problems just with potatoes.\s*"
+    check50_java.run("Brutus \"" + inp + "\"").stdout(out, regex=True)
