@@ -1,6 +1,6 @@
 # A Touch of Class
 
-All of the variables we have used so far (with the exception of Scanner) have been primitive data types. There's an awful lot you can do with primitive data types, in languages such as C we only have primitive data types (and people have done an awful lot with C).
+All of the variables we have used so far (with the exception of `Comp122`) have been primitive data types. There's an awful lot you can do with primitive data types, in languages such as C we only have primitive data types (and people have done an awful lot with C).
 
 In Java however we have the option of creating more complex datatypes, classes!
 
@@ -36,13 +36,11 @@ public class Student {
 }
 ```
 
-The body of this class defines the operations we can perform on this object.
-
 {% next %}
 
 ## My Body Is Not An Object
 
-To use classes we must first *instantiate* these as objects. We do this in exactly the same manner as we declared the arrays earlier in this lab e.g.
+The body of this class defines the operations we can perform on this object. Once we have the class body written in a Java file, we can use it in any other code in the folder. To use classes we must first *instantiate* these as objects otherwise we will get an exception. We do this in exactly the same manner as we declared primitive types in previous labs e.g.
 
 ```java
 ...
@@ -53,7 +51,7 @@ System.out.println("Alice Submitted Coursework: " + alice.hasSubmitted)
 ...
 ```
 
-This is a bit of a boring class currently, so let's add some functionality
+This is a bit of a boring class currently, so let's add some functionality.
 
 {% next %}
 
@@ -67,13 +65,15 @@ Additionally add an `int` to the class to keep track of the students score, call
 
 After each of the assignments, the lecturer will update the students score with a method which will return a `void` called `updateGrade(int mark)`, which will add the students grade for that assignment to their `grade`.
 
+As we need to access the `grade` attribute, make sure there is also a `int getGrade()` method.
+
 The automarker will be using these terms, so make sure to follow this specification closely!
 
 {% next %}
 
 ## Gather Round
 
-Lecturers typically store their students grades on an abacus, but some progressive types have started using software to do this for them. 
+Lecturers will typically store their students grades on an abacus, but some progressive types have started using software to do this for them. 
 
 We often deal with lots of objects of the same type when building real world software, and Java makes it easy for us to bundle these together into *Arrays*. Arrays in Java allow us to structure our code and saves us from creating lots of variables (which looks messy).
 
@@ -85,7 +85,7 @@ Lets start creating some software to simulate a virtual classroom like the one y
 
 Create a new file called `VGather.Java` where we will store our virtual virtual classroom. 
 
-For now we'll keep it simple and write a `public static class VGather` with a single `public static void main(String[] args)` method to help the lecturer calculate the class average. 
+For now we'll keep it simple and write a `public static class VGather` with a single `public static void main(String[] args)` method, and all this program will do is help the lecturer calculate the class average. 
 
 The Lecturer has all the students grades written down so needs to enter them one by one into the terminal, and will then expect to have the average returned to them.
 
@@ -101,7 +101,6 @@ Number of Students:     \\ Output
 23
 27
 25                      \\ Output
-
 ```
 
 {% spoiler "Hint" %}
@@ -116,14 +115,14 @@ You can loop through this array and modify each object individually:
 
 ```java
 for (int i = 0; i < n; i++) {
-    studentArray[i].setGrade(SOMETHING);
+    ...
+    studentArray[i].setGrade(AN_INTEGER_READ_IN_EARLIER);
 }    
-    
 ```
-
 
 {% endspoiler %}
 
+{% next %}
 
 ## Submission
 

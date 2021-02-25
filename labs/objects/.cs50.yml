@@ -1,9 +1,9 @@
 lab50:
   files:
     - !exclude "*"
-    - !include Terminal.class
+    - !include Comp122.class
     - !include Student.java
-    - !include Largest.java
+    
 
   window:
     - editor
