@@ -4,7 +4,7 @@ check50:
     - check50-junit
   files:
     - !exclude "*"
-    - !include "Largest.java"
+    - !include "VGather.java"
     - !include "Student.java"
     
 
@@ -12,5 +12,5 @@ submit50:
   slug: "liv-ac-uk/comp122/2021/objects"
   files:
     - !exclude "*"
-    - !include "Largest.java"
+    - !include "VGather.java"
     - !include "Student.java"
