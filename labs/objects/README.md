@@ -77,13 +77,13 @@ Lecturers will typically store their students grades on an abacus, but some prog
 
 We often deal with lots of objects of the same type when building real world software, and Java makes it easy for us to bundle these together into *Arrays*. Arrays in Java allow us to structure our code and saves us from creating lots of variables (which looks messy).
 
-Lets start creating some software to simulate a virtual classroom like the one you're virtually interacting with right now!
+Lets start creating some software to simulate a virtual classroom, similar to the one you're virtually interacting with right now!
 
 {% next %}
 
 ## I'm So Meta, Even This Acronym
 
-Create a new file called `VGather.Java` where we will store our virtual virtual classroom. 
+Create a new file called `VGather.java` where we will store our virtual virtual classroom. You can do this in CS50 Lab Environment by clicking on the + symbol next to the tab for `Student.java`.
 
 For now we'll keep it simple and write a `public static class VGather` with a single `public static void main(String[] args)` method, and all this program will do is help the lecturer calculate the class average. 
 
@@ -92,6 +92,8 @@ The Lecturer has all the students grades written down so needs to enter them one
 To do this use the `Comp122.getInt()` method to first read in the number of students, then use a `for` loop to read in the grade of each student.
 
 Once all the `Student`s have had their grades read in, use another `for` loop to compute the class average, and print this to the terminal.
+
+Example Usage: 
 
 ```
 $ java VGather 
