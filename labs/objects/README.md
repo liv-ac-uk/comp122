@@ -85,7 +85,7 @@ Lets start creating some software to simulate a virtual classroom, similar to th
 
 ## I'm So Meta, Even This Acronym
 
-Create a new file called `VGather.java` where we will store our virtual virtual classroom. You can do this in CS50 Lab Environment by clicking on the + symbol next to the tab for `Student.java`.
+Go to the empty `VGather.java` file where we will store the code for our virtual virtual classroom. 
 
 For now we'll keep it simple and write a `public class VGather` with a single `public static void main(String[] args)` method, and all this program will do is help the lecturer calculate the class average. 
 
