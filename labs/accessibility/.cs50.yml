@@ -2,7 +2,6 @@ lab50:
   files:
     - !exclude "*"
     - !include "Student.java"
-    - !include "Comp122.class"
     
   window:
     - editor
