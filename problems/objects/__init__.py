@@ -66,18 +66,18 @@ def vgather_compiles():
 
 @check50.check(vgather_compiles)
 def vgather_single():
-    """ VGatherruns with a single student"""
+    """ VGather runs with a single student"""
     check50_java.run("VGather").stdin("1").stdin("5").stdout("5\n").exit()
 
 
 
 @check50.check(vgather_compiles)
 def vgather_two():
-    """ VGatherruns with two students"""
+    """ VGather runs with two students"""
     check50_java.run("VGather").stdin("2").stdin("5").stdin("15").stdout("10\n").exit()
 
 
 @check50.check(vgather_compiles)
 def vgather_five():
-    """ VGatherruns with five students"""
+    """ VGather runs with five students"""
     check50_java.run("VGather").stdin("5").stdin("5").stdin("15").stdin("25").stdin("35").stdin("45").stdout("25\n").exit()
