@@ -1,6 +1,6 @@
 # A Touch of Class
 
-All of the variables we have used so far (with the exception of `Comp122`) have been primitive data types. There's an awful lot you can do with primitive data types, in languages such as C we only have primitive data types (and people have done an awful lot with C).
+All of the variables we have used so far (with the exception of `Arrays` and `Comp122`) have been primitive data types. There's an awful lot you can do with primitive data types, in languages such as C we only have primitive data types (and people have done an awful lot with C).
 
 In Java however we have the option of creating more complex datatypes, classes!
 
@@ -87,7 +87,7 @@ Lets start creating some software to simulate a virtual classroom, similar to th
 
 Create a new file called `VGather.java` where we will store our virtual virtual classroom. You can do this in CS50 Lab Environment by clicking on the + symbol next to the tab for `Student.java`.
 
-For now we'll keep it simple and write a `public static class VGather` with a single `public static void main(String[] args)` method, and all this program will do is help the lecturer calculate the class average. 
+For now we'll keep it simple and write a `public class VGather` with a single `public static void main(String[] args)` method, and all this program will do is help the lecturer calculate the class average. 
 
 The Lecturer has all the students grades written down so needs to enter them one by one into the terminal, and will then expect to have the average returned to them.
 
@@ -99,20 +99,22 @@ Example Usage:
 
 ```
 $ java VGather 
-Number of Students:     \\ Output
-3                       \\ Input
-Please Enter 3 Grades:  \\ Output
-25 
+How Many Students In Class?  // Output
+3                           // Input
+Enter a grade:              // Output
+25                          // Input
+Enter a grade:
 23
+Enter a grade:
 27
-25                      \\ Output
+25                          // Output
 ```
 
 {% spoiler "Hint" %}
 To read in an integer and create an array of size `n` the syntax is:
 
 ```java
-int n = Comp122.getInt("");
+int n = Comp122.getInt("How Many Students in Class?");
 Student[] studentArray = new Student[n];
 ```
 
