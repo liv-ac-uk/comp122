@@ -4,18 +4,18 @@ import check50_junit
 
 @check50.check()
 def student_exists():
-    """Student.java exists"""
+    """ Student.java exists"""
     check50.exists("Student.java")
 
 @check50.check(student_exists)
 def student_compiles():
-    """Student.java compiles"""
+    """ Student.java compiles"""
     check50.include("Comp122.class")  # copy over input helper
     check50_java.compile("Student.java")
 
 @check50.check(student_compiles)
 def student_construction():
-    """Create student object successfully"""
+    """ Create student object successfully"""
     check50_junit.run_and_interpret_test(
         classpaths=['tests/'],
         args=['--select-method', 'StudentTest#testBlankConstructor'])
@@ -30,7 +30,7 @@ def student_setName():
 
 @check50.check(student_compiles)
 def student_getName():
-    """Ensure that the student getName() method is working properly"""
+    """ Ensure that the student getName() method is working properly"""
     check50_junit.run_and_interpret_test(
         classpaths=['tests/'],
         args=['--select-method', 'StudentTest#testGetName'])
@@ -38,7 +38,7 @@ def student_getName():
 
 @check50.check(student_compiles)
 def student_getName():
-    """Ensure that the student setGrade() method is working properly"""
+    """ Ensure that the student setGrade() method is working properly"""
     check50_junit.run_and_interpret_test(
         classpaths=['tests/'],
         args=['--select-method', 'StudentTest#testSetGrade'])
@@ -46,7 +46,7 @@ def student_getName():
 
 @check50.check(student_compiles)
 def student_getName():
-    """Ensure that the student getGrade() method is working properly"""
+    """ Ensure that the student getGrade() method is working properly"""
     check50_junit.run_and_interpret_test(
         classpaths=['tests/'],
         args=['--select-method', 'StudentTest#testGetGrade'])
@@ -55,12 +55,12 @@ def student_getName():
 
 @check50.check()
 def vgather_exists():
-    """VGather.java exists"""
+    """ VGather.java exists"""
     check50.exists("VGather.java")
 
 @check50.check(vgather_exists)
 def vgather_compiles():
-    """VGather.java compiles"""
+    """ VGather.java compiles"""
     check50.include("Comp122.class")  # copy over input helper
     check50_java.compile("VGather.java")
 
