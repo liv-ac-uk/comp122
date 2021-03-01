@@ -1,13 +1,13 @@
 # Constructing Classes
-In our previous programs we haven't kept much information about the students, apart from their grades. Due to the strength of your previous software you've been asked to extend the program to have more functionality. 
+In our previous programs we haven't kept much information about the students, apart from their grades. Due to the popularity of `VGather.java` you've been asked to extend the program to have more functionality. 
 
-In particular, the administrator is tired of writing emails to each of the students and would prefer instead to automate this entire process. 
+In particular, the administrator is tired of writing letters to each of the students and would prefer instead to automate this entire process. 
 
 {% next %}
 
-## Enrolment
+## Late Registration
 
-When we create objects we can use the default constructor. This sets each of the variables to their default values (which is normally $'0'$, `false`, or `""`).
+When we create objects we can use the default constructor. This sets each of the variables to their default values (which is normally '0', `false`, or `""`).
 
 We can then go through each of our attributes and manually change these to the values we want them to using setters.
 
@@ -72,13 +72,13 @@ For example we might create a `Student` class when the student first applies to 
 
 When we define multiple methods with the same method name, but different arguments this is called *overloading* a method.
 
-Create a new overloaded method for the `Student` class which takes only three arguments, two `String`'s and an `int` for the birth year for each of these students.
+Create a new overloaded method for the `Student` class which takes only three arguments, two `String`s and an `int` for the birth year for each of these students.
 
 {% next %}
 
 ## Functionality of Constructors
 
-Seeing how useful these constructors are, the administrator has asked you to change your program so that we can store all the historic details of students also. This data is mostly the same, but the date of birth for these students is in `String` format such as "01/06/1984". Add a new constructor to your `Student` class which takes three `String`s and two `int`s. 
+Seeing how useful these constructors are, the administrator has asked you to change your program so that we can store all the historic details of students also. This data is mostly the same, but the date of birth for these students is in `String` format such as "01/06/1984". Add a new constructor to your `Student` class which takes three `String`s and correctly parses these. 
 
 You will still store the year of birth as an integer however, so you will need to add some more code into this constructor to process this date string and store the year as an `int`.
 
@@ -89,6 +89,8 @@ You will still store the year of birth as an integer however, so you will need t
 The `Integer` class, has a built in method `parseInt()`.
 
 {% endspoiler %}
+
+{% next %}
 
 ## Submitting 
 
