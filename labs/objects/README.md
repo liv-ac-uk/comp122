@@ -65,7 +65,7 @@ We want to be able to be able to set the students name, so add a method to *set*
 
 Additionally add an `int` to the class to keep track of the students score, called `grade`, initially equal to `0`
 
-After each of the assignments, the lecturer will update the students score with a method which will return a `void` called `updateGrade(int mark)`, which will add the students grade for that assignment to their `grade`.
+After each of the assignments, the lecturer will update the students score with a method which will return a `void` called `setGrade(int mark)`, which will add the students grade for that assignment to their `grade`.
 
 As we need to access the `grade` attribute, make sure there is also a `int getGrade()` method.
 
