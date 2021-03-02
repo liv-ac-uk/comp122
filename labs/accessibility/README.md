@@ -27,6 +27,8 @@ When designing software we cannot trust the end user. If software can be acciden
 
 Luckily we can force people to use our software correctly with access modifiers.
 
+Make sure that the `updateGrade()` method can only accept grades from `0`-`30` and will otherwise print an error to the terminal and do nothing.
+
 {% next %}
 
 ## Privacy is Important
