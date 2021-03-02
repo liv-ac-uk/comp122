@@ -122,6 +122,7 @@ You can loop through this array and modify each object individually:
 
 ```java
 for (int i = 0; i < n; i++) {
+    studentArray[i] = new Student();
     ...
     studentArray[i].setGrade(AN_INTEGER_READ_IN_EARLIER);
 }    
