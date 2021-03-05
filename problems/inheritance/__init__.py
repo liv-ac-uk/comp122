@@ -16,20 +16,20 @@ def person_compiles():
 
 @check50.check(person_compiles)
 def person_has_greet_is_public():
-    """Person has a public attribute called \"greet\""""
+    """Person has a public method called \"greet\""""
     check50_junit.run_and_interpret_test(
         classpaths=['tests/'],
         args=['--select-method', 'PersonTest#testGreetIsPublic'])
 
 @check50.check(person_compiles)
-def person_has_greet_is_public():
-    """Person has working getters/setters"""
+def person_test_name_setter():
+    """Person has working name setters"""
     check50_junit.run_and_interpret_test(
         classpaths=['tests/'],
         args=['--select-method', 'PersonTest#testNameSet'])
 
 @check50.check(person_compiles)
-def person_has_greet_is_public():
+def person_test_greet   ():
     """Person has a working \"greet\""""
     check50_junit.run_and_interpret_test(
         classpaths=['tests/'],
