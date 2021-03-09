@@ -36,10 +36,89 @@ class ProfessorTest {
     }
 
     @Test
+    public void testInheritedPerson() {
+        Professor professor = new Professor();
+        assertThat(professor, instanceOf(Person.class));
+    }
+
+    @Test
     public void testInheritedLecturer() {
         Professor professor = new Professor();
         assertThat(professor, instanceOf(Lecturer.class));
     }
+
+    @Test
+    public void testTimetableIsPrivate() {
+        try {
+            if (!Modifier.isPrivate(Class.forName("Professor").getDeclaredField("timetable").getModifiers())) {
+                fail("attribute timetable is not private");
+            }
+        } catch (Exception e) {
+            fail("could not find a private attribute \"timetable\".");
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testSetTimeTableIsPublic() {
+        try {
+            if (!Modifier.isPublic(Class.forName("Professor").getDeclaredMethod("setTimeTable").getModifiers())) {
+                fail("method setTimeTable is not public");
+            }
+        } catch (Exception e) {
+            fail("could not find a public method \"setTimeTable\".");
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testBudgetIsPrivate() {
+        try {
+            if (!Modifier.isPrivate(Class.forName("Professor").getDeclaredField("budget").getModifiers())) {
+                fail("attribute budget is not private");
+            }
+        } catch (Exception e) {
+            fail("could not find a private attribute \"budget\".");
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testSetBudgetIsPublic() {
+        try {
+            if (!Modifier.isPublic(Class.forName("Professor").getDeclaredMethod("setBudget").getModifiers())) {
+                fail("method setBudget is not public");
+            }
+        } catch (Exception e) {
+            fail("could not find a public method \"setBudget\".");
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testGetBudgetIsPublic() {
+        try {
+            if (!Modifier.isPublic(Class.forName("Professor").getDeclaredMethod("getBudget").getModifiers())) {
+                fail("method getBudget is not public");
+            }
+        } catch (Exception e) {
+            fail("could not find a public method \"getBudget\".");
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testGetTimeTableIsPublic() {
+        try {
+            if (!Modifier.isPublic(Class.forName("Professor").getDeclaredMethod("getTimeTable").getModifiers())) {
+                fail("method getTimeTable is not public");
+            }
+        } catch (Exception e) {
+            fail("could not find a public method \"getTimeTable\".");
+            e.printStackTrace();
+        }
+    }
+
 
     @Test
     public void testNameSet() {
@@ -57,18 +136,16 @@ class ProfessorTest {
     }
 
     @Test
-    public void testTimeTable() {
+    public void testSetTimeTable() {
         Professor professor = new Professor();
         professor.setTimeTable("Test");
-
         assertThat(professor.getTimeTable(), is("Test"));
     }
 
     @Test
-    public void testBudget() {
+    public void testSetBudget() {
         Professor professor = new Professor();
-        professor.setBudget(60);
-
-        assertThat(professor.getTimeTable(), is(60));
+        professor.setBudget(10);
+        assertThat(professor.getBudget(), is(10));
     }
 }
