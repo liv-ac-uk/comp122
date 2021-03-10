@@ -10,17 +10,21 @@ public class Student {
 
     }
 
-    // Change this constructor to take in more parameters
     public Student(String studentName) {
         name = studentName;
     }
 
+    // Change this constructor to take in more parameters
+    // public Student(?) {
+    //     name = studentName;
+    //     ?
+    // }
+
     // Add a new constructor below to take in fewer parameters
-
-
-    public void setName(String studentName) {
-        name = studentName;
-    }
+    // public Student(?) {
+    //     name = studentName;
+    //     ?
+    // }
 
     public void setEmail(String emailAddress) {
         email = emailAddress;
