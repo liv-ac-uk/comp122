@@ -27,8 +27,6 @@ When designing software we cannot trust the end user. If software can be acciden
 
 Luckily we can force people to use our software correctly with access modifiers.
 
-Make sure that the `updateGrade()` method can only accept grades from `0`-`30` and will otherwise print an error to the terminal and do nothing.
-
 {% next %}
 
 ## Privacy is Important
@@ -58,6 +56,19 @@ We want there to be two `array` attributes for our student classes, `hasSubmitte
 Having learned from the past mistakes, once we have created a student, there should only be a single method we can call to change the attributes of the student.
 
 This method will take the assignment number and grade from the user, and update the appropriate entry in `private finalGrades[i]`, as well as marking the assignment as complete in `hasSubmitted[i]`.
+
+{% next %}
+
+## Summing Up
+
+Make sure that the `updateGrade()` method can only accept grades from `0`-`30` and will otherwise print an error to the terminal and do nothing.
+
+Additionally, ensure that `updateGrade()` will only accept grade numbers `0`-`2` (as there are only three assignments in `finalGrades`).
+
+Complete the method `getTotalGrade()` by summing up all of the values in `finalGrades` and returning these as an integer. Do not print to the terminal. 
+
+Complete the methods `getGrades()` and `getHasSubmitted` to return the array objects `finalGrades` and `hasSubmitted`.
+
 
 {% next %}
 

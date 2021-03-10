@@ -64,7 +64,7 @@ def substitution_implements_cipher():
 
 @check50.check(substitution_compiles)
 def substitution_check_encrypt():
-    """Substitution.java implements encrypt(char) as expected"""
+    """Substitution.java has an abstract method encrypt(char) that returns char"""
     lines = []
 
     with open("Substitution.java") as f:
@@ -82,7 +82,7 @@ def substitution_check_encrypt():
 
 @check50.check(substitution_compiles)
 def substitution_check_decrypt():
-    """Substitution.java implements decrypt(char) as expected"""
+    """Substitution.java has an abstract method decrypt(char) that returns char"""
     lines = []
 
     with open("Substitution.java") as f:
@@ -204,7 +204,8 @@ def mas_main_exists():
 
 @check50.check(mas_main_exists)
 def mas_main_returns_successfully():
-    """See if MonoAlphaSubstitution.main runs successfuly without runtime errors"""
+    """See if MonoAlphaSubstitution.main runs successfuly without runtime errors
+       and without waiting for user input"""
     check50_java.run("MonoAlphaSubstitution encrypt abcd lalala").exit(0)
 
 
@@ -223,13 +224,13 @@ def mas_main_test_02():
 # TODO DOUBLE CHECK ERROR MESSAGES
 @check50.check(mas_main_exists)
 def mas_check_many_args():
-    """See if we get the right error message when MAS run with too many arguments"""
+    """See if we get the right error message when MonoAlphaSubstitution is run with too many arguments"""
     check50_java.run("MonoAlphaSubstitution 13 a 13 13").stdout("Too many parameters!\nUsage: java MonoAlphaSubstitution encrypt key \"cipher text\"\n")
 
 
 @check50.check(mas_main_exists)
 def mas_check_one_arg():
-    """See if we get the right error message whe run with a single argument"""
+    """See if we get the right error message when MonoAlphaSubstitution is run with just one argument"""
     check50_java.run("MonoAlphaSubstitution 3").stdout("Too few parameters!\nUsage: java MonoAlphaSubstitution encrypt key \"cipher text\"\n")
 
 
@@ -282,7 +283,7 @@ def caesar_has_integer_constructor():
 
 @check50.check(caesar_compiles)
 def caesar_encrypt_test_01():
-    """Caesar.java encrypt(char c) works as expected given input"""
+    """Caesar.java encrypt(char c) works as expected with key 10:  pex --> fun"""
     check50_junit.run_and_interpret_test(
         classpaths=['tests/'],
         args=['--select-method', 'CaesarTest#caesarEncryptTest01'])
@@ -290,7 +291,7 @@ def caesar_encrypt_test_01():
 
 @check50.check(caesar_compiles)
 def caesar_decrypt_test_01():
-    """Caesar.java decrypt(char c) works as expected given input"""
+    """Caesar.java encrypt(char c) works as expected with key 10:  fun --> pex"""
     check50_junit.run_and_interpret_test(
         classpaths=['tests/'],
         args=['--select-method', 'CaesarTest#caesarDecryptTest01'])
@@ -325,13 +326,13 @@ def caesar_main_test_02():
 # TODO DOUBLE CHECK ERROR MESSAGES
 @check50.check(caesar_main_exists)
 def caesar_check_many_args():
-    """See if we get the right error message when Caesar run with too many arguments"""
+    """See if we get the right error message when running Caesar with too many arguments"""
     check50_java.run("Caesar encrypt 13 The ships hung in the sky in much the same way that bricks dont.\n").stdout("Too many parameters!\nUsage: java Caesar encode n \"cipher text\"\n")
 
 
 @check50.check(caesar_main_exists)
 def caesar_check_one_arg():
-    """See if we get the right error message when run with too few arguments"""
+    """See if we get the right error message when running Caesar with too few arguments"""
     check50_java.run("Caesar encrypt 3").stdout("Too few parameters!\nUsage: java Caesar encode n \"cipher text\"\n")
 
 
@@ -393,14 +394,6 @@ def vigenere_encrypt_default():
 
 
 @check50.check(vigenere_compiles)
-def vigenere_encrypt_empty():
-    """Vigenere.java encrypt(char c) works as identity using the empty string"""
-    check50_junit.run_and_interpret_test(
-        classpaths=['tests/'],
-        args=['--select-method', 'VigenereTest#vigenereEncryptEmpty'])
-
-
-@check50.check(vigenere_compiles)
 def vigenere_encrypt_test_01():
     """Vigenere.java encrypt(char c) works as expected given input"""
     check50_junit.run_and_interpret_test(
@@ -409,60 +402,11 @@ def vigenere_encrypt_test_01():
 
 
 @check50.check(vigenere_compiles)
-def vigenere_encrypt_test_02():
-    """Vigenere.java encrypt(char c) works as expected given input"""
-    check50_junit.run_and_interpret_test(
-        classpaths=['tests/'],
-        args=['--select-method', 'VigenereTest#vigenereEncryptTest02'])
-
-
-@check50.check(vigenere_compiles)
-def vigenere_encrypt_test_03():
-    """Vigenere.java encrypt(char c) works as expected given input"""
-    check50_junit.run_and_interpret_test(
-        classpaths=['tests/'],
-        args=['--select-method', 'VigenereTest#vigenereEncryptTest03'])
-
-
-
-@check50.check(vigenere_compiles)
-def vigenere_decrypt_default():
-    """Vigenere.java decrypt(char c) works as identity using the default constructor"""
-    check50_junit.run_and_interpret_test(
-        classpaths=['tests/'],
-        args=['--select-method', 'VigenereTest#vigenereDecryptDefault'])
-
-
-@check50.check(vigenere_compiles)
-def vigenere_decrypt_empty():
-    """Vigenere.java decrypt(char c) works as identity using the empty string"""
-    check50_junit.run_and_interpret_test(
-        classpaths=['tests/'],
-        args=['--select-method', 'VigenereTest#vigenereDecryptEmpty'])
-
-
-@check50.check(vigenere_compiles)
 def vigenere_decrypt_test_01():
     """Vigenere.java decrypt(char c) works as expected given input"""
     check50_junit.run_and_interpret_test(
         classpaths=['tests/'],
         args=['--select-method', 'VigenereTest#vigenereDecryptTest01'])
-
-
-@check50.check(vigenere_compiles)
-def vigenere_decrypt_test_02():
-    """Vigenere.java decrypt(char c) works as expected given input"""
-    check50_junit.run_and_interpret_test(
-        classpaths=['tests/'],
-        args=['--select-method', 'VigenereTest#vigenereDecryptTest02'])
-
-
-@check50.check(vigenere_compiles)
-def vigenere_decrypt_test_03():
-    """Vigenere.java decrypt(char c) works as expected given input"""
-    check50_junit.run_and_interpret_test(
-        classpaths=['tests/'],
-        args=['--select-method', 'VigenereTest#vigenereDecryptTest03'])
 
 
 @check50.check(vigenere_compiles)

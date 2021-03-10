@@ -42,6 +42,43 @@ class LecturerTest {
     }
 
     @Test
+    public void testTimetableIsPrivate() {
+        try {
+            if (!Modifier.isPrivate(Class.forName("Lecturer").getDeclaredField("timetable").getModifiers())) {
+                fail("attribute timetable is not private");
+            }
+        } catch (Exception e) {
+            fail("could not find a private attribute \"timetable\".");
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testSetTimeTableIsPublic() {
+        try {
+            if (!Modifier.isPublic(Class.forName("Lecturer").getDeclaredMethod("setTimeTable").getModifiers())) {
+                fail("method setTimeTable is not public");
+            }
+        } catch (Exception e) {
+            fail("could not find a public method \"setTimeTable\".");
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testGetTimeTableIsPublic() {
+        try {
+            if (!Modifier.isPublic(Class.forName("Lecturer").getDeclaredMethod("getTimeTable").getModifiers())) {
+                fail("method getTimeTable is not public");
+            }
+        } catch (Exception e) {
+            fail("could not find a public method \"getTimeTable\".");
+            e.printStackTrace();
+        }
+    }
+
+
+    @Test
     public void testNameSet() {
         Lecturer lecturer = new Lecturer();
         lecturer.setName("Test");
@@ -57,10 +94,9 @@ class LecturerTest {
     }
 
     @Test
-    public void testTimeTable() {
+    public void testSetTimeTable() {
         Lecturer lecturer = new Lecturer();
         lecturer.setTimeTable("Test");
-
         assertThat(lecturer.getTimeTable(), is("Test"));
     }
 }

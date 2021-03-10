@@ -16,24 +16,27 @@ def person_compiles():
 
 @check50.check(person_compiles)
 def person_has_greet_is_public():
-    """Person has a public method called \"greet\""""
+    """Person has a public attribute called \"greet\""""
     check50_junit.run_and_interpret_test(
         classpaths=['tests/'],
         args=['--select-method', 'PersonTest#testGreetIsPublic'])
 
 @check50.check(person_compiles)
-def person_test_name_setter():
-    """Person has working name setters"""
+def person_has_greet_is_public():
+    """Person has working getters/setters"""
     check50_junit.run_and_interpret_test(
         classpaths=['tests/'],
         args=['--select-method', 'PersonTest#testNameSet'])
 
 @check50.check(person_compiles)
-def person_test_greet   ():
+def person_has_greet_is_public():
     """Person has a working \"greet\""""
     check50_junit.run_and_interpret_test(
         classpaths=['tests/'],
         args=['--select-method', 'PersonTest#testGreet'])
+
+
+
 
 
 @check50.check()
@@ -56,6 +59,14 @@ def student_is_person():
         args=['--select-method', 'StudentTest#testInheritedPerson'])
 
 @check50.check(student_compiles)
+def student_has_private_grade():
+    """Student has a private variable \"grade\""""
+    check50_junit.run_and_interpret_test(
+        classpaths=['tests/'],
+        args=['--select-method', 'StudentTest#testGradeIsPrivate'])
+
+
+@check50.check(student_compiles)
 def student_set_name(student_compiles):
     """Student has name setter works"""
     check50_junit.run_and_interpret_test(
@@ -76,7 +87,10 @@ def student_grade():
     """Student \"grade\" setters work as expected"""
     check50_junit.run_and_interpret_test(
         classpaths=['tests/'],
-        args=['--select-method', 'StudentTest#testGrades'])
+        args=['--select-method', 'StudentTest#testSetGrade'])
+
+
+
 
 
 @check50.check()
@@ -91,6 +105,7 @@ def lecturer_compiles():
     check50_java.compile("Lecturer.java")
 
 
+
 @check50.check(lecturer_compiles)
 def lecturer_is_person():
     """Lecturer is an instance of \"Person\""""
@@ -99,7 +114,25 @@ def lecturer_is_person():
         args=['--select-method', 'LecturerTest#testInheritedPerson'])
 
 @check50.check(lecturer_compiles)
-def lecturer_set_name():
+def lecturer_has_private_timetable():
+    """Lecturer has a private variable \"timetable\""""
+    check50_junit.run_and_interpret_test(
+        classpaths=['tests/'],
+        args=['--select-method', 'LecturerTest#testTimetableIsPrivate'])
+
+
+
+
+
+@check50.check(lecturer_compiles)
+def lecturer_has_public_getTimeTable():
+    """Lecturer has a public method \"getTimeTable\""""
+    check50_junit.run_and_interpret_test(
+        classpaths=['tests/'],
+        args=['--select-method', 'LecturerTest#testGetTimeTableIsPublic'])
+
+@check50.check(lecturer_compiles)
+def lecturer_set_name(lecturer_compiles):
     """Lecturer has name setter works"""
     check50_junit.run_and_interpret_test(
         classpaths=['tests/'],
@@ -114,12 +147,7 @@ def lecturer_greet():
         args=['--select-method', 'LecturerTest#testGreet'])
 
 
-@check50.check(lecturer_compiles)
-def lecturer_grade():
-    """Lecturer \"TimeTable\" setters work as expected"""
-    check50_junit.run_and_interpret_test(
-        classpaths=['tests/'],
-        args=['--select-method', 'LecturerTest#testTimeTable'])
+
 
 
 @check50.check()
@@ -135,14 +163,41 @@ def professor_compiles():
 
 
 @check50.check(professor_compiles)
+def professor_is_person():
+    """Professor is an instance of \"Person\""""
+    check50_junit.run_and_interpret_test(
+        classpaths=['tests/'],
+        args=['--select-method', 'ProfessorTest#testInheritedPerson'])
+
+
+@check50.check(professor_compiles)
 def professor_is_lecturer():
     """Professor is an instance of \"Lecturer\""""
     check50_junit.run_and_interpret_test(
         classpaths=['tests/'],
         args=['--select-method', 'ProfessorTest#testInheritedLecturer'])
 
+
 @check50.check(professor_compiles)
-def professor_set_name():
+def professor_has_private_budget():
+    """Professor has a private variable \"budget\""""
+    check50_junit.run_and_interpret_test(
+        classpaths=['tests/'],
+        args=['--select-method', 'ProfessorTest#testBudgetIsPrivate'])
+
+
+
+@check50.check(professor_compiles)
+def professor_has_public_getBudget():
+    """Professor has a public method \"getBudget\""""
+    check50_junit.run_and_interpret_test(
+        classpaths=['tests/'],
+        args=['--select-method', 'ProfessorTest#testGetBudgetIsPublic'])
+
+
+
+@check50.check(professor_compiles)
+def professor_set_name(professor_compiles):
     """Professor has name setter works"""
     check50_junit.run_and_interpret_test(
         classpaths=['tests/'],
@@ -158,9 +213,10 @@ def professor_greet():
 
 
 @check50.check(professor_compiles)
-def professor_grade():
-    """Professor \"TimeTable\" setters work as expected"""
+def professor_budget_setter():
+    """Professor \"budget\" setters work as expected"""
     check50_junit.run_and_interpret_test(
         classpaths=['tests/'],
-        args=['--select-method', 'ProfessorTest#testTimeTable'])
+        args=['--select-method', 'ProfessorTest#testSetBudget'])
+
 

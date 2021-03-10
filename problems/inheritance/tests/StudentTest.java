@@ -42,6 +42,43 @@ class StudentTest {
     }
 
     @Test
+    public void testGradeIsPrivate() {
+        try {
+            if (!Modifier.isPrivate(Class.forName("Student").getDeclaredField("grade").getModifiers())) {
+                fail("attribute grade is not private");
+            }
+        } catch (Exception e) {
+            fail("could not find a private attribute \"grade\".");
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testSetGradeIsPublic() {
+        try {
+            if (!Modifier.isPublic(Class.forName("Student").getDeclaredMethod("setGrade").getModifiers())) {
+                fail("method setGrade is not public");
+            }
+        } catch (Exception e) {
+            fail("could not find a public method \"setGrade\".");
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testGetGradeIsPublic() {
+        try {
+            if (!Modifier.isPublic(Class.forName("Student").getDeclaredMethod("getGrade").getModifiers())) {
+                fail("method getGrade is not public");
+            }
+        } catch (Exception e) {
+            fail("could not find a public method \"getGrade\".");
+            e.printStackTrace();
+        }
+    }
+
+
+    @Test
     public void testNameSet() {
         Student student = new Student();
         student.setName("Test");
@@ -57,10 +94,9 @@ class StudentTest {
     }
 
     @Test
-    public void testTimeTable() {
+    public void testSetGrade() {
         Student student = new Student();
-        student.setGrade(50);
-
-        assertThat(student.getGrade(), is(50));
+        student.setGrade(10);
+        assertThat(student.getGrade(), is(10));
     }
 }
