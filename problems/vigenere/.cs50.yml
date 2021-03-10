@@ -1,0 +1,11 @@
+check50:
+  dependencies:
+    - check50-java
+    - check50-junit
+  files:
+    - !exclude "*"
+    - !include "Cipher.java"
+    - !include "Substitution.java"
+    - !include "MonoAlphaSubstitution.java"
+    - !include "Caesar.java"
+    - !include "Vigenere.java"
