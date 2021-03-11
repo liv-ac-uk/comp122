@@ -291,7 +291,7 @@ def caesar_encrypt_test_01():
 
 @check50.check(caesar_compiles)
 def caesar_decrypt_test_01():
-    """Caesar.java encrypt(char c) works as expected with key 10:  fun --> pex"""
+    """Caesar.java decrypt(char c) works as expected with key 10:  fun --> pex"""
     check50_junit.run_and_interpret_test(
         classpaths=['tests/'],
         args=['--select-method', 'CaesarTest#caesarDecryptTest01'])
@@ -327,13 +327,13 @@ def caesar_main_test_02():
 @check50.check(caesar_main_exists)
 def caesar_check_many_args():
     """See if we get the right error message when running Caesar with too many arguments"""
-    check50_java.run("Caesar encrypt 13 The ships hung in the sky in much the same way that bricks dont.\n").stdout("Too many parameters!\nUsage: java Caesar encode n \"cipher text\"\n")
+    check50_java.run("Caesar encrypt 13 The ships hung in the sky in much the same way that bricks dont.\n").stdout("Too many parameters!\nUsage: java Caesar encrypt n \"cipher text\"\n")
 
 
 @check50.check(caesar_main_exists)
 def caesar_check_one_arg():
     """See if we get the right error message when running Caesar with too few arguments"""
-    check50_java.run("Caesar encrypt 3").stdout("Too few parameters!\nUsage: java Caesar encode n \"cipher text\"\n")
+    check50_java.run("Caesar encrypt 3").stdout("Too few parameters!\nUsage: java Caesar encrypt n \"cipher text\"\n")
 
 
 
