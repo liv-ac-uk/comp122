@@ -221,7 +221,6 @@ def mas_main_test_02():
     check50_java.run("MonoAlphaSubstitution decrypt akbjcidhegffgehdicjbka \"Lcfg cs wkstgh on tdg lcvcne.\"").stdout("Life is wasted on the living.\n")
 
 
-# TODO DOUBLE CHECK ERROR MESSAGES
 @check50.check(mas_main_exists)
 def mas_check_many_args():
     """See if we get the right error message when MonoAlphaSubstitution is run with too many arguments"""
@@ -232,6 +231,12 @@ def mas_check_many_args():
 def mas_check_one_arg():
     """See if we get the right error message when MonoAlphaSubstitution is run with just one argument"""
     check50_java.run("MonoAlphaSubstitution 3").stdout("Too few parameters!\nUsage: java MonoAlphaSubstitution encrypt key \"cipher text\"\n")
+
+
+@check50.check(mas_main_exists)
+def mas_check_first_arg():
+    """See if we get the right error message when MonoAlphaSubstitution is run with an incorrect first argument"""
+    check50_java.run("MonoAlphaSubstitution dec akbjcidhegffgehdicjbka lala").stdout("The first parameter must be \"encrypt\" or \"decrypt\"!\nUsage: java MonoAlphaSubstitution encrypt key \"cipher text\"\n")
 
 
 # # Caesar ###############################
@@ -323,7 +328,6 @@ def caesar_main_test_02():
     check50_java.run("Caesar decrypt 3 \"Wkh vklsv kxqj lq wkh vnb lq pxfk wkh vdph zdb wkdw eulfnv grq\'w.\"").stdout("The ships hung in the sky in much the same way that bricks don\'t.\n")
 
 
-# TODO DOUBLE CHECK ERROR MESSAGES
 @check50.check(caesar_main_exists)
 def caesar_check_many_args():
     """See if we get the right error message when running Caesar with too many arguments"""
@@ -336,6 +340,10 @@ def caesar_check_one_arg():
     check50_java.run("Caesar encrypt 3").stdout("Too few parameters!\nUsage: java Caesar encrypt n \"cipher text\"\n")
 
 
+@check50.check(caesar_main_exists)
+def caesar_check_first_arg():
+    """See if we get the right error message when Caesar is run with an incorrect first argument"""
+    check50_java.run("Caesar dec 12 lala").stdout("The first parameter must be \"encrypt\" or \"decrypt\"!\nUsage: java Caesar encrypt key \"cipher text\"\n")
 
 
 # # # Vigenere ###############################
@@ -441,7 +449,6 @@ def vigenere_main_test_03():
     check50_java.run("Vigenere enc COMPONETWOTWO \"fun fun fun\"").stdout("First parameter must be \"encrypt\" or \"decrypt\"!\nUsage: java Vigenere encrypt key \"cipher text\"\n")
 
 
-# # TODO DOUBLE CHECK ERROR MESSAGES
 @check50.check(vigenere_main_exists)
 def vigenere_check_many_args():
     """See if we get the right error message when Vigenere run with too many arguments"""
@@ -453,3 +460,8 @@ def vigenere_check_one_arg():
     """See if we get the right error message when Vigenere run with too few arguments"""
     check50_java.run("Vigenere decrypt COMPONETWOTWO").stdout("Too few parameters!\nUsage: java Vigenere encrypt key \"cipher text\"\n")
 
+
+@check50.check(vigenere_main_exists)
+def vigenere_check_first_arg():
+    """See if we get the right error message when Vigenere is run with an incorrect first argument"""
+    check50_java.run("Vigenere enc COMPONETWOTWO lala").stdout("The first parameter must be \"encrypt\" or \"decrypt\"!\nUsage: java Vigenere encrypt key \"cipher text\"\n")
