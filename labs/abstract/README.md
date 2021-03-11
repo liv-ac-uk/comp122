@@ -100,7 +100,7 @@ Implement `sendEmail` and `payBill()` as before.
 
 The final class diagram of your solution should be:
 
-![](img/CompleteUML.PNG)
+![](img/CompleteUML.png)
 
 {% next %}
 
