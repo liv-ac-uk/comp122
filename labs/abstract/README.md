@@ -108,7 +108,7 @@ The final class diagram of your solution should be:
 
 You can test your code with 
 
-`check50 liv-ac-uk/comp122/abstract/problems/abstract`
+`check50 liv-ac-uk/comp122/2021/problems/abstract`
 
 And submit your code with:
-`submit50 liv-ac-uk/comp122/polymorphism/problems/polymorphism`
+`submit50 liv-ac-uk/comp122/2021/problems/abstract`
