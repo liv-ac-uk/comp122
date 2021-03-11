@@ -4,7 +4,7 @@
  * @author Patrick Totzke
  */
 public interface Cipher {
-
+    
     /**
      * Encodes the given plain text into a secret cipher text.
      *
@@ -12,7 +12,7 @@ public interface Cipher {
      * @return the cipher text
      */
     public String encrypt(String plainText);
-
+    
     /**
      * Determines the plain text string for a given cipher text.
      *
