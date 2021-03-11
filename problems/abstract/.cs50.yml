@@ -1,0 +1,23 @@
+check50:
+  dependencies:
+    - check50-java
+    - check50-junit
+  files:
+    - !exclude "*"
+    - !include "Person.java"
+    - !include "Student.java"
+    - !include "Lecturer.java"
+    - !include "Professor.java"
+    - !include "Dog.java"
+    - !include "ResearchCouncil.java"
+    - !include "Payable.java"
+    - !include "Billable.java"
+    - !include "Degreeable.java"
+    - !include "Emailable.java"
+
+
+submit50:
+  slug: "liv-ac-uk/comp122/2021/abstract"
+  files:
+    - !exclude "*"
+    - !include "*.java"
