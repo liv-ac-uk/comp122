@@ -14,7 +14,7 @@ In our code, `Person` is a fully instantiable class, which doesn't make sense in
 
 Lets make sure that a future coder can't make a mistake here and accidentally include it in a program. 
 
-Create an abstract `Person.java` class, and apply the necessary modifications to the `Professor`, `Lecturer`, and `Student` classes.
+Modify the `Person.java` class so that it is abstract, and `extend` each of the `Professor`, `Lecturer`, and `Student` classes so they match the class hierarchy.
 
 {% next %}
 
@@ -26,7 +26,7 @@ We have established, that all of the Persons of faculty need to be sent emails, 
 
 Create a new interface class `Emailable.java`, ensure this includes the method `public void sendEmail();`.
 
-Modify `Person.java` to include a simple implementation of this method, by adding this to the method body of the implementation of `sendEmail()`:
+Modify `Person.java` to include a simple implementation of this method, by adding this to the method body of the definition of `sendEmail()`:
 
 `System.out.println(greet());`
 
@@ -70,7 +70,7 @@ if goodGirl {
 
 As much as teachers find philosophical satisfaction from passing knowledge to the next generation of great thinkers, they would also like to get paid to do it.
 
-Create an interface class `Payable.java`, with a single method `payAmount();`
+Create an interface class `Payable.java`, with a single method `payAmount(int   );`
 
 This should be implemented in `Lecturer.java` (and thus will be inherited by `Professor.java`). Make this method take in a single integer `amount`, and make the body of the method simply print to the terminal as so:
 
@@ -100,7 +100,7 @@ Implement `sendEmail` and `payBill()` as before.
 
 The final class diagram of your solution should be:
 
-TODO Discuss with Pat before making diagram
+![](img/CompleteUML.png)
 
 {% next %}
 
@@ -108,7 +108,7 @@ TODO Discuss with Pat before making diagram
 
 You can test your code with 
 
-`check50 liv-ac-uk/comp122/abstract/problems/abstract`
+`check50 liv-ac-uk/comp122/2021/problems/abstract`
 
 And submit your code with:
-`submit50 liv-ac-uk/comp122/polymorphism/problems/polymorphism`
+`submit50 liv-ac-uk/comp122/2021/problems/abstract`
