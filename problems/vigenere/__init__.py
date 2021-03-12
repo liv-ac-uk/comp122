@@ -343,7 +343,7 @@ def caesar_check_one_arg():
 @check50.check(caesar_main_exists)
 def caesar_check_first_arg():
     """See if we get the right error message when Caesar is run with an incorrect first argument"""
-    check50_java.run("Caesar dec 12 lala").stdout("The first parameter must be \"encrypt\" or \"decrypt\"!\nUsage: java Caesar encrypt key \"cipher text\"\n")
+    check50_java.run("Caesar dec 12 lala").stdout("The first parameter must be \"encrypt\" or \"decrypt\"!\nUsage: java Caesar encrypt n \"cipher text\"\n")
 
 
 # # # Vigenere ###############################
