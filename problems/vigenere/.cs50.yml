@@ -9,3 +9,7 @@ check50:
     - !include "MonoAlphaSubstitution.java"
     - !include "Caesar.java"
     - !include "Vigenere.java"
+
+submit50:
+  files: *check50_files
+
