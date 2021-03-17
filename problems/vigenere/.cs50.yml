@@ -2,7 +2,8 @@ check50:
   dependencies:
     - check50-java
     - check50-junit
-  files:
+
+  files: &check50_files
     - !exclude "*"
     - !include "Cipher.java"
     - !include "Substitution.java"
