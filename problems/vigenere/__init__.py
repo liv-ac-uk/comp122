@@ -343,7 +343,7 @@ def caesar_check_one_arg():
 @check50.check(caesar_main_exists)
 def caesar_check_first_arg():
     """See if we get the right error message when Caesar is run with an incorrect first argument"""
-    check50_java.run("Caesar dec 12 lala").stdout("The first parameter must be \"encrypt\" or \"decrypt\"!\nUsage: java Caesar encrypt n \"cipher text\"\n")
+    check50_java.run("Caesar dec 12 lala").stdout("The first parameter must be \"encrypt\" or \"decrypt\"!\nUsage: java Caesar encrypt key \"cipher text\"\n")
 
 
 # # # Vigenere ###############################
@@ -442,7 +442,7 @@ def vigenere_main_test_02():
     """java Vigenere decrypt COMPONETWOTWO \"hiz thr big\" works as expected"""
     check50_java.run("Vigenere decrypt COMPONETWOTWO \"hiz thr big\"").stdout("fun fun fun\n")
 
-
+# TODO This is just a repeat of the test below, make better
 @check50.check(vigenere_main_returns_successfully)
 def vigenere_main_test_03():
     """java Vigenere enc COMPONETWOTWO \"fun fun fun\" returns correct error message"""
