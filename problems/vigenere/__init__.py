@@ -288,7 +288,7 @@ def caesar_has_integer_constructor():
 
 @check50.check(caesar_compiles)
 def caesar_encrypt_test_01():
-    """Caesar.java encrypt(char c) works as expected with key 10:  pex --> fun"""
+    """Caesar.java encrypt(char c) works as expected with key 10:  fun --> pex"""
     check50_junit.run_and_interpret_test(
         classpaths=['tests/'],
         args=['--select-method', 'CaesarTest#caesarEncryptTest01'])
@@ -296,7 +296,7 @@ def caesar_encrypt_test_01():
 
 @check50.check(caesar_compiles)
 def caesar_decrypt_test_01():
-    """Caesar.java decrypt(char c) works as expected with key 10:  fun --> pex"""
+    """Caesar.java decrypt(char c) works as expected with key 10:  pex --> fun"""
     check50_junit.run_and_interpret_test(
         classpaths=['tests/'],
         args=['--select-method', 'CaesarTest#caesarDecryptTest01'])
