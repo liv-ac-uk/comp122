@@ -443,10 +443,10 @@ def vigenere_main_test_02():
     check50_java.run("Vigenere decrypt COMPONETWOTWO \"hiz thr big\"").stdout("fun fun fun\n")
 
 # TODO This is just a repeat of the test below, make better
-@check50.check(vigenere_main_returns_successfully)
-def vigenere_main_test_03():
-    """java Vigenere enc COMPONETWOTWO \"fun fun fun\" returns correct error message"""
-    check50_java.run("Vigenere enc COMPONETWOTWO \"fun fun fun\"").stdout("The first parameter must be \"encrypt\" or \"decrypt\"!\nUsage: java Vigenere encrypt key \"cipher text\"\n")
+# @check50.check(vigenere_main_returns_successfully)
+# def vigenere_main_test_03():
+#     """java Vigenere enc COMPONETWOTWO \"fun fun fun\" returns correct error message"""
+#     check50_java.run("Vigenere enc COMPONETWOTWO \"fun fun fun\"").stdout("The first parameter must be \"encrypt\" or \"decrypt\"!\nUsage: java Vigenere encrypt key \"cipher text\"\n")
 
 
 @check50.check(vigenere_main_exists)
