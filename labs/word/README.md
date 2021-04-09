@@ -6,7 +6,7 @@ Now that we have some core Java knowledge under our belt, we can start to write 
 
 {% next %}
 
-## Expressing Yourself
+## Express Yourself
 
 To split strings into words you can use a *regular expression*. This is a cool topic in its own right (see [here](https://en.wikipedia.org/wiki/Regular_expression), as well as [here](https://docs.oracle.com/javase/tutorial/essential/regex/) and [here](https://www.javatpoint.com/java-regex) for more). 
 
@@ -15,11 +15,11 @@ The basic idea is that we define a pattern which we want to find in a query stri
 
 {% next %}
 
-## A Test of Character
+## I Walked the Line
 
 A basic example of a regular expression in Java is the following, which assumes that `line` is a `String`. The result will be an array of `String`s, splitting `line` based on whitespace in the `line` variable. 
 
-The method is what is performing the split, and the pattern in the quotation marks is specifying to split on whitespace (ie. spaces, line breaks, tabs, etc in the string).
+The method is what is performing the split, and the pattern in the quotation marks is specifying to split on whitespace (spaces, line breaks, tabs, etc in the string).
 
 ```java
 String line = "When in the course of human events...";
@@ -39,7 +39,21 @@ $ java WC -w "When in the course of human events..."
 
 {% next %}
 
-## Feed Me a Line
+## A Text of Character
+
+We have also given the method `charCount`, which simply returns the numbers of characters in an input string. 
+
+This can be used as follows:
+
+```
+$ java WC -m ""
+7
+```
+
+
+{% next %}
+
+## Line, Laugh, Love
 
 Add new functionality to `WC.java` so that we can give your program the flag `-l` (lowercase L), such that it will print the number of lines in the file. 
 
@@ -47,7 +61,7 @@ Also add functionality to your program so that it will print the number of chara
 
 {% spoiler "Hint" %}
 
-You can pass text files as command line arguments to your program with the following syntax
+You can pass text files as command line arguments to your program using `cat` and the following syntax
 
 ```
 $ java WC "-w" "\`cat test\`"
@@ -83,7 +97,7 @@ TODO ADD RESULT
 
 In general text documents aren't a great format to perform numeric analysis on a computer. One of the earliest approaches to featurizing text is called the bag of words. 
 
-As it sounds, this is simply a vector of length `n`, where `n` is the number of unique words in the document. For each field in the vector this is associated with a specific word, with it's value being equal to the count of that specific word. 
+As it sounds, this is simply a vector of length `n`, where `n` is the number of unique words in the document. For each field in the vector this is associated with a specific word, with its value being equal to the count of that specific word. 
 
 Add the functionality to `WC.java` so that it prints the bag of words vector to the terminal with the `-b` flag. 
 
@@ -109,10 +123,10 @@ When we have two (or more) documents, we can use the words in each to generate j
 
 For example, take the phrase "The cat sat on the mat" and the phrase "The pat sat on the stats". We can take *all* of the unique words in both documents and compute the bag of words vectors from these.
 
-|    | cat | mat | sat | stats | on | the | pat |
+| *String* | cat | mat | sat | stats | on | the | pat |
 | -- | --- | --- | --- | ----- | -- | --- | --- |
-| 1  | 1   |  1  |  1  |   0   |  1 |  2  |  0  |
-| 2  | 0   |  0  |  1  |   1   |  1 |  2  |  1  |
+| *1*  | 1   |  1  |  1  |   0   |  1 |  2  |  0  |
+| *2*  | 0   |  0  |  1  |   1   |  1 |  2  |  1  |
 
 
 Add this functionality to `WC.java` such that we may enter two documents with the `-v` flag, and it will print the vectors to the terminal.
@@ -124,6 +138,7 @@ $ java WC "-v" "The cat sat on the mat" "The pat sat on the stats"
 ```
 
 {% next %}
+
 ## The Distance Between Ideas
 
 Make a final modification to your program so that it can be given two input strings and the flag `-d`, so that it will print the Euclidean distance between the two joint bag of words vectors. 
