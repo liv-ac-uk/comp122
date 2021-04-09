@@ -19,13 +19,6 @@ def test_word_cat():
 
 
 @check50.check(wc_compiles)
-def test_word_test():
-    """Ensures WC -l is still working on the test file"""
-
-    check50_java.run(f'WC -l "$(< test)"').stdout("99\n").exit()
-
-
-@check50.check(wc_compiles)
 def test_char_cat():
     """WC -m is returning the right value for 'the cat sat on the mat'"""
     cat = "the cat sat on the mat"
