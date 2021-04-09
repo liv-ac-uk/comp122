@@ -15,9 +15,9 @@ The basic idea is that we define a pattern which we want to find in a query stri
 
 {% next %}
 
-## I Walked the Line
+## Woorrrrrd
 
-A basic example of a regular expression in Java is the following, which assumes that `line` is a `String`. The result will be an array of `String`s, splitting `line` based on whitespace in the `line` variable. 
+A basic example of a regular expression in Java is the following, which assumes that `line` is a `String`. The result will be an array of `String`s, splitting `line` based on whitespace in `line`. 
 
 The method is what is performing the split, and the pattern in the quotation marks is specifying to split on whitespace (spaces, line breaks, tabs, etc in the string).
 
@@ -154,6 +154,9 @@ Make a final modification to your program so that it can be given two input stri
 ```
 $ java WC -d "The cat sat on the mat" "The pat sat on the stats"
 2
+
+$ java WC -d "The cat sat on the mat" "$(< test)"
+343.9098719141397
 ```
 
 {% next %}
