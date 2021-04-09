@@ -24,7 +24,7 @@ The method is what is performing the split, and the pattern in the quotation mar
 ```java
 String line = "When in the course of human events...";
 String[] words = line.split("\\s");
-
+    
 for (String w: words)  {
    System.out.println(w);
 }

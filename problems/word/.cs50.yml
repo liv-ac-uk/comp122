@@ -1,0 +1,14 @@
+check50:
+  dependencies:
+    - check50-java
+
+  files:
+    - !exclude "*"
+    - !include "WC.java"
+
+
+submit50:
+  slug: "liv-ac-uk/comp122/2021/word"
+  files:
+    - !exclude "*"
+    - !include "WC.java"
