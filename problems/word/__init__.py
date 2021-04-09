@@ -15,15 +15,13 @@ def wc_compiles():
 @check50.check(wc_compiles)
 def test_word_cat():
     """Ensures WC -w is still working on 'the cat sat on the mat'"""
-    # print(os.getcwd())
     check50_java.run('WC -w "the cat sat on the mat"').stdout("6\n").exit()
 
 
 @check50.check(wc_compiles)
 def test_word_test():
     """Ensures WC -l is still working on the test file"""
-    # with open("test") as f:
-    #     test_f = f.read()
+
     check50_java.run(f'WC -l "$(< test)"').stdout("99\n").exit()
 
 
@@ -82,7 +80,7 @@ def test_bag_cat():
 def test_bag_test():
     """WC -b is printing the integer array correctly for ipsum"""
     ipsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-    check50_java.run(f'WC -b "$(< test)"').stdout("[1, 1, 1, 1, 1, 1, 1, 1]\n").exit()
+    check50_java.run(f'WC -b "{ipsum}"').stdout("[1, 1, 1, 1, 1, 1, 1, 1]\n").exit()
 
 @check50.check(wc_compiles)
 def test_bag_assessment():
@@ -104,7 +102,7 @@ def test_vec_ipsum_cat():
     """WC -v is printing the two integer arrays correctly for ipsum and 'the cat sat on the mat'"""
     ipsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     cat = "the cat sat on the mat"
-    check50_java.run(f'WC -v "{cat}" "{ipsum}"').stdout("[0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 2]\n[1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0]]\n").exit()
+    check50_java.run(f'WC -v "{cat}" "{ipsum}"').stdout("[0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 2]\n[1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0]\n").exit()
 
 @check50.check(wc_compiles)
 def test_vec_():
@@ -112,7 +110,7 @@ def test_vec_():
     ipsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     ass2 = "In this coursework you will implement a whole bunch of simple substitution ciphers in an object oriented fashion, as depicted in the (incomplete) UML diagram below."
 
-    check50_java.run(f'WC -v "{ipsum}" "{ass2}"').stdout("[0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]\n[1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 3, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1]0]\n").exit()
+    check50_java.run(f'WC -v "{ipsum}" "{ass2}"').stdout("[0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]\n[1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 3, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1]\n").exit()
 
 
 @check50.check(wc_compiles)
