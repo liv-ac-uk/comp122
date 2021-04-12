@@ -149,7 +149,7 @@ Your program does not need to take in any more than two strings.
 
 {% next %}
 
-## The Distance Between Ideas
+## What's The Distance Between That?
 
 Make a final modification to your program so that it can be given two input strings and the flag `-d`, so that it will print the Euclidean distance between the two joint bag of words vectors. 
 
@@ -160,6 +160,8 @@ $ java WC -d "The cat sat on the mat" "The pat sat on the stats"
 $ java WC -d "The cat sat on the mat" "`cat test`"
 343.9098719141397
 ```
+
+Make sure that your program discards all punctuation, under this metric there is no distance between the sentence "That that is, is. That that is not, is not. Is that it? It is." and the sentence "That that is, is that that is not. Is 'not is that' it? It is.".
 
 {% next %}
 
