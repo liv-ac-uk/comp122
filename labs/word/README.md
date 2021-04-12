@@ -141,8 +141,8 @@ Add this functionality to `WC.java` such that we may enter two documents with th
 
 ```
 $ java WC -v "The cat sat on the mat" "The pat sat on the stats"
-[1, 1, 1, 0, 1, 2, 0]
-[0, 0, 1, 1, 1, 2, 1]
+[1, 1, 1, 0, 1, 0, 2]
+[0, 0, 1, 1, 1, 1, 2]
 ```
 
 Your program does not need to take in any more than two strings. 
