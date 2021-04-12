@@ -57,18 +57,16 @@ $ java WC -m "simplicial"
 
 Add new functionality to `WC.java` so that we can give your program the flag `-l` (lowercase L), such that it will print the number of lines in the file. 
 
-Also add functionality to your program so that it will print the number of characters in the input string when given the flag `-m`. 
-
 {% spoiler "Hint" %}
 
-You can pass text files as command line arguments to your program using `cat` and the following syntax
+You can pass text files as command line arguments to your program using cat and the following syntax
 
 ```
-$ java WC -w "$(< test)"
+$ java WC -w \`cat test\`
 4648
-$ java WC -m "$(< test)"
+$ java WC -m \`cat test\`
 31120
-$ java WC -l "$(< test)"
+$ java WC -l \`cat test\`
 99
 ```
 
@@ -76,27 +74,6 @@ $ java WC -l "$(< test)"
 
 {% next %}
 
-## Come Stat Me Bro
-
-We often use statistics to describe text documents (although nowadays deep neural networks are commonly preferred). One of the most common metrics which we can use in text analysis is "lexical diversity".
-
-Lexical diversity is defined as the number of distinct words in the document, divided by the total number of words in the document
-
-![LexicalDiversity](img/LexicalDiversity.jpg)
-
-Add a method to `WC.java` which computes the lexical diversity of an input string when the `-s` flag is passed to the program.
-
-```
-$ java WC -s "$(< test)"
-0.09638554
-```
-
-{% spoiler %}
-Hashmaps are your friend here.
-
-{% endspoiler %}
-
-{% next %}
 
 ## The Bag of Words
 
@@ -122,7 +99,32 @@ $ java WC -b "That that is is that that is not is not is that it it is"
 
 Note that we are discarding the case of the letter. 
 
+
+{% spoiler %}
+Hashmaps are your friend here.
+
+{% endspoiler %}
+
+
 {% next %}
+
+## Come Stat Me Bro
+
+We often use statistics to describe text documents (although nowadays deep neural networks are commonly preferred). One of the most common metrics which we can use in text analysis is "lexical diversity".
+
+Lexical diversity is defined as the number of distinct words in the document, divided by the total number of words in the document
+
+![LexicalDiversity](img/LexicalDiversity.jpg)
+
+Add a method to `WC.java` which computes the lexical diversity of an input string when the `-s` flag is passed to the program.
+
+```
+$ java WC -s \`cat test\`
+0.09638554
+```
+
+{% next %}
+
 
 ## Representing Lots of Documents
 
@@ -155,7 +157,7 @@ Make a final modification to your program so that it can be given two input stri
 $ java WC -d "The cat sat on the mat" "The pat sat on the stats"
 2
 
-$ java WC -d "The cat sat on the mat" "$(< test)"
+$ java WC -d "The cat sat on the mat" \`cat test\`
 343.9098719141397
 ```
 
