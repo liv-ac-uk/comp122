@@ -93,7 +93,7 @@ def test_vec_ipsum_cat():
     """WC -v is printing the two integer arrays correctly for ipsum and 'the cat sat on the mat'"""
     ipsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     cat = "the cat sat on the mat"
-    check50_java.run(f'WC -v "{cat}" "{ipsum}"').stdout("[0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 2]\s[1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0]\s").exit()
+    check50_java.run(f'WC -v "{cat}" "{ipsum}"').stdout("[0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 2]\\s[1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0]\\s").exit()
 
 @check50.check(wc_compiles)
 def test_vec_():
@@ -101,7 +101,7 @@ def test_vec_():
     ipsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     ass2 = "In this coursework you will implement a whole bunch of simple substitution ciphers in an object oriented fashion, as depicted in the (incomplete) UML diagram below."
 
-    check50_java.run(f'WC -v "{ipsum}" "{ass2}"').stdout("[0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]\s[1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 3, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1]\s").exit()
+    check50_java.run(f'WC -v "{ipsum}" "{ass2}"').stdout("[0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]\\s[1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 3, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1]\\s").exit()
 
 
 @check50.check(wc_compiles)
