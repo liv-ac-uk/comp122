@@ -95,7 +95,7 @@ def test_vec_ipsum_cat():
     """WC -v is printing the two integer arrays correctly for ipsum and 'the cat sat on the mat'"""
     ipsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     cat = "the cat sat on the mat"
-    check50_java.run(f'WC -v "{cat}" "{ipsum}"').stdout("[0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 2]\n[1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0]\s").exit()
+    check50_java.run(f'WC -v "{cat}" "{ipsum}"').stdout("[0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 2]\n[1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0]\n").exit()
 
 @check50.check(wc_compiles)
 def test_vec_():
