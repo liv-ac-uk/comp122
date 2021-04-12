@@ -22,7 +22,7 @@ A basic example of a regular expression in Java is the following, which assumes 
 The method is what is performing the split, and the pattern in the quotation marks is specifying to split on whitespace (spaces, line breaks, tabs, etc in the string).
 
 ```java
-String line = "When in the course of human events...";
+String line = "If it takes a man a week to walk a fortnight, how many apples are in a barrel of grapes?";
 String[] words = line.split("\\s");
     
 for (String w: words)  {
@@ -33,8 +33,8 @@ for (String w: words)  {
 This functionality has been given to you in `WC.java` in the method `wordCount`. This program can be used as so 
 
 ```
-$ java WC -w "When in the course of human events..."
-7
+$ java WC -w "If it takes a man a week to walk a fortnight, how many apples are in a barrel of grapes?"
+20
 ```
 
 {% next %}
@@ -126,7 +126,7 @@ $ java WC -s "`cat test`"
 {% next %}
 
 
-## Representing Lots of Documents
+## What's Our Vector Victor?
 
 When we have two (or more) documents, we can use the words in each to generate joint bag of words vectors. 
 
@@ -149,7 +149,7 @@ Your program does not need to take in any more than two strings.
 
 {% next %}
 
-## What's The Distance Between That?
+## Can You Measure The Distance Between That?
 
 Make a final modification to your program so that it can be given two input strings and the flag `-d`, so that it will print the Euclidean distance between the two joint bag of words vectors. 
 
