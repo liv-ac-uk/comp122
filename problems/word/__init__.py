@@ -48,8 +48,6 @@ def test_lex_cat():
 @check50.check(wc_compiles)
 def test_lex_test():
     """WC -s is returning the correct double for lexicographic diversity for lipsum """
-    with open("test") as f:
-        test_f = f.read()
     ipsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
 
     check50_java.run(f'WC -s "{ipsum}"').stdout("1.0\n").exit()
@@ -88,7 +86,7 @@ def test_vec_cat_stat():
     cat = "the cat sat on the mat"
     stat = "the pat sat on the stats"
 
-    check50_java.run(f'WC -v "{cat}" "{stat}"').stdout("[1, 1, 1, 0, 1, 0, 2]\s [0, 0, 1, 1, 1, 1, 2]\s").exit()
+    check50_java.run(f'WC -v "{cat}" "{stat}"').stdout("[1, 1, 1, 0, 1, 0, 2]\n").stdout("[0, 0, 1, 1, 1, 1, 2]\n").exit()
 
 @check50.check(wc_compiles)
 def test_vec_ipsum_cat():
