@@ -62,11 +62,11 @@ Add new functionality to `WC.java` so that we can give your program the flag `-l
 You can pass text files as command line arguments to your program using cat in backticks with the following syntax
 
 ```
-$ java WC -w `cat test`
+$ java WC -w "`cat test`"
 4648
-$ java WC -m `cat test`
+$ java WC -m "`cat test`"
 31120
-$ java WC -l `cat test`
+$ java WC -l "`cat test`"
 99
 ```
 
@@ -119,7 +119,7 @@ Lexical diversity is defined as the number of distinct words in the document, di
 Add a method to `WC.java` which computes the lexical diversity of an input string when the `-s` flag is passed to the program.
 
 ```
-$ java WC -s `cat test`
+$ java WC -s "`cat test`"
 0.09638554
 ```
 
@@ -157,7 +157,7 @@ Make a final modification to your program so that it can be given two input stri
 $ java WC -d "The cat sat on the mat" "The pat sat on the stats"
 2
 
-$ java WC -d "The cat sat on the mat" `cat test`
+$ java WC -d "The cat sat on the mat" "`cat test`"
 343.9098719141397
 ```
 
