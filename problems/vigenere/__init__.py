@@ -1,14 +1,14 @@
 import check50
 import check50_java
 import check50_junit
-import os
 
-## Cipher ###########################
+
+# Cipher ###########################
 @check50.check()
 def cipher_unmodified():
     """Ensure that the cipher file has not been modified"""
     check50.include("ModelCipher.java")  # copy over input helper
-    exit_code = os.system('cmp -s Cipher.java ModelCipher.java')
+    exit_code = check50.run('diff -Bw Cipher.java ModelCipher.java').exit()
     if exit_code != 0:
         raise check50.Failure("Your Cipher class must be unmodified")
 
@@ -29,73 +29,31 @@ def substitution_compiles():
 @check50.check(substitution_compiles)
 def substitution_is_abstract():
     """Substitution.java is abstract"""
-    lines = []
-
-    with open("Substitution.java") as f:
-        for line in f:
-            lines.append(line.replace("\n", ""))
-
-    for line in lines:
-        if "Substitution" in line and "class" in line and "public" in line and "abstract" in line:
-            return
-        else:
-            pass
-
-    raise check50.Failure("Your Substitution class must be abstract")
+    check50_junit.run_and_interpret_test(
+        classpaths=['tests/'],
+        args=['--select-method', 'SubstitutionTest#substitutionIsAbstract'])
 
 
 @check50.check(substitution_compiles)
 def substitution_implements_cipher():
-    """Substitution.java implements cipher"""
-    lines = []
-
-    with open("Substitution.java") as f:
-        for line in f:
-            lines.append(line.replace("\n", ""))
-
-    for line in lines:
-        if "Substitution" in line and "class" in line and "implements" in line and "Cipher" in line:
-            return
-        else:
-            pass
-
-    raise check50.Failure("Your Substitution class must implement Cipher")
+    check50_junit.run_and_interpret_test(
+        classpaths=['tests/'],
+        args=['--select-method', 'HierarchyTest#testSubstitutionImplementsCipher'])
 
 
 @check50.check(substitution_compiles)
 def substitution_check_encrypt():
     """Substitution.java has an abstract method encrypt(char) that returns char"""
-    lines = []
-
-    with open("Substitution.java") as f:
-        for line in f:
-            lines.append(line.replace("\n", ""))
-
-    for line in lines:
-        if "public abstract char encrypt(char c);" in line:
-            return
-        else:
-            pass
-
-    raise check50.Failure("Your Substitution class must have the method \"public abstract char encrypt(char c);\"")
-
-
+    check50_junit.run_and_interpret_test(
+        classpaths=['tests/'],
+        args=['--select-method', 'SubstitutionTest#substitutionCheckEncryptChar'])
+        
 @check50.check(substitution_compiles)
 def substitution_check_decrypt():
     """Substitution.java has an abstract method decrypt(char) that returns char"""
-    lines = []
-
-    with open("Substitution.java") as f:
-        for line in f:
-            lines.append(line.replace("\n", ""))
-
-    for line in lines:
-        if "public abstract char decrypt(char c);" in line:
-            return
-        else:
-            pass
-
-    raise check50.Failure("Your Substitution class must have the method \"public abstract char decrypt(char c);\"")
+    check50_junit.run_and_interpret_test(
+        classpaths=['tests/'],
+        args=['--select-method', 'SubstitutionTest#substitutionCheckDecryptChar'])
 
 
 @check50.check(substitution_compiles)
@@ -103,7 +61,7 @@ def substitution_encrypt_string():
     """Substitution.java implements encrypt(String) as expected"""
     check50_junit.run_and_interpret_test(
         classpaths=['tests/'],
-        args=['--select-method', 'SubstitutionTest#substitutionCheckEncrypt'])
+        args=['--select-method', 'SubstitutionTest#substitutionCheckEncryptString'])
 
 
 @check50.check(substitution_compiles)
@@ -111,7 +69,7 @@ def substitution_decrypt_string():
     """Substitution.java implements decrypt(String) as expected"""
     check50_junit.run_and_interpret_test(
         classpaths=['tests/'],
-        args=['--select-method', 'SubstitutionTest#substitutionCheckDecrypt'])
+        args=['--select-method', 'SubstitutionTest#substitutionCheckDecryptString'])
 
 
 # MonoAlphaSubstitution ###############################
@@ -130,19 +88,16 @@ def mas_compiles():
 @check50.check(mas_compiles)
 def mas_is_not_abstract():
     """MonoAlphaSubstitution.java is not abstract"""
-    lines = []
-
-    with open("MonoAlphaSubstitution.java") as f:
-        for line in f:
-            lines.append(line.replace("\n", ""))
-
-    for line in lines:
-        if "MonoAlphaSubstitution" in line and "class" in line and "public" in line and "abstract" not in line:
-            return
-        else:
-            pass
-
-    raise check50.Failure("Your MonoAlphaSubstitution class cannot be abstract")
+    check50_junit.run_and_interpret_test(
+        classpaths=['tests/'],
+        args=['--select-method', 'MonoAlphaSubstitutionTest#masIsNotAbstract'])
+        
+@check50.check(mas_compiles)
+def mas_extends_substitution():
+    """MonoAlphaSubstitution extends Substitution"""
+    check50_junit.run_and_interpret_test(
+        classpaths=['tests/'],
+        args=['--select-method', 'HierarchyTest#testMASExtendsSubstitution'])
 
 
 @check50.check(mas_compiles)
@@ -255,19 +210,16 @@ def caesar_compiles():
 @check50.check(caesar_compiles)
 def caesar_is_not_abstract():
     """Caesar.java is not abstract"""
-    lines = []
-
-    with open("Caesar.java") as f:
-        for line in f:
-            lines.append(line.replace("\n", ""))
-
-    for line in lines:
-        if "Caesar" in line and "class" in line and "public" in line and "abstract" not in line:
-            return
-        else:
-            pass
-
-    raise check50.Failure("Your Caesar class cannot be abstract")
+    check50_junit.run_and_interpret_test(
+        classpaths=['tests/'],
+        args=['--select-method', 'CaesarTest#caesarIsNotAbstract'])
+        
+@check50.check(caesar_compiles)
+def caesar_extends_mono_alpha_substitution():
+    """Caesar extends MonoAlphaSubstitution"""
+    check50_junit.run_and_interpret_test(
+        classpaths=['tests/'],
+        args=['--select-method', 'HierarchyTest#testCaesarExtendsMAS'])        
 
 
 @check50.check(caesar_compiles)
@@ -362,19 +314,23 @@ def vigenere_compiles():
 @check50.check(vigenere_compiles)
 def vigenere_is_not_abstract():
     """Vigenere.java is not abstract"""
-    lines = []
-
-    with open("Vigenere.java") as f:
-        for line in f:
-            lines.append(line.replace("\n", ""))
-
-    for line in lines:
-        if "Vigenere" in line and "class" in line and "public" in line and "abstract" not in line:
-            return
-        else:
-            pass
-
-    raise check50.Failure("Your Vigenere class cannot be abstract")
+    check50_junit.run_and_interpret_test(
+        classpaths=['tests/'],
+        args=['--select-method', 'VigenereTest#vigenereIsNotAbstract'])
+        
+@check50.check(vigenere_compiles)
+def vigenere_has_private_class_variables():
+    """Vigenere.java should use private class variables in support of the Vigenere Cipher"""
+    check50_junit.run_and_interpret_test(
+        classpaths=['tests/'],
+        args=['--select-method', 'VigenereTest#vigenereHasPrivateClassVariables'])
+        
+@check50.check(vigenere_compiles)
+def vigenere_extends_substitution():
+    """Vigenere extends Substitution"""
+    check50_junit.run_and_interpret_test(
+        classpaths=['tests/'],
+        args=['--select-method', 'HierarchyTest#testVigenereExtendsSubstitution'])
 
 
 @check50.check(vigenere_compiles)
