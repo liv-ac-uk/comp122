@@ -43,14 +43,14 @@ def test_lex_cat():
     """WC -s is returning the correct double for 'the cat sat on the mat'"""
     cat = "the cat sat on the mat"
 
-    check50_java.run(f'WC -s "{cat}"').stdout(0.833333).exit()
+    check50_java.run(f'WC -s "{cat}"').stdout("0.8333333134651184\n").exit()
 
 @check50.check(wc_compiles)
 def test_lex_test():
     """WC -s is returning the correct double for lexicographic diversity for lipsum """
     ipsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
 
-    check50_java.run(f'WC -s "{ipsum}"').stdout(check50.regex.decimal("1")).exit()
+    check50_java.run(f'WC -s "{ipsum}"').stdout("1.0\n").exit()
 
 @check50.check(wc_compiles)
 def test_lex_assessment():
@@ -110,14 +110,14 @@ def test_euc_cat_stat():
     cat = "the cat sat on the mat"
     stat = "the pat sat on the stats"
 
-    check50_java.run(f'WC -d "{cat}" "{stat}"').stdout(check50.regex.decimal("2.0")).exit()
+    check50_java.run(f'WC -d "{cat}" "{stat}"').stdout("2.0\n").exit()
 
 @check50.check(wc_compiles)
 def test_euc_ipsum_cat():
     """WC -d is printing the correct double for the Euclidean distance the two strings of ipsum and 'the cat sat on the mat'"""
     ipsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     cat = "the cat sat on the mat"
-    check50_java.run(f'WC -d "{ipsum}" "{cat}"').stdout(check50.regex.decimal("4.0")).exit()
+    check50_java.run(f'WC -d "{ipsum}" "{cat}"').stdout("4.0\n").exit()
 
 @check50.check(wc_compiles)
 def test_euc_ass_ipsum():
@@ -125,5 +125,5 @@ def test_euc_ass_ipsum():
     ipsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     ass2 = "In this coursework you will implement a whole bunch of simple substitution ciphers in an object oriented fashion, as depicted in the (incomplete) UML diagram below."
 
-    check50_java.run(f'WC -d "{ipsum}" "{ass2}"').stdout(check50.regex.decimal("6.3245")).exit()
+    check50_java.run(f'WC -d "{ipsum}" "{ass2}"').stdout("6.324555320336759\n").exit()
 
