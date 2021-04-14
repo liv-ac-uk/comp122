@@ -57,7 +57,7 @@ def test_lex_assessment():
     """WC -s is returning the correct double for the Assessment 2 documenation"""
     ass2 = "In this coursework you will implement a whole bunch of simple substitution ciphers in an object oriented fashion, as depicted in the (incomplete) UML diagram below."
 
-    check50_java.run(f'WC -s "{ass2}"').stdout("0.9615384340286255\n").exit()
+    check50_java.run(f'WC -s "{ass2}"').stdout("0\.961538.*", regex=True).exit()
 
 
 @check50.check(wc_compiles)
@@ -125,5 +125,5 @@ def test_euc_ass_ipsum():
     ipsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     ass2 = "In this coursework you will implement a whole bunch of simple substitution ciphers in an object oriented fashion, as depicted in the (incomplete) UML diagram below."
 
-    check50_java.run(f'WC -d "{ipsum}" "{ass2}"').stdout("6.324555320336759\n").exit()
+    check50_java.run(f'WC -d "{ipsum}" "{ass2}"').stdout("6\.3245553.*", regex=True).exit()
 
