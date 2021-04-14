@@ -43,7 +43,7 @@ def test_lex_cat():
     """WC -s is returning the correct double for 'the cat sat on the mat'"""
     cat = "the cat sat on the mat"
 
-    check50_java.run(f'WC -s "{cat}"').stdout("0.8333333134651184\n").exit()
+    check50_java.run(f'WC -s "{cat}"').stdout(0.833333).exit()
 
 @check50.check(wc_compiles)
 def test_lex_test():
