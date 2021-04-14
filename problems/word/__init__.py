@@ -50,7 +50,7 @@ def test_lex_test():
     """WC -s is returning the correct double for lexicographic diversity for lipsum """
     ipsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
 
-    check50_java.run(f'WC -s "{ipsum}"').stdout("1.0\n").exit()
+    check50_java.run(f'WC -s "{ipsum}"').stdout(check50.regex.decimal("1")).exit()
 
 @check50.check(wc_compiles)
 def test_lex_assessment():
