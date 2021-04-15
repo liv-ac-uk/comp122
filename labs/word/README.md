@@ -75,7 +75,7 @@ $ java WC -l "`cat test`"
 {% next %}
 
 
-## The Bag of Words
+## Papa's Got a Brand New Word Bag
 
 In general text documents aren't a great format to perform numeric analysis on a computer directly. One of the earliest approaches to featurizing text is called the bag of words approach. 
 
@@ -97,7 +97,7 @@ $ java WC -b "That that is is that that is not is not is that it it is"
 [6, 2, 2, 5]
 ```
 
-Note that we are discarding the case of the letter. 
+Note that we are discarding the case of the letter and storing each of the words in alphabetical order. 
 
 
 {% spoiler %}
@@ -161,7 +161,7 @@ $ java WC -d "The cat sat on the mat" "`cat test`"
 343.9098719141397
 ```
 
-Make sure that your program discards all punctuation, under this metric there is no distance between the sentence "That that is, is. That that is not, is not. Is that it? It is." and the sentence "That that is, is that that is not. Is 'not is that' it? It is.".
+Make sure that your program discards all punctuation. There is no difference between the sentence "That that is, is. That that is not, is not. Is that it? It is." and the sentence "That that is, is that that is not. Is 'not is that' it? It is.".
 
 {% next %}
 
