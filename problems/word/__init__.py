@@ -17,7 +17,6 @@ def test_word_cat():
     """Ensures WC -w is still working on 'the cat sat on the mat'"""
     check50_java.run('WC -w "the cat sat on the mat"').stdout("6\n").exit()
 
-
 @check50.check(wc_compiles)
 def test_char_cat():
     """WC -m is returning the right value for 'the cat sat on the mat'"""
@@ -59,7 +58,6 @@ def test_lex_assessment():
 
     check50_java.run(f'WC -s "{ass2}"').stdout("0\.961538.*", regex=True).exit()
 
-
 @check50.check(wc_compiles)
 def test_bag_cat():
     """WC -b is printing the integer array correctly for 'the cat sat on the mat'"""
@@ -79,14 +77,13 @@ def test_bag_assessment():
     ass2 = "In this coursework you will implement a whole bunch of simple substitution ciphers in an object oriented fashion, as depicted in the (incomplete) UML diagram below."
     check50_java.run(f'WC -b "{ass2}"').stdout("[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]\s").exit()
 
-
 @check50.check(wc_compiles)
 def test_vec_cat_stat():
     """WC -v is printing the two integer arrays correctly for 'the cat sat on the mat' 'the pat sat on the stats'"""
     cat = "the cat sat on the mat"
     stat = "the pat sat on the stats"
 
-    check50_java.run(f'WC -v "{cat}" "{stat}"').stdout("[1, 1, 1, 0, 1, 0, 2]\\s").stdout("[0, 0, 1, 1, 1, 1, 2]\\s").exit()
+    check50_java.run(f'WC -v "{cat}" "{stat}"').stdout("\[1, 1, 1, 0, 1, 0, 2\]\s*\[0, 0, 1, 1, 1, 1, 2\]\s*", regex=True).exit()
 
 @check50.check(wc_compiles)
 def test_vec_ipsum_cat():
@@ -102,7 +99,6 @@ def test_vec_():
     ass2 = "In this coursework you will implement a whole bunch of simple substitution ciphers in an object oriented fashion, as depicted in the (incomplete) UML diagram below."
 
     check50_java.run(f'WC -v "{ipsum}" "{ass2}"').stdout("[0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]\\s").stdout("[1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 3, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1]\\s").exit()
-
 
 @check50.check(wc_compiles)
 def test_euc_cat_stat():
