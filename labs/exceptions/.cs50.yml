@@ -1,0 +1,15 @@
+lab50:
+  files:
+    - !exclude "*"
+    - !include "Exceptron.class"
+    - !include "SelectFrom.java"
+    - !include "SelectFromTest.java"
+    - !include "SelectFromTest.class"
+    - !include "SuperCoolException.java"
+    - !include "ExceptronTest.class"
+    - !include "ExceptronPlatform.java"
+    
+  window:
+    - editor
+    - readme
+    - terminal
