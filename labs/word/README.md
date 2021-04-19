@@ -97,9 +97,6 @@ $ java WC -b "That that is is that that is not is not is that it it is"
 [6, 2, 2, 5]
 ```
 
-Note that we are discarding the case of the letter and storing each of the words in alphabetical order. 
-
-
 {% spoiler %}
 Hashmaps are your friend here.
 
@@ -147,6 +144,8 @@ $ java WC -v "The cat sat on the mat" "The pat sat on the stats"
 
 Your program does not need to take in any more than two strings. 
 
+Note that the vectors have their words sorted by alphabetical order for both bags.
+
 {% next %}
 
 ## Can You Measure The Distance Between That?
@@ -160,8 +159,6 @@ $ java WC -d "The cat sat on the mat" "The pat sat on the stats"
 $ java WC -d "The cat sat on the mat" "`cat test`"
 343.9098719141397
 ```
-
-Make sure that your program discards all punctuation. There is no difference between the sentence "That that is, is. That that is not, is not. Is that it? It is." and the sentence "That that is, is that that is not. Is 'not is that' it? It is.".
 
 {% next %}
 
