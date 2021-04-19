@@ -1,6 +1,6 @@
 # Exceptions
 
-This lab aims to cover Exceptions and Exception Handling, and following completion you should understand the rationale behind Exceptions,
+This lab aims to cover exceptions and exception Handling, and following completion you should understand the rationale behind exceptions,
 how to use try/catch, throw, multi catch and finally blocks.
 
 For an even more elaborate intro check out [Oracle's Exceptions tutorial](https://docs.oracle.com/javase/tutorial/essential/exceptions/index.html).
@@ -23,17 +23,17 @@ Different sections have relevant tests which will be referenced later on.
 
 ## What is an Exception?
 
-An Exception is defined by Oracle as an event that occurs during the execution of a program that disrupts the normal flow of instructions. 
+An exception is an event that occurs during the execution of a program that disrupts the normal flow of instructions. 
 Exceptions can thus be though of at a high level as errors that occur at runtime (when running a program) as opposed to a syntactic error that prevents compilation i.e. a compile time error. 
 
-Digging a bit deeper, there is a root class called `Exception` from which all other Exception classes derive. We categorize `Exception` and its children
-into two categories: Runtime Exceptions and Checked Exceptions. 
+Digging a bit deeper, there is a root class called `Exception` from which all other exception classes derive. We categorize `Exception` and its children
+into two categories: Runtime exceptions and Checked exceptions. 
 TODO: This is not what I tell them in the lecture/video! (all exceptions are recoverable, `Error`s are not.)
-Runtime Exceptions inherit from the `RuntimeException` class and are usually triggered
+Runtime exceptions inherit from the `RuntimeException` class and are usually triggered
 by catastrophic errors from which the program should not recover. Examples of this are the `NullPointerException` and `ArrayIndexOutOfBoundsException`
 which we will discuss in detail below. These errors are typically the result of programmer error.
 
-Checked Exceptions are all other Exception classes that don't inherit from `RuntimeException`. These exceptions
+Checked exceptions are all other exception classes that don't inherit from `RuntimeException`. These exceptions
 are triggered by less catastrophic events from which the program potentially could recover. An example of these exceptions
 is the `IOException`, which can be triggered while reading/writing from files. Imagine an instance where we are reading data line by line from
 a file with thousands of lines. If one line is malformed, while the others are correct, we may wish to catch and log the error in the one malformed line
@@ -48,7 +48,7 @@ by default.
 
 ## ArrayIndexOutOfBoundsException and NullPointerException
 
-A couple of Exceptions many of you will have already made unfortunate acquaintance with are the   [`ArrayIndexOutOfBoundsException`](https://docs.oracle.com/javase/7/docs/api/java/lang/ArrayIndexOutOfBoundsException.html)
+A couple of exceptions many of you will have already made unfortunate acquaintance with are the   [`ArrayIndexOutOfBoundsException`](https://docs.oracle.com/javase/7/docs/api/java/lang/ArrayIndexOutOfBoundsException.html)
 and the [`NullPointerException`](https://docs.oracle.com/javase/7/docs/api/java/lang/NullPointerException.html).
 
 The `ArrayIndexOutOfBoundsException` is the easier of the two to understand. This exception is triggered when you attempt to retrieve an element from
@@ -84,10 +84,10 @@ to be integers, which are added to `arrayOfNumbers`. The `selectFromArray` funct
 but otherwise returning the `i`th element of `arrayOfNumbers`. At the moment, however, there are a couple errors that will trigger a `NullPointerException`
 and an `ArrayOfIndexOutOfBoundsException`. 
 
-Compile and run `SelectFrom` from the terminal. When you run it, an error is spit out to the console informing you of the Exception. 
+Compile and run `SelectFrom` from the terminal. When you run it, an error is spit out to the console informing you of the exception. 
 
 ```terminal
-java SelectFrom
+$> java SelectFrom
 Exception in thread "main" java.lang.NullPointerException
 	at SelectFrom.<init>(SelectFrom.java:9)
 	at SelectFrom.main(SelectFrom.java:21)
@@ -141,19 +141,20 @@ doSomeMoreStuffWithMyClass(mc);
 {% next %}
 
 ## Exceptron
-To demonstrate try-catch, we will modify the provided program ExceptronPlatform.java.
-`Exceptron` is a class whose primary purpose is as it sounds:
+To demonstrate try-catch, we have written a class called
+`Exceptron`. Its primary purpose is as it sounds:
 it throws exceptions. Specifically, it has preloaded scenarios dependent upon an index that decides which exceptions to throw, and then runs
 these exceptions with the aptly named function `doSomeStuff()`. 
 
+Let's modify the provided program ExceptronPlatform.java.
 For now, we'll keep it simple. In the `runExceptron` function uncomment `exceptron.doSomeStuff()`.
 Now, wrap this function in a try catch block,
 with the `catch` catching `Exception e`. If you are unsure of what this looks like, refer to the try-catch block in SelectFromTest.java. In the catch block,
-return the String `e.toString()` + "\n". The Exception's `toString` function returns the name of the exception followed by a colon and then a message often
+return the String `e.toString() + "\n"`. The Exception's `toString` function returns the name of the exception followed by a colon and then a message often
 shedding light on why the exception occurred. The "\n" is just a newline.
 
-If the catch block is not reached, `runExceptron` should return "Everything's Fine\n". Note that any code after a try-catch block runs as normal unless
-the catch block explicitly decides to return from the function or throw an Exception. From the instructions above you should return a String, 
+If the catch block is not reached, `runExceptron` should return `"Everything's Fine\n"`. Note that any code after a try-catch block runs as normal unless
+the catch block explicitly decides to return from the function or throw an exception. From the instructions above you should return a String, 
 but if instead you merely printed the String the code would pick
 up at the next line after the try-catch block.
 
@@ -166,9 +167,9 @@ argument is omitted it will run all the tests. Once the above is completed your 
 What we have just implemented is a general exception handler. Because it catches the root class `Exception`, it will actually catch *all* possible exceptions.
 Sometimes, however, we may want to have behaviour for when specific exceptions are encountered. Fortunately, the try-catch block can be expanded to 
 have multiple catch blocks. An example of this can be seen in SelectFromTest.java. The catch blocks are executed in the order from top to bottom i.e.
-the top block will be checked first and the bottom block will be checked last. The catch blocks have to be ordered such that any type of Exception caught
-is not a parent class of a block below. Specifically, the root Exception must always be at the bottom, since it is the parent of all other exceptions. 
-To demonstrate this, try moving the root Exception to be the top block in SelectFromTest.java and try to recompile. It won't work, because
+the top block will be checked first and the bottom block will be checked last. The catch blocks have to be ordered such that any type of exception caught
+is not a parent class of a block below. Specifically, the root exception must always be at the bottom, since it is the parent of all other exceptions. 
+To demonstrate this, try moving the root exception to be the top block in SelectFromTest.java and try to recompile. It won't work, because
 the other catch blocks are now unreachable code which is a Java crime.
 
 Back in `ExceptronPlatform`, modify the try-catch block to catch two additional classes, `SQLException` and `SuperCoolException`. You'll need to import
@@ -186,7 +187,7 @@ Like before, return `e.toString() + "\n"` from these catch blocks. Your code sho
 
 Right now, because we have the general exception handler we are going to catch and kill catastrophic `RuntimeException`s too. Let's now modify
 our block to catch `RuntimeException`(s). When we catch one of these, we will throw the exception out of the function. To do this,
-simply employ the `throw` keyword followed by your Exception object e.g. (`throw e`). 
+simply employ the `throw` keyword followed by your exception object e.g. (`throw e`). 
 
 A reasonable question one might have: if I throw an exception from a catch block catching a `RunTimeException`, will it then be caught by the 
 catch block below that catches all exceptions? The answer is no. Similarly, one might wonder if an exception can "fall through" a catch block, 
@@ -197,7 +198,7 @@ Once an exception is thrown out of a try block, it is caught by the first block 
 you can throw, return from the function, or allow the program to continue onto the code after the try-catch blocks. None of the other catch blocks
 in that try-catch are involved. If you wanted to emulate the behaviour from the two scenarios above, you could nest try-catch blocks like so:
 
-```
+```java
 try{
     try{
         
@@ -236,7 +237,7 @@ To check String equality in Java don't use `==`. Use the String function [`equal
 
 When your code is working, you should pass test 4 in ExceptronTest.
 
-{ %next %}
+{% next %}
 
 ## Finally
 We `finally` near the end of the lab.
@@ -265,6 +266,8 @@ a catch associated with a try block. In the `finally` block, call the function
 `exceptron.goodBye()`. 
 
 Once you have done this, you should pass test 5 and thus all tests in ExceptronTest.
+
+{% next %}
 
 ## Submission
 
