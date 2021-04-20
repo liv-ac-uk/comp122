@@ -17,6 +17,7 @@ The latter has the following specific tests
 0-5 that can be run like so:
 `java ExceptronTest <Test Number>`
 
+**Note: Don't forget to recompile your code after any changes before running the test files again.**
 Different sections have relevant tests which will be referenced later on.
 
 {% next %}
@@ -28,20 +29,17 @@ Exceptions can thus be though of at a high level as errors that occur at runtime
 
 Digging a bit deeper, there is a root class called `Exception` from which all other exception classes derive. We categorize `Exception` and its children
 into two categories: Runtime exceptions and Checked exceptions. 
-TODO: This is not what I tell them in the lecture/video! (all exceptions are recoverable, `Error`s are not.)
 Runtime exceptions inherit from the `RuntimeException` class and are usually triggered
-by catastrophic errors from which the program should not recover. Examples of this are the `NullPointerException` and `ArrayIndexOutOfBoundsException`
-which we will discuss in detail below. These errors are typically the result of programmer error.
+by catastrophic events. Examples of this are the `NullPointerException` and `ArrayIndexOutOfBoundsException`
+which we will discuss in detail below. These exceptions are typically the result of programmer error, and while the program
+can recover from them, usually they should be thrown so that the program will halt. Because of this, Runtime Exceptions can be thrown by default.
 
 Checked exceptions are all other exception classes that don't inherit from `RuntimeException`. These exceptions
 are triggered by less catastrophic events from which the program potentially could recover. An example of these exceptions
 is the `IOException`, which can be triggered while reading/writing from files. Imagine an instance where we are reading data line by line from
 a file with thousands of lines. If one line is malformed, while the others are correct, we may wish to catch and log the error in the one malformed line
-while still processing the others. 
-
-Beyond philosophical differences, a technical detail to note is that in order to throw a checked exception you must explicitly add the
-"`throws` (name of your Exception)" to the top of the function from which you are throwing. This is unnecessary for unchecked exceptions, as they can be thrown
-by default.
+while still processing the others. Beyond the philosophical differences with Runtime Exceptions there is a technical difference. In order to throw a checked exception 
+you must explicitly add the "`throws` (name of your Exception)" to the top of the function from which you are throwing. 
 
 {% next %}
 
@@ -281,6 +279,8 @@ java ExceptronTest
 The latter has the following specific tests
 0-5 that can be run like so:
 `java ExceptronTest <Test Number>`
+
+**Note: Don't forget to recompile your code after any changes before running the test files again.**
 
 submit via:
 
