@@ -1,12 +1,12 @@
 # Exceptions
 
-This lab aims to cover exceptions and exception Handling, and following completion you should understand the rationale behind exceptions,
+This lab covers Java's exception handling mechanism. Following completion you should understand the rationale behind exceptions,
 how to use try/catch, throw, multi catch and finally blocks.
 
 For an even more elaborate intro check out [Oracle's Exceptions tutorial](https://docs.oracle.com/javase/tutorial/essential/exceptions/index.html).
 We will cover most of the material found there excepting for try with resources, which will be covered in the I/O lab next week.
 
-Note: The document references local tests, you can check your code locally using `SelectFromTest` and `ExceptronTest` like so:
+This lab references local tests, you can check your code locally using `SelectFromTest` and `ExceptronTest` like so:
 
 ```terminal
 java SelectFromTest
@@ -27,19 +27,19 @@ Different sections have relevant tests which will be referenced later on.
 An exception is an event that occurs during the execution of a program that disrupts the normal flow of instructions. 
 Exceptions can thus be though of at a high level as errors that occur at runtime (when running a program) as opposed to a syntactic error that prevents compilation i.e. a compile time error. 
 
-Digging a bit deeper, there is a root class called `Exception` from which all other exception classes derive. We categorize `Exception` and its children
-into two categories: Runtime exceptions and Checked exceptions. 
-Runtime exceptions inherit from the `RuntimeException` class and are usually triggered
-by catastrophic events. Examples of this are the `NullPointerException` and `ArrayIndexOutOfBoundsException`
+Digging a bit deeper, there is a root class called [`Exception`](https://docs.oracle.com/javase/8/docs/api/java/lang/Exception.html) from which all other exception classes derive. We categorize `Exception` and its children
+into two categories: Checked and unchecked exceptions.
+Unchecked exceptions are sometimes called "runtime exceptions", as they are those derived from the `RuntimeException` class (itself a subclass of `Exception`). They are usually triggered
+by "catastrophic" events. Examples of this are the `NullPointerException` and `ArrayIndexOutOfBoundsException`
 which we will discuss in detail below. These exceptions are typically the result of programmer error, and while the program
-can recover from them, usually they should be thrown so that the program will halt. Because of this, Runtime Exceptions can be thrown by default.
+can recover from them, usually they should be thrown so that the program will halt. Because of this, runtime exceptions can be thrown by default.
 
 Checked exceptions are all other exception classes that don't inherit from `RuntimeException`. These exceptions
-are triggered by less catastrophic events from which the program potentially could recover. An example of these exceptions
+are often used for less catastrophic events from which the program potentially could recover more easily. An example of these exceptions
 is the `IOException`, which can be triggered while reading/writing from files. Imagine an instance where we are reading data line by line from
 a file with thousands of lines. If one line is malformed, while the others are correct, we may wish to catch and log the error in the one malformed line
-while still processing the others. Beyond the philosophical differences with Runtime Exceptions there is a technical difference. In order to throw a checked exception 
-you must explicitly add the "`throws` (name of your Exception)" to the top of the function from which you are throwing. 
+while still processing the others. Beyond the philosophical differences with runtime exceptions there is a technical difference: In order to throw a checked exception 
+you must explicitly add the "`throws` (name of your Exception)" to the top of the function from which you are throwing. This allows the compiler to check (hence the name) that a user of your method either handles or re-throws such an exception.
 
 {% next %}
 
@@ -55,7 +55,7 @@ i.e. [0, 1, 2, ..., n-1]. So if your program tries to access an indices greater 
 The most common cause for this to happen is a mistake 
 in a for loop.
 
-[`NullPointerException`](https://docs.oracle.com/javase/9/docs/api/java/lang/NullPointerException.html) are a bit trickier. The `null` value is the default value of all classes which inherit from `Object`.
+[`NullPointerException`](https://docs.oracle.com/javase/9/docs/api/java/lang/NullPointerException.html) are a bit trickier. The `null` value is the default value of all object types, meaning those defined by a class (and thus derive from `Object`.
 This includes all non-primitives such as Strings and arrays.
 It does not include primitives, such as `int`, `float`, etc. who have a default value, such as `0` for `int`.
 A [`NullPointerException`](https://docs.oracle.com/javase/9/docs/api/java/lang/NullPointerException.html) is
@@ -70,7 +70,7 @@ thrown "when an application attempts to use null in a case where an object is re
 
 The first three reasons will be the likeliest culprits in your code, and the biggest root issue in this class so far has been assigning a value to a class variable
 out of a class context (e.g. main) rather than in a class context (e.g. a constructor). For more on this, you can go to the discussion board and view
-the pinned topic "Common NullPointerException Errors".
+the pinned topic ["Common NullPointerException Errors"](https://liverpool.instructure.com/courses/19367/discussion_topics/204746).
 
 {% next %}
 
