@@ -103,7 +103,10 @@ occurs in an external library you should keep reading from the top down until yo
 
 Your first task is to fix `SelectFrom` such that it passes the test in the provided `SelectFromTest.java` file. Note that you do not have to call check50
 to run this, for this week the tests are provided locally
-so that you get used to interpreting stack traces.
+so that you get used to interpreting stack traces. The specific command to run the test is:
+```terminal
+Java SelectFromTest
+```
 
 {% next %}
 
@@ -156,8 +159,13 @@ the catch block explicitly decides to return from the function or throw an excep
 but if instead you merely printed the String the code would pick
 up at the next line after the try-catch block.
 
-To test your code, you can use `ExceptronTest.java`. You can run specific tests by adding the test number as the command line argument. If this
-argument is omitted it will run all the tests. Once the above is completed your code should pass tests 0 and 1.
+Once the above is completed your code should pass tests 0 and 1. 
+To test these, you can use the following commands:
+```terminal
+Java ExceptronTest 0
+Java ExceptronTest 1
+```
+
 
 {% next %}
 
@@ -210,7 +218,11 @@ try{
 ```
 
 
-Upon completion of the section above, your code should now pass tests 2 and 3 in ExceptronTest.
+Upon completion of the section above, your code should now pass tests 2 and 3 in ExceptronTest. You can run these tests with the following commands:
+```terminal
+Java ExceptronTest 2
+Java ExceptronTest 3
+```
 
 {% next %}
 
@@ -233,7 +245,10 @@ Can we check this somehow?
 To check String equality in Java don't use `==`. Use the String function [`equals()`](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#equals(java.lang.Object)). See [this post explaining the difference](https://stackoverflow.com/a/513839/11885326). Basically, `==` compares two objects (Strings) for object identity whereas `String.equals` compares two strings for equality of content.
 {% endspoiler %}
 
-When your code is working, you should pass test 4 in ExceptronTest.
+When your code is working, you should pass test 4 in ExceptronTest. You can test this with the following command:
+```terminal
+Java ExceptronTest 4
+```
 
 {% next %}
 
@@ -263,7 +278,14 @@ To finish off, wrap the for loop from above in a try statement, and then follow 
 a catch associated with a try block. In the `finally` block, call the function
 `exceptron.goodBye()`. 
 
-Once you have done this, you should pass test 5 and thus all tests in ExceptronTest.
+Once you have done this, you should pass test 5 and thus all tests in ExceptronTest. To check test 5 use the following command:
+```terminal
+Java ExceptronTest 5
+```
+To run all the tests you can use the following command:
+```terminal
+Java ExceptronTest
+```
 
 {% next %}
 
