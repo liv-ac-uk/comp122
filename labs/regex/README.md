@@ -20,7 +20,9 @@ For starters, let's search for some simple words in the first few lines of an ol
 
 {% next %}
 
-## Simple Match
+## Find the Rebels
+
+Let us say we wished to search for a specific string, such as the word "Rebel". 
 
 To do this we must first define a matching pattern for the regular expression. As we are trying to match the word "Rebel", in our input we wish to match the characters "R", "e", "b", "e", "l", in sequence. 
 
@@ -33,7 +35,7 @@ Matcher matcher = pattern.matcher(input);
 
 {% next %}
 
-## Find the Rebels
+## Query the Rebels
 
 Now that we have a matched `Matcher` object, we can query this to find the results of our matching. There are three core methods that we will use. `start()`, `end()`, and `find()`. 
 
@@ -63,11 +65,11 @@ Rebel
 
 {% next %}
 
-## Both Sides Make Very String Arguments
+## Both Sides Make String Arguments
 
 Regular expressions are flexible, and there are lots of special characters which enable us to match a range of things very concisely. 
 
-If we were an undecided voter in the galaxy, and we wanted to match with either the rebels or the empire, we could use the regex OR character "|" to match with:
+If we were an undecided voter in the galaxy, and we wanted to match with either the rebels or the empire, we could use the regex OR character "|" to match those two words with:
 
 ```java
 Pattern pattern = Pattern.compile("Rebel|Empire");
@@ -96,7 +98,16 @@ Empire
 
 {% next %}
 
-## Repeated Chars
+## Leia is My Special Character
+
+Regex is practically a dense programming language in its own right. Therefore we often use (online regular expression helpers)[https://regexr.com/] to help us when we work things out, but do remember that Java regex is ever so slightly different to "standard" regex which is a common source of bugs.
+
+- Make a modification to the regex in `Rebel.java` so that it outputs the positions and words for "Rebel", "Empire", and ensure that is also prints out the position of "Princess Leia"
+
+{% next %}
+
+
+## A Range of Character
 
 Many times we do not know the specific characters we are looking for, and we may not know how many times a character should repeat. The art of regex comes in identifying which of the special characters can be combined to match what you are looking for. 
 
@@ -108,16 +119,17 @@ Secondly we can define a range of characters or numbers in regex using `-`, e.g.
 
 Unfortunately this will only match a single capital letter, and we are looking for complete words of capital letters...
 
+{% next %}
+
 ## Quantifiers
 
 We can define how many times to repeat a matching set (or character) in a regex with a number in braces (a quantifier). For example the regex `[A-Z]{5}` would match with all the sequences of five letters which are fully capitalized. We can also use the range rules from earlier, and `[A-Z]{5-7}` would match all 5, 6, and 7 letter capitalized words.
 
-We often don't known how many times we need to repeat a matching character, and therefore regex has some looser quantifiers 
+We often don't known how many times we need to repeat a matching character, and therefore regex has some looser quantifiers.
 
 `+` - One or more, match the previous character at least once, but possibly many times.
 `*` - Zero or more, if the previous character exists, then match it as many times as it repeats. 
 
-As you are beginning to see, regex is practically a dense programming language in its own right. Therefore we often use (online regular expression helpers)[https://regexr.com/] to help us when we work things out, but do remember that Java regex is ever so slightly different to "standard" regex.
 
 {% next %}
 
@@ -129,13 +141,18 @@ For example, the character `\d` matches a single digit from 0-9, and `\w` will m
 
 If you want to be more general and match any character (except for newline) then we use a full-stop character `.` so `.*` would match any number of character until the end of the line. If we wanted to specifically match for a full stop, then we can escape this wild behaviour with a backslash. `\.*` would match any number of full-stops in a row.
 
+{% spoiler "Hint" %}
+You can use a capital letter for the main three wildcards (`\d`, `\w`, `\s`) to invert these. E.g. `\D` selects any non decimal character, `\W` matches any non-ASCII character, and `\S` matches any non-whitespace character. 
+
+{% endspoiler %}
+
 {% next %}
 
 ## I am what I Spam
 
 We will use regular expressions to parse datasets, such as a subset of emails from the (CLAIR dataset of spam emails)[https://www.kaggle.com/rtatman/fraudulent-email-corpus]. If you open this file, you will see that it follows a standard set of lines for the metadata for each email, followed by the message body of the email. 
 
-With the power of regex, let's try and get all the email addresses that are associated with each of these spammers. 
+With the power of regex, let's try and get all the email addresses that are associated with each of these spammers and find out who they were sending emails to. 
 
 {% next %}
 
@@ -159,7 +176,7 @@ Use the `substring()` method to print the string to the terminal
 
 ## Did you get the Email?
 
-If your program is running correctly you should see the following when you run your program.
+If your program is running correctly you should see the following when you run it.
 
 ```
 ...
@@ -199,13 +216,13 @@ If we recompile this and run, what do we see?
 
 There are still two big issues with how our regex is matching emails. First of all, we can have a `.` in the part of the email before the `@`, but here `\\w` will only match `a-z`. Secondly we can see that our emails end with a `>`, this is because `.` will match with this before reaching the space. 
 
-- Modify the regex in `SpamEmail.java` so that it correctly prints every single email addresses in `spam.txt` to the terminal completely, ensuring there are no leading and trailing `<>`s.
+- Modify the regex in `SpamEmail.java` so that it correctly prints every single email addresses in `Spam.txt` to the terminal completely, ensuring there are no leading and trailing `<>`s.
 
 {% next %}
 
 ## Grouping By 
 
-Unfortunately, this is simply giving us all of the email addresses in the document, and isn't actually telling us which of these are from the spammers. 
+Unfortunately, this is simply giving us all of the email addresses in the document, and isn't actually telling us which of these are from the spammers. There's also a lot of repetitions and redundant emails, as we have been too loose with our regex.
 
 What we really want to do is match on the "From:" part of the line, and then ignore everything else in the line until we get to the email address. We then want to take this email address and print it to the terminal. 
 
@@ -213,66 +230,44 @@ We can do this with regular expression capturing groups. A group in a regular ex
 
 In `SpamSender.java` you can see that we have defined a regular expression to match on "From:(.*)". This will match all characters similar to before, however it will save all of the characters after "From:" in a specific group. We can access these using the `matcher.group()` method.
 
-- Modify the regular expression in `SpamSender.java` so that it will return only the email addresses of each of senders of each email.
+{% next %}
 
-<!-- 
-## It's a Match!
+## To and From
 
-Let us say we have a text file, for example a copy of (Websters English Dictionary)[https://www.gutenberg.org/cache/epub/29765/pg29765.txt] (here just the letter C), given in `Dictionary.txt`.
-
-Here's a simple example of how we could search to see if our dictionary contains the word "CLASS". 
+When using groups the regular expression will match the entire regular expression and save this as the first (0th) group. It will then work through each set of brackets and save these in subsequent groups. We access each of these groups via their integer index and the `group()` method. 
 
 ```java
-import java.util.regex.Pattern;
-import java.util.regex.Matcher;
-
-public class GREP {
-    public static void main(String[] args) {
-        Pattern pattern = Pattern.compile("CLASS");
-        Matcher matcher = pattern.matcher(args[0]);
-        boolean matchFound = matcher.find();
-
-        if(matchFound) {
-            System.out.println("Match found");
-        } else {
-            System.out.println("Match not found");
-        }
-    }
-}
+Pattern pattern = Pattern.compile("From:(.*)");
+Matcher matcher = pattern.matcher(spam);
+System.out.println("After From: " + matcher.group(1));
 ```
 
-We can run this with:
+Create a regular expression which will take the email address of the sender at the "From:" line and store this in a group, and then later in the document take the email address of the recipient (the "To:" line) and store this in another group.
 
-```
-$ java Dict
-Match found
-```
+- Modify the regular expression in `SpamSender.java` so that it will print the email addresses of each of senders and recipients of each email.
 
 {% next %}
 
-## Well Defined 
+## Submission
 
-Our lookup program is now fully functional, and all we need to do is change the lookup word in the first line of `main` and we can change what to search for. However it would be even easier if our program just printed the definition instead of us having to look it up. 
+Ensure your `Rebel.java`, `SpamEmail.java`, `SpamFrom.java`, and `SpamSender.java` files compile correctly.
 
-If we look at the format of the Dictionary, we can see that each of the defined words are upper case, with the definitions given after. This means that if we wanted to match this, we would be searching from the start of the line for our word ("CLASS"), followed by all words and punctuation until we reach another word which is upper case. 
+- Make a modification to the regex in `Rebel.java` so that it outputs the positions and words for "Rebel", "Empire", and ensure that is also prints out the position of "Princess Leia"
 
-We build regular expressions up piece by piece, so this could be built up as so:
+- Modify SpamFrom.java so that instead of printing Match Number, Index Start, and Index End it will just print each of the substrings which match the regex
 
-`(` - Capture the expression within these parentheses. 
-`CLASS` - Match the word CLASS 
-`[` - Start a new group of things to match
-`.` - Match any character, number, or standard piece of punctuation.
-`|` - Or 
-`\n` - Match a new line
-`]` - Finish this group
-`*` - Repeat the previous matching group as many times as possible
-`)` - Return this full sequence of characters as a single group
-`[A-Z]` - Finish matching when we come across any of the capital letters A-Z
-`{2}` - Make sure that we only end when there are two capital letters in a row, as we have capital letters in our definitions.
+- Modify the regex in `SpamEmail.java` so that it correctly prints every single email addresses in `Spam.txt` to the terminal completely, ensuring there are no leading and trailing `<>`s.
 
-In code, we combine this into a single string, and we would enter this in Java as:
+- Modify the regular expression in `SpamSender.java` so that it will print the email addresses of each of senders and recipients of each email.
 
-```java
-Pattern pattern = Pattern.compile("(CLASS[.|\n]*)[A-Z]{2}"); -->
+You can check your code with:
+
+```
+check50 liv-ac-uk/comp122/2021/problems/regex/
 ```
 
+And submit via:
+
+```
+submit50 liv-ac-uk/comp122/2021/problems/regex/
+```

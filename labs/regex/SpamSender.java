@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Spam {
     public static void main(String[] args) {
         // First read in the file
-        File input_file = new File("./spam.txt");
+        File input_file = new File("./Spam.txt");
         StringBuffer spam = new StringBuffer(); // Basically, a conglomerate of all of the lines in the file
         String line;
 
@@ -35,7 +35,8 @@ public class Spam {
             System.out.println("Match number: " + count);
             System.out.println("Index Start: " + matcher.start());
             System.out.println("Index End: " + matcher.end());
-            System.out.println("First Group: " + matcher.group(0));
+            System.out.println("Complete Match: " + matcher.group(0));
+            System.out.println("After From: " + matcher.group(1));
         }
     }
 }

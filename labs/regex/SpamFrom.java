@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Spam {
     public static void main(String[] args) {
         // First read in the file
-        File input_file = new File("./spam.txt");
+        File input_file = new File("./Spam.txt");
         StringBuffer spam = new StringBuffer(); // Basically, a conglomerate of all of the lines in the file
         String line;
 
