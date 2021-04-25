@@ -11,6 +11,8 @@ def io_lab_part_one_exists():
 def io_lab_part_one_compiles():
     """IOLabPartOne.java compiles."""
     check50.include("OurData.class")  # copy over OurData
+    check50.include("programs.txt")
+    check50.include("programsTwo.txt")
     check50_java.compile("IOLabPartOne.java")
     
 @check50.check(io_lab_part_one_compiles)
