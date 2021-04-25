@@ -56,14 +56,3 @@ def spam_test_2():
     
     check50_java.run("Spam 2").stdout("marksteven301@netscape.net\s*maraba234@anfmail.com\s*maraba234@latinmail.com\s*mathewike212@juno.com\s*sunnyokogwo@post.cz\s*deacon_zik@yaoo.com\s*mobkuz3@kukamail.com\s*muhammed303@arabtop.net\s*hopkinsmbeki@hknetmail.com\s*mcabacha@freesurf.fr\s*modey06@go.com\s*akindada@indiatimes.com\s*2003vincent@freesurf.fr\s*jamie777@mail.biz.ly\s*jerrypeter2@freesurf.fr\s*mnoah3@hotmail.com\s*JUDE@YAHOO.COM\s*mrbongo@themail.com\s*akumembeki@netscape.net\s*mmaryaabacha8@caramail.com\s*mmaryaabacha8@caramail.com\s*hansob@123.com\s*dtshombe2@123.com\s*ekong.bassey2@caramail.com\s*vas_imoti@abv.bg\s*frankokonjo5@123.com\s*gokalala1@tiscali.co.uk\s*ekong.bassey2@caramail.com\s*hellenshaka@netscape.net\s*fredsam@123.com\s*esamakingdom@fsmail.net\s*", regex=True).exit()
 
-@check50.check(spam_compiles)
-def spam_test_3():
-    """Check Spam.java is returning the correct output for the fourth regex"""
-    
-    check50_java.run("Spam 3").stdout("29\s*34\s*Spam\s*131\s*137\s*Empire\s*158\s*163\s*Spam\s*207\s*213\s*Empire\s*237\s*242\s*DEATH\s*243\s*247\s*STAR\s*337\s*343\s*Empire\s*363\s*376\s*Princess Leia\s*", regex=True).exit()
-
-
-
-
-
-
