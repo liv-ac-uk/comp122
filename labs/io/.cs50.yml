@@ -3,6 +3,7 @@ lab50:
     - !exclude "*"
     - !include "IOLabPartOne.java"
     - !include "OurData.class"
+    - !include "programs.txt"
     
   window:
     - editor
