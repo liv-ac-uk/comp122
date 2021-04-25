@@ -1,6 +1,6 @@
 # Regular Expressions
 
-A reasonably large proportion of practical computer programs work with text files in some capacity. A lot of data comes as raw text, and we must analyse this, process this, and store it consistently. 
+A reasonably large proportion of practical computer programs work with text files in some capacity. A lot of data comes as raw text, and we must analyse this, process this, and store it. 
 
 This has been the case for much of the history of software and an early success was the development of regular expressions to do this consistently. 
 
@@ -278,11 +278,11 @@ Ensure your `Rebel.java` and `Spam.java` files compile correctly.
 You can check your code with:
 
 ```
-check50 liv-ac-uk/comp122/2021/problems/regex/
+check50 liv-ac-uk/comp122/2021/problems/regex
 ```
 
 And submit via:
 
 ```
-submit50 liv-ac-uk/comp122/2021/problems/regex/
+submit50 liv-ac-uk/comp122/2021/problems/regex
 ```

@@ -1,29 +1,23 @@
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.io.File;
+import java.io.IOException;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+import java.nio.file.Files;
 
 public class Spam {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         // First read in the file
         String spam = getSpam();    
 
         Matcher matcher = matchFrom(spam);
-            int count = 0;
-            // // Loop through our matches
-            // while(matcher.find()) {
-            //     count++;
-            //     System.out.println("Match number: " + count);
-            //     System.out.println("Index Start: " + matcher.start());
-            //     System.out.println("Index End: " + matcher.end());
-            // }
             
         if (args[0].equals("0")) {
             System.out.println(spam);
             // Define our pattern and matches
             matcher = matchFrom(spam);
-            count = 0;
+            int count = 0;
             // Loop through our matches
             while(matcher.find()) {
                 count++;
@@ -46,32 +40,13 @@ public class Spam {
 
             // Loop through our matches
         }
-
-        if (args[0].equals("3")) {
-            // Define our pattern and matches
-            matcher = matchRecipients(spam);
-
-            // Loop through our matches
-        }
     }
 
-    public static String getSpam() {
-        File input_file = new File("./Spam.txt");
-        StringBuffer spam = new StringBuffer(); // Basically, a conglomerate of all of the lines in the file
-        String line;
+    public static String getSpam() throws IOException {
+        File file = new File("./Spam.txt");
+        String fileContent = Files.readString(file.toPath());
 
-        try {
-            Scanner file_reader = new Scanner(input_file);
-
-            while (file_reader.hasNext()) {
-                spam.append("\n" + file_reader.nextLine());
-            }
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-
-        return spam.toString();
+        return fileContent;
     }
 
     public static Matcher matchFrom(String input) {
