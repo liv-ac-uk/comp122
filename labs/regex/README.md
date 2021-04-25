@@ -75,7 +75,7 @@ If we were an undecided voter in the galaxy, and we wanted to match with either 
 Pattern pattern = Pattern.compile("Rebel|Empire");
 ```
 
-If we were to recompile our program and run it we would see that it has matched on both of these words in the input
+If we were to match this in our program and run it we would see that it has matched on both of these words in the input
 
 ```
 $ java Rebel
@@ -96,13 +96,15 @@ Empire
 Empire
 ```
 
+- Modify the `matchEmpire()` method so that your program prints these matches to the terminal. 
+
 {% next %}
 
 ## Leia is My Special Character
 
 Regex is practically a dense programming language in its own right. Therefore we often use (online regular expression helpers)[https://regexr.com/] to help us when we work things out, but do remember that Java regex is ever so slightly different to "standard" regex which is a common source of bugs.
 
-- Make a modification to the regex in `Rebel.java` so that it outputs the positions and words for "Rebel", "Empire", and ensure that is also prints out the position of "Princess Leia"
+- Make a modification to the regex in `matchLeia()` so that it outputs the positions and words for "Rebel", "Empire", and ensure that is also prints out the position of "Princess Leia"
 
 {% next %}
 
@@ -121,7 +123,7 @@ Unfortunately this will only match a single capital letter, and we are looking f
 
 {% next %}
 
-## Quantifiers
+## Set Your Boundaries
 
 We can define how many times to repeat a matching set (or character) in a regex with a number in braces (a quantifier). For example the regex `[A-Z]{5}` would match with all the sequences of five letters which are fully capitalized. We can also use the range rules from earlier, and `[A-Z]{5-7}` would match all 5, 6, and 7 letter capitalized words.
 
@@ -130,6 +132,13 @@ We often don't known how many times we need to repeat a matching character, and 
 `+` - One or more, match the previous character at least once, but possibly many times.
 `*` - Zero or more, if the previous character exists, then match it as many times as it repeats. 
 
+If we made the regex `[A-Z]*` this would also match with each space in our string as this matches zero or more. We must also tell the regex to only start scanning for matching patterns once we have reached a boundary.
+
+- `^` Start of line anchor
+- `\\b` Start or end of a word (a word boundary)
+- `$` End of line anchor
+
+- Modify `Rebel.java` so that the method `matchUpper()` prints out the positions of "Rebel", "Empire", "Princess Leia", as well as all of the fully capitalized words (and no other words).
 
 {% next %}
 
@@ -137,12 +146,14 @@ We often don't known how many times we need to repeat a matching character, and 
 
 To save space in the regex, we can use wildcards instead of matching sets. These are simple escape characters (similar to the `\n` escape character that you are used to using) which match specific sets. 
 
-For example, the character `\d` matches a single digit from 0-9, and `\w` will match any ASCII character, including letters, numbers, and standard punctuation. Additionally, the `\s` character will match a single whitespace character, such as space, tab, or newline.
+For example, the character `\\d` matches a single digit from 0-9, and `\\w` will match any ASCII character, including letters, numbers, and standard punctuation. Additionally, the `\\s` character will match a single whitespace character, such as space, tab, or newline.
 
-If you want to be more general and match any character (except for newline) then we use a full-stop character `.` so `.*` would match any number of character until the end of the line. If we wanted to specifically match for a full stop, then we can escape this wild behaviour with a backslash. `\.*` would match any number of full-stops in a row.
+If you want to be more general and match any character (except for newline) then we use a full-stop character `.` so `.*` would match any number of character until the end of the line. If we wanted to specifically match for a full stop, then we can escape this wild behaviour with a backslash. `\\.*` would match any number of full-stops in a row.
+
+- Modify your regex so that it also outputs the positions of all upper class words in the script 
 
 {% spoiler "Hint" %}
-You can use a capital letter for the main three wildcards (`\d`, `\w`, `\s`) to invert these. E.g. `\D` selects any non decimal character, `\W` matches any non-ASCII character, and `\S` matches any non-whitespace character. 
+You can use a capital letter for the main three wildcards (`\\d`, `\\w`, `\\s`) to invert these. E.g. `\\D` selects any non decimal character, `\\W` matches any non-ASCII character, and `\\S` matches any non-whitespace character. 
 
 {% endspoiler %}
 
@@ -164,9 +175,15 @@ We know that each of the headers contains the line "From:......" which has the s
 Pattern pattern = Pattern.compile("From:.*");
 ```
 
-Given that we have covered IO in the previous lab, we will use a `Scanner` class to read in this text file as a single string. You can run this basic regex with Spam.java. 
+Given that we have covered IO in the previous lab, we will use a `Scanner` class to read in this text file as a single string. You can run this basic regex with Spam.java. You can run this program as 
 
-- Modify SpamFrom.java so that instead of printing Match Number, Index Start, and Index End it will just print each of the substrings which match the regex
+```
+$ java Spam 0
+```
+
+
+
+- Modify `Spam.java`, `main` method so that instead of printing Match Number, Index Start, and Index End it will just print each of the substrings which match the regex for `matchFrom()`
 
 {% spoiler "Hint" %}
 Use the `substring()` method to print the string to the terminal
@@ -192,19 +209,19 @@ This is pulling our desired information out, but we really just want the email.
 
 To do this in regex we can look for the `@` symbol, as we know that all emails must contain an `@`. We could search for all words which contain any number of characters (apart from space) followed by an `@`, followed by any number of characters.
 
-We can use the escape character `\w` to match any character, but in Java `String`s the `\` character indicates an escape sequence, so this won't actually get passed to the regex compiler. To pass escape characters to `Pattern.compile` properly we need to use a double slash `\\w`.
+We can use the escape character `\\w` to match any character, but in Java `String`s the `\` character indicates an escape sequence, so this won't actually get passed to the regex compiler. This is why when passing escape characters to `Pattern.compile` properly we need to use a double slash `\\w`.
 
 ```java
 Pattern pattern = Pattern.compile("\\w*@\\w*");
 ```
 
-Compile this program and see the output.
+- Compile this program calling the `matchEmail()` method in `main()` and see the output.
 
 {% next %}
 
 ## Better Spam
 
-We can see that this isn't really getting us the emails correctly. The `\w` regex character only matches alpha characters, and the second half of email addresses normally contain one (or more) `.`'s.
+We can see that this isn't really getting us the emails correctly. The `\\w` regex character only matches alpha characters, and the second half of email addresses normally contain one (or more) `.`'s.
 
 We can change this second `\\w` to a `.` 
 
@@ -216,7 +233,7 @@ If we recompile this and run, what do we see?
 
 There are still two big issues with how our regex is matching emails. First of all, we can have a `.` in the part of the email before the `@`, but here `\\w` will only match `a-z`. Secondly we can see that our emails end with a `>`, this is because `.` will match with this before reaching the space. 
 
-- Modify the regex in `SpamEmail.java` so that it correctly prints every single email addresses in `Spam.txt` to the terminal completely, ensuring there are no leading and trailing `<>`s.
+- Modify the regex in `matchEmail()` so that it correctly prints every single email addresses in `Spam.txt` to the terminal completely, ensuring there are no leading and trailing `<>`s.
 
 {% next %}
 
@@ -228,7 +245,7 @@ What we really want to do is match on the "From:" part of the line, and then ign
 
 We can do this with regular expression capturing groups. A group in a regular expression is defined by `()`. This enables us to focus on a particular region of interest.
 
-In `SpamSender.java` you can see that we have defined a regular expression to match on "From:(.*)". This will match all characters similar to before, however it will save all of the characters after "From:" in a specific group. We can access these using the `matcher.group()` method.
+In `Spam.java` you can see that we have defined a regular expression to match senders in `matchSenders()`. `"From:(.*)"` will match all characters similar to before, however it will save all of the characters after "From:" in a specific group. We can access these using the `matcher.group()` method.
 
 {% next %}
 
@@ -242,9 +259,11 @@ Matcher matcher = pattern.matcher(spam);
 System.out.println("After From: " + matcher.group(1));
 ```
 
-Create a regular expression which will take the email address of the sender at the "From:" line and store this in a group, and then later in the document take the email address of the recipient (the "To:" line) and store this in another group.
+Create a regular expression which will take the email address of the sender at the "From:" line and store this in a group. This can be expanded to also ignore all characters until it matches "To:", whereupon we can take the recipients email as well.
 
-- Modify the regular expression in `SpamSender.java` so that it will print the email addresses of each of senders and recipients of each email.
+- Modify the `matchSenders()` regular expression in `Spam.java` so that it will print the email addresses of each of senders of each email once only.
+
+- Modify the `matchRecipients()` regular expression in `Spam.java` so that it will print the email addresses of each of senders of each email once only, followed by the recipient of that email.
 
 {% next %}
 
