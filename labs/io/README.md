@@ -106,15 +106,25 @@ We now have everything we need to do the final exercise.
 
 ## Parsing a Stuctured Text File
 
-Examine the file "programs.txt". It contains Program Descriptions, a form of data describing a computer program being applied to a problem, all of which have 6 fields.
-Of these 6 fields, "problem" and "program"  are of type `String`, "program_length", "passed_tests", "total_tests" are of type `int`, and "correct" is of type `boolean`.
-Before these 6 fields is `"Program Description <n>"`, where n corresponds to the Program Description's order in the file, and after these 6 fields is a blank line.
+Examine the file "programs.txt". It contains Program Descriptions, a form of data describing a computer program being applied to a problem, all of which have 6 fields that 
+adhere to the format "fieldName-fieldValue" i.e. the name of the field, followed by "-", followed by the value of the field.
+Of these 6 fields, 
+- "problem" and "program"  are of type `String`, 
+- "program_length", "passed_tests", "total_tests" are of type `int`, and 
+- "correct" is of type `boolean`.
+Before these 6 fields is `"Program Description n"`, where n corresponds to the Program Description's order in the file, and after these 6 fields is a blank line.
 
+### TODO
 In the included file `IOLabPartOne.java` modify the function `parseStructuredTextFile(Path path)`, where path is the corresponding file path to the file of interest, such that
 it returns an `ArrayList<OurData>` corresponding to data in the file. You can be assured that the file will be in the same format as 
-`programs.txt`, though the values and number of entries may be different in tests. You need to read fields into `OurData` as their appropriate type
-e.g. "program_length" needs to be an int, so you'll need its value to be parsed as int with `Integer.parseInt` before storing it with setField("program_length", value).
-In the case where an IOException is encountered, let it be thrown. By default, the starter code throws IOExceptions, so you do not need to make any changes.
+`programs.txt`, though the values and number of entries may be different in tests. 
+
+You need to read fields into `OurData` as their appropriate type
+e.g. "program_length" needs to be an `int`, so you'll need its value to be parsed as `int` with `Integer.parseInt` before storing it with `setField("program_length", value)`.
+
+Remember that `Integer.parseInt` can throw an exception. Which one?
+In the case where an `IOException` is encountered you can just re-throw it. The starter code already does this
+so you do not need to make any changes here.
 
 You'll notice the long comments in the starter code, you should read these as they give significant hints on how to approach the problem. If you are confused
 about the String substring or split functions mentioned in these comments you can consult the String javadoc [here](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html).
