@@ -1,0 +1,14 @@
+lab50:
+  files:
+    - !exclude "*"
+    - !include SpamEmail.java
+    - !include SpamFrom.java
+    - !include SpamSender.java
+    - !include Dictionary.txt
+    - !include Spam.txt
+    - !include Rebel.java
+    
+  window:
+    - editor
+    - readme
+    - terminal
