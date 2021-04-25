@@ -259,25 +259,21 @@ Matcher matcher = pattern.matcher(spam);
 System.out.println("After From: " + matcher.group(1));
 ```
 
-Create a regular expression which will take the email address of the sender at the "From:" line and store this in a group. This can be expanded to also ignore all characters until it matches "To:", whereupon we can take the recipients email as well.
-
 - Modify the `matchSenders()` regular expression in `Spam.java` so that it will print the email addresses of each of senders of each email once only.
-
-- Modify the `matchRecipients()` regular expression in `Spam.java` so that it will print the email addresses of each of senders of each email once only, followed by the recipient of that email.
 
 {% next %}
 
 ## Submission
 
-Ensure your `Rebel.java`, `SpamEmail.java`, `SpamFrom.java`, and `SpamSender.java` files compile correctly.
+Ensure your `Rebel.java` and `Spam.java` files compile correctly.
 
-- Make a modification to the regex in `Rebel.java` so that it outputs the positions and words for "Rebel", "Empire", and ensure that is also prints out the position of "Princess Leia"
+- Make a modification to the regex in `Rebel.java` so that it outputs the positions and words for "Rebel", "Empire", and ensure that is also prints out the position of "Princess Leia", as well as all upper case words for each of the respective methods.
 
-- Modify SpamFrom.java so that instead of printing Match Number, Index Start, and Index End it will just print each of the substrings which match the regex
+- Modify `Spam.java` so that instead of printing Match Number, Index Start, and Index End it will just print each of the substrings which match the regex
 
-- Modify the regex in `SpamEmail.java` so that it correctly prints every single email addresses in `Spam.txt` to the terminal completely, ensuring there are no leading and trailing `<>`s.
+- Modify the regex in `matchEmails()` so that it correctly prints every single email addresses in `Spam.txt` to the terminal completely, ensuring there are no leading and trailing `<>`s.
 
-- Modify the regular expression in `SpamSender.java` so that it will print the email addresses of each of senders and recipients of each email.
+- Modify the regular expression in `matchSenders()` so that it will print the email addresses of each of senders of each email.
 
 You can check your code with:
 
