@@ -1,0 +1,10 @@
+lab50:
+  files:
+    - !exclude "*"
+    - !include "IOLabPartOne.java"
+    - !include "OurData.class"
+    
+  window:
+    - editor
+    - readme
+    - terminal
