@@ -14,9 +14,11 @@ As these are such common operations, there are some included classes with the Ja
 
 The standard usage is to define a regular expression that we wish to match, and compile this `Pattern`. We then take the string that we wish to match and compare our regular expression against this with `Matcher`.
 
-For starters, let's search for some simple words in the first few lines of an old American folktale:
+For starters, let's search for some simple words in the first few lines of an old American folk-tale:
 
-"It is a period of civil war. Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire. During the battle, Rebel spies managed to steal secret plans to the Empire's ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet. Pursued by the Empire's sinister agents, Princess Leia races home aboard her starship, custodian of the stolen plans that can save her people and restore freedom to the galaxy..."
+```txt
+It is a period of civil war. Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire. During the battle, Rebel spies managed to steal secret plans to the Empire's ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet. Pursued by the Empire's sinister agents, Princess Leia races home aboard her starship, custodian of the stolen plans that can save her people and restore freedom to the galaxy...
+```
 
 {% next %}
 
@@ -69,7 +71,7 @@ Rebel
 
 Regular expressions are flexible, and there are lots of special characters which enable us to match a range of things very concisely. 
 
-If we were an undecided voter in the galaxy, and we wanted to match with either the rebels or the empire, we could use the regex OR character "|" to match those two words with:
+If we were an undecided voter in the galaxy, and we wanted to match with either the rebels or the empire, we could use the regex OR character `"|"` to match those two words with:
 
 ```java
 Pattern pattern = Pattern.compile("Rebel|Empire");
@@ -102,7 +104,7 @@ Empire
 
 ## Leia is My Special Character
 
-Regex is practically a dense programming language in its own right. Therefore we often use (online regular expression helpers)[https://regexr.com/] to help us when we work things out, but do remember that Java regex is ever so slightly different to "standard" regex which is a common source of bugs.
+Regex is practically a dense programming language in its own right. Therefore we often use [online regular expression helpers](https://regexr.com/) to help us when we work things out, but do remember that Java regex is ever so slightly different to "standard" regex which is a common source of bugs.
 
 - Make a modification to the regex in `matchLeia()` so that it outputs the positions and words for "Rebel", "Empire", and ensure that is also prints out the position of "Princess Leia"
 
@@ -115,7 +117,7 @@ Many times we do not know the specific characters we are looking for, and we may
 
 Let's say we wanted to search for any word that is fully capitalized with a regular expression, to do this we can combine a few of these standard tricks. 
 
-First, we can define a character set with `[]`, which means match any of the characters within the square brackets. For example if we were building a spell checker and we did not mind if people used British or American spelling of words, in our lookup dictionary for the word "organize" we might have the regular expression `"organi[sz]e".
+First, we can define a character set with `[]`, which means match any of the characters within the square brackets. For example if we were building a spell checker and we did not mind if people used British or American spelling of words, in our lookup dictionary for the word "organize" we might have the regular expression `"organi[sz]e"`.
 
 Secondly we can define a range of characters or numbers in regex using `-`, e.g. `[F-L]` would match any character between capital F and capital L, and `[0-9]` would match any single character. Therefore to match any capital letter we can use `[A-Z]`.
 
@@ -135,7 +137,11 @@ We often don't known how many times we need to repeat a matching character, and 
 If we made the regex `[A-Z]*` this would also match with each space in our string as this matches zero or more. We must also tell the regex to only start scanning for matching patterns once we have reached a boundary.
 
 - `^` Start of line anchor
+<<<<<<< HEAD
+- `\b` Start or end of a word (a word boundary)
+=======
 - `\\b` Start or end of a word (a word boundary)
+>>>>>>> 338fe24940614b5032c3121592d0e1b038444d20
 - `$` End of line anchor
 
 - Modify `Rebel.java` so that the method `matchUpper()` prints out the positions of "Rebel", "Empire", "Princess Leia", as well as all of the fully capitalized words (and no other words).
@@ -152,16 +158,25 @@ If you want to be more general and match any character (except for newline) then
 
 - Modify your regex so that it also outputs the positions of all upper class words in the script 
 
+####Caution!
+If you want to include any of the above mentioned special characters in a String literal, then you need to escape the backslash with another backslash. For instance, a string literal containing the regular expression `(\d\d)*` (an even number of digits) would have to be written as `"(\\d\\d)*"`. This is in order for `""`, the implicit constructor methof for the `String` class, needs to distinguish between the string containing special character `\d` and the two-character string containing a backslash followed by a `d`.
+
+- Modify your regex so that it also outputs the positions of all upper class words in the script 
+
 {% spoiler "Hint" %}
+<<<<<<< HEAD
+You can use a capital letter for the main three wildcards (`\d`, `\w`, `\s`) to invert these. E.g. `\D` selects any non decimal character, `\W` matches any non-ASCII character, and `\S` matches any non-whitespace character. 
+=======
 You can use a capital letter for the main three wildcards (`\\d`, `\\w`, `\\s`) to invert these. E.g. `\\D` selects any non decimal character, `\\W` matches any non-ASCII character, and `\\S` matches any non-whitespace character. 
 
+>>>>>>> 338fe24940614b5032c3121592d0e1b038444d20
 {% endspoiler %}
 
 {% next %}
 
 ## I am what I Spam
 
-We will use regular expressions to parse datasets, such as a subset of emails from the (CLAIR dataset of spam emails)[https://www.kaggle.com/rtatman/fraudulent-email-corpus]. If you open this file, you will see that it follows a standard set of lines for the metadata for each email, followed by the message body of the email. 
+We will use regular expressions to parse datasets, such as a subset of emails from the [CLAIR dataset of spam emails](https://www.kaggle.com/rtatman/fraudulent-email-corpus). If you open this file, you will see that it follows a standard set of lines for the metadata for each email, followed by the message body of the email. 
 
 With the power of regex, let's try and get all the email addresses that are associated with each of these spammers and find out who they were sending emails to. 
 
@@ -180,9 +195,15 @@ Given that we have covered IO in the previous lab, we will use a `Scanner` class
 ```
 $ java Spam 0
 ```
+<<<<<<< HEAD
 
 
 
+=======
+
+
+
+>>>>>>> 338fe24940614b5032c3121592d0e1b038444d20
 - Modify `Spam.java`, `main` method so that instead of printing Match Number, Index Start, and Index End it will just print each of the substrings which match the regex for `matchFrom()`
 
 {% spoiler "Hint" %}
@@ -209,7 +230,11 @@ This is pulling our desired information out, but we really just want the email.
 
 To do this in regex we can look for the `@` symbol, as we know that all emails must contain an `@`. We could search for all words which contain any number of characters (apart from space) followed by an `@`, followed by any number of characters.
 
+<<<<<<< HEAD
+We can use the escape character `\w` to match any character, but in Java `String`s the `\ ` character indicates an escape sequence, so this won't actually get passed to the regex compiler. This is why when passing escape characters to `Pattern.compile` properly we need to use a double slash `\\w`.
+=======
 We can use the escape character `\\w` to match any character, but in Java `String`s the `\` character indicates an escape sequence, so this won't actually get passed to the regex compiler. This is why when passing escape characters to `Pattern.compile` properly we need to use a double slash `\\w`.
+>>>>>>> 338fe24940614b5032c3121592d0e1b038444d20
 
 ```java
 Pattern pattern = Pattern.compile("\\w*@\\w*");
