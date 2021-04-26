@@ -156,7 +156,7 @@ For example, the character `\d` matches a single digit from 0-9, and `\w` will m
 
 If you want to be more general and match any character (except for newline) then we use a full-stop character `.` so `.*` would match any number of character until the end of the line. If we wanted to specifically match for a full stop, then we can escape this wild behaviour with a backslash. `\.*` would match any number of full-stops in a row.
 
-####Caution!
+#### Caution! A word on Escaping..
 If you want to include any of the above mentioned special characters in a String literal, then you need to escape the backslash with another backslash. For instance, a string literal containing the regular expression `(\d\d)*` (an even number of digits) would have to be written as `"(\\d\\d)*"`. This is in order for `""`, the implicit constructor methof for the `String` class, needs to distinguish between the string containing special character `\d` and the two-character string containing a backslash followed by a `d`.
 
 - Modify your regex so that it also outputs the positions of all upper class words in the script 
