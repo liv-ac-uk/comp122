@@ -141,7 +141,7 @@ We often don't known how many times we need to repeat a matching character, and 
 If we made the regex `[A-Z]*` this would also match with each space in our string as this matches zero or more. We must also tell the regex to only start scanning for matching patterns once we have reached a boundary.
 
 - `^` Start of line anchor
-- `\b` Start or end of a word (a word boundary)
+- `\\b` Start or end of a word (a word boundary)
 - `$` End of line anchor
 
 - Modify `Rebel.java` so that the method `matchUpper()` prints out the positions of "Rebel", "Empire", "Princess Leia", as well as all of the fully capitalized words (and no other words).
@@ -266,6 +266,8 @@ Pattern pattern = Pattern.compile("From:(.*)");
 Matcher matcher = pattern.matcher(spam);
 System.out.println("After From: " + matcher.group(1));
 ```
+
+Many spam email addresses do not give a name, for ease we can discard these and simply focus on those emails with a name associated.
 
 - Modify the `matchSenders()` regular expression in `Spam.java` so that it will print the email addresses of each of senders of each email once only.
 
