@@ -137,11 +137,7 @@ We often don't known how many times we need to repeat a matching character, and 
 If we made the regex `[A-Z]*` this would also match with each space in our string as this matches zero or more. We must also tell the regex to only start scanning for matching patterns once we have reached a boundary.
 
 - `^` Start of line anchor
-<<<<<<< HEAD
 - `\b` Start or end of a word (a word boundary)
-=======
-- `\\b` Start or end of a word (a word boundary)
->>>>>>> 338fe24940614b5032c3121592d0e1b038444d20
 - `$` End of line anchor
 
 - Modify `Rebel.java` so that the method `matchUpper()` prints out the positions of "Rebel", "Empire", "Princess Leia", as well as all of the fully capitalized words (and no other words).
@@ -152,11 +148,9 @@ If we made the regex `[A-Z]*` this would also match with each space in our strin
 
 To save space in the regex, we can use wildcards instead of matching sets. These are simple escape characters (similar to the `\n` escape character that you are used to using) which match specific sets. 
 
-For example, the character `\\d` matches a single digit from 0-9, and `\\w` will match any ASCII character, including letters, numbers, and standard punctuation. Additionally, the `\\s` character will match a single whitespace character, such as space, tab, or newline.
+For example, the character `\d` matches a single digit from 0-9, and `\w` will match any ASCII character, including letters, numbers, and standard punctuation. Additionally, the `\s` character will match a single whitespace character, such as space, tab, or newline.
 
-If you want to be more general and match any character (except for newline) then we use a full-stop character `.` so `.*` would match any number of character until the end of the line. If we wanted to specifically match for a full stop, then we can escape this wild behaviour with a backslash. `\\.*` would match any number of full-stops in a row.
-
-- Modify your regex so that it also outputs the positions of all upper class words in the script 
+If you want to be more general and match any character (except for newline) then we use a full-stop character `.` so `.*` would match any number of character until the end of the line. If we wanted to specifically match for a full stop, then we can escape this wild behaviour with a backslash. `\.*` would match any number of full-stops in a row.
 
 ####Caution!
 If you want to include any of the above mentioned special characters in a String literal, then you need to escape the backslash with another backslash. For instance, a string literal containing the regular expression `(\d\d)*` (an even number of digits) would have to be written as `"(\\d\\d)*"`. This is in order for `""`, the implicit constructor methof for the `String` class, needs to distinguish between the string containing special character `\d` and the two-character string containing a backslash followed by a `d`.
@@ -164,12 +158,7 @@ If you want to include any of the above mentioned special characters in a String
 - Modify your regex so that it also outputs the positions of all upper class words in the script 
 
 {% spoiler "Hint" %}
-<<<<<<< HEAD
 You can use a capital letter for the main three wildcards (`\d`, `\w`, `\s`) to invert these. E.g. `\D` selects any non decimal character, `\W` matches any non-ASCII character, and `\S` matches any non-whitespace character. 
-=======
-You can use a capital letter for the main three wildcards (`\\d`, `\\w`, `\\s`) to invert these. E.g. `\\D` selects any non decimal character, `\\W` matches any non-ASCII character, and `\\S` matches any non-whitespace character. 
-
->>>>>>> 338fe24940614b5032c3121592d0e1b038444d20
 {% endspoiler %}
 
 {% next %}
@@ -195,15 +184,9 @@ Given that we have covered IO in the previous lab, we will use a `Scanner` class
 ```
 $ java Spam 0
 ```
-<<<<<<< HEAD
 
 
 
-=======
-
-
-
->>>>>>> 338fe24940614b5032c3121592d0e1b038444d20
 - Modify `Spam.java`, `main` method so that instead of printing Match Number, Index Start, and Index End it will just print each of the substrings which match the regex for `matchFrom()`
 
 {% spoiler "Hint" %}
@@ -230,11 +213,7 @@ This is pulling our desired information out, but we really just want the email.
 
 To do this in regex we can look for the `@` symbol, as we know that all emails must contain an `@`. We could search for all words which contain any number of characters (apart from space) followed by an `@`, followed by any number of characters.
 
-<<<<<<< HEAD
 We can use the escape character `\w` to match any character, but in Java `String`s the `\ ` character indicates an escape sequence, so this won't actually get passed to the regex compiler. This is why when passing escape characters to `Pattern.compile` properly we need to use a double slash `\\w`.
-=======
-We can use the escape character `\\w` to match any character, but in Java `String`s the `\` character indicates an escape sequence, so this won't actually get passed to the regex compiler. This is why when passing escape characters to `Pattern.compile` properly we need to use a double slash `\\w`.
->>>>>>> 338fe24940614b5032c3121592d0e1b038444d20
 
 ```java
 Pattern pattern = Pattern.compile("\\w*@\\w*");
@@ -246,7 +225,7 @@ Pattern pattern = Pattern.compile("\\w*@\\w*");
 
 ## Better Spam
 
-We can see that this isn't really getting us the emails correctly. The `\\w` regex character only matches alpha characters, and the second half of email addresses normally contain one (or more) `.`'s.
+We can see that this isn't really getting us the emails correctly. The `\w` regex character only matches alpha characters, and the second half of email addresses normally contain one (or more) `.`'s.
 
 We can change this second `\\w` to a `.` 
 
