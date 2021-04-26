@@ -6,14 +6,16 @@ check50:
     - !exclude "*"
     - !include "Rebel.java"
     - !include "Spam.java"
-
+    - !include "Spam.txt"
+    
     
 
 
 submit50:
-  slug: "liv-ac-uk/comp122/2021/regex"
+  slug: "liv-ac-uk/comp122/2021/word"
   files:
     - !exclude "*"
     - !include "Rebel.java"
     - !include "Spam.java"
+    - !include "Spam.txt"
     
