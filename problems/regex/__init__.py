@@ -5,6 +5,7 @@ import os
 @check50.check()
 def rebel_compiles():
     """Rebel.java compiles"""
+    check50.include("Spam.txt")
     check50_java.compile("Rebel.java")
 
 @check50.check(rebel_compiles)
