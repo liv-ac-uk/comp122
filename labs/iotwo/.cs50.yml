@@ -1,0 +1,13 @@
+lab50:
+  files:
+    - !exclude "*"
+    - !include "IOLabPartTwo.java"
+    - !include "OurData.class"
+    - !include "OurData.java"
+    - !include "programs.txt"
+    - !include "programs.csv"
+    
+  window:
+    - editor
+    - readme
+    - terminal
