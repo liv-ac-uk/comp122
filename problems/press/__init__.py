@@ -10,6 +10,16 @@ def book_exists():
 
 
 @check50.check(book_exists)
+def book_nonempty():
+    """Verify that Book.java is non-empty"""
+    filename = "Book.java"
+    with open(filename) as f:
+        content = f.read()
+    if not content:
+        raise check50.Failure(filename + " is empty!")
+
+
+@check50.check(book_nonempty)
 def book_compiles():
     """Book.java compiles."""
     check50_java.compile("Book.java")
@@ -78,6 +88,16 @@ def press_exists():
 
 
 @check50.check(press_exists)
+def press_nonempty():
+    """Verify that Press.java is non-empty"""
+    filename = "Press.java"
+    with open(filename) as f:
+        content = f.read()
+    if not content:
+        raise check50.Failure(filename + " is empty!")
+
+
+@check50.check(press_nonempty)
 def press_compiles():
     """Press.java compiles."""
     check50_java.compile("Press.java")
@@ -146,6 +166,16 @@ def vm_exists():
 
 
 @check50.check(vm_exists)
+def vm_nonempty():
+    """Verify that VendingMachine.java is non-empty"""
+    filename = "VendingMachine.java"
+    with open(filename) as f:
+        content = f.read()
+    if not content:
+        raise check50.Failure(filename + " is empty!")
+
+
+@check50.check(vm_nonempty)
 def vm_compiles():
     """VendingMachine.java compiles."""
     check50_java.compile("VendingMachine.java")
