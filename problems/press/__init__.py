@@ -95,7 +95,7 @@ def press_testEditionField():
 
 @check50.check(press_compiles)
 def press_testShelfField():
-    """Press.locationFactor declared as private attribute"""
+    """Press.shelf declared as private attribute"""
     check50_junit.run_and_interpret_test(
         classpaths=['tests/'],
         args=['--select-method', 'PressTest#testShelfField'])
