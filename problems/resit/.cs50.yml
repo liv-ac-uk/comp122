@@ -1,0 +1,16 @@
+check50:
+  dependencies:
+    - check50-java
+    - check50-junit
+    - check50-checkstyle
+  files:
+    - !exclude "*"
+    - !include "*.java"
+    - !include "*.pdf"
+
+submit50:
+  slug: "liv-ac-uk/comp122/2020/resit"
+  files:
+    - !exclude "*"
+    - !include "*.java"
+    - !include "*.pdf"
