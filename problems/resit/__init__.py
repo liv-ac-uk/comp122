@@ -5,11 +5,6 @@ import check50_checkstyle
 import re
 
 
-@check50.check()
-def report_exists():
-    """report exists"""
-    check50.exists("report.pdf")
-
 #####################################
 # Item
 #####################################
@@ -540,3 +535,10 @@ def basket_checkstyle_javadoc_picky():
         checks_file=style_file,
         rationale="{report}",
         target=target)
+
+
+@check50.check()
+def report_exists():
+    """UML diagram exists"""
+    check50.exists("UML.pdf")
+
