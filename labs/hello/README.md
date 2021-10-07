@@ -47,7 +47,7 @@ Now run the program by executing the below. Notice that the parameter is just th
 java Hello
 ```
 
-Hello, world, indeed!
+Hello world, indeed!
 
 {% next %}
 
@@ -102,7 +102,7 @@ Hello there again!
 
 ## Getting User Input
 
-Suffice it to say, our program is boring because it only ever prints `hello, world!`. Let's personalize it a bit.
+Suffice it to say, our program is boring because it only ever prints `Hello world!`. Let's personalize it a bit.
 
 Modify this program in such a way that it first prompts the user for their name and then prints "Hello so-and-so !", where `so-and-so` is their actual name.
 
@@ -127,8 +127,9 @@ This is an early example of the *information hiding* principle: You can use this
 ## How to submit your solution
 
 You can submit your solution to this exercise through Canvas:
-Go to the COMP122 course; then Assignments; then chose "hello".
+Go to the COMP122 course; then chose "Week 1 Lab: hello" under Assignments.
 Once submitted you should get some automated feedback on your code.
+You can submit a solution and trigger the auto-marking as often as you like.
 
 This will work throughout the semester for all lab exercises and coursework.
 You do not need to perfectly solve or submit every exercise and we will not manually grade these exercises (only the assignments).
