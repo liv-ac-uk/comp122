@@ -1,0 +1,10 @@
+lab50:
+  files:
+    - !exclude "*"
+    - !include Hello.java
+    - !include Comp122.class
+    
+  window:
+    - editor
+    - readme
+    - terminal
