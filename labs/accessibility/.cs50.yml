@@ -1,9 +1,0 @@
-lab50:
-  files:
-    - !exclude "*"
-    - !include "Student.java"
-    
-  window:
-    - editor
-    - readme
-    - terminal

@@ -1,7 +1,0 @@
-lab50:
-  files:
-    - !exclude "*"
-    - !include "*.java"
-  window:
-    - readme
-    - terminal
