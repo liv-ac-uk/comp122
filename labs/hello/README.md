@@ -127,7 +127,7 @@ This is an early example of the *information hiding* principle: You can use this
 ## How to submit your solution
 
 You can submit your solution to this exercise through Canvas:
-Go to the COMP122 course; then chose "Week 1 Lab: hello" under Assignments.
+Go to the COMP122 course; then chose "Lab: Hello" under Assignments.
 Once submitted you should get some automated feedback on your code.
 You can submit a solution and trigger the auto-marking as often as you like.
 
@@ -137,4 +137,3 @@ You do not need to perfectly solve or submit every exercise and we will not manu
 However, attendance is worth 10% of the final module grade,
 and we use submissions to lab exercises as a proxy for your participation.
 You can gain points each per week if you submit your attempt to solve the lab exercises.
-

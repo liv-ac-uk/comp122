@@ -1,0 +1,9 @@
+lab50:
+  files:
+    - !exclude "*"
+    - !include Comp122.class
+    - !include LeapYear.java
+  window:
+    - editor
+    - readme
+    - terminal

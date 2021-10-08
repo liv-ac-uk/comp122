@@ -1,0 +1,14 @@
+lab50:
+  files:
+    - !exclude "*"
+    - !include "Declarations.java"
+    - !include "FPTestApp.java"
+    - !include "SimpleCircle.java"
+    - !include "Pythagoras.java"
+    - !include "Cosines.java"
+    - !include "Comp122.class"
+    
+  window:
+    - editor
+    - readme
+    - terminal
