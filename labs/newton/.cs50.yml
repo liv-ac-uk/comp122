@@ -1,0 +1,9 @@
+lab50:
+  files:
+    - !exclude "*"
+    - !include Newton.java
+    - !include Comp122.class
+  window:
+    - editor
+    - readme
+    - terminal
