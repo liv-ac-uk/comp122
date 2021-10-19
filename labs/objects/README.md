@@ -94,20 +94,43 @@ The Lecturer has all the students grades written down so needs to enter them one
 To do this use the `Comp122.getInt()` method to first read in the number of students, then use a `for` loop to read in the grade of each student.
 
 Once all the `Student`s have had their grades read in, use another `for` loop to compute the class average, and print this to the terminal.
+This output should display at most 2 digits after the decimal point.
 
-Example Usage: 
+Example Usages: 
 
+```console
+$> java VGather 
+How Many Students In Class?
+3
+Enter a grade:
+1
+Enter a grade:
+2
+Enter a grade:
+3
+2.0
 ```
-$ java VGather 
-How Many Students In Class?  // Output
-3                           // Input
-Enter a grade:              // Output
-25                          // Input
+
+```console
+How Many Students In Class?
+2
 Enter a grade:
-23
+3
 Enter a grade:
-27
-25                          // Output
+4
+3.5
+```
+
+```console
+How Many Students In Class?
+3
+Enter a grade:
+3
+Enter a grade:
+3
+Enter a grade:
+4
+3.33
 ```
 
 {% spoiler "Hint" %}
@@ -122,12 +145,17 @@ You can loop through this array and modify each object individually:
 
 ```java
 for (int i = 0; i < n; i++) {
-    studentArray[i] = new Student();
     ...
     studentArray[i].setGrade(AN_INTEGER_READ_IN_EARLIER);
 }    
 ```
+{% endspoiler %}
 
+{% spoiler "Hint" %}
+
+There are several ways to print a double only up to a given precision.
+One easy way is to print at most the last 2 digits after the decimal point is to multiply by `100`, round to the next integer, then multiply by `100`.
+Use [`Math.round`](https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html#round-double-) here?
 {% endspoiler %}
 
 {% next %}
