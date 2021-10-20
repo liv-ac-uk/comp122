@@ -59,16 +59,16 @@ This is a bit of a boring class currently, so let's add some functionality.
 
 ## What's in a Name?
 
-Let's change the given starter code `Student.java` a bit, as follows.
+Let's change the given starter code `Student.java` a bit, and add more attributes as follows.
 
-- Most students have a name, so at the top of the class add a `public String` variable `name`.  
-  We want to be able to be able to set the students name, so add a method to *set* the name, `setName()`.
+- Most students have a name, so at the top of the class add a `public String` variable `name`;
+- Similarly, add a `String` attribute called `email`,
+- an `int` attribute called `yearOfBirth`,
+- an `int` attribute called `enrolmentYear`,
+- and an `int` attribute called `studentId`.
+- Finally, an `int` to the class to keep track of the students score, called `grade`, initially equal to `0`.
 
-- Additionally add an `int` to the class to keep track of the students score, called `grade`, initially equal to `0`.
-
-- After each of the assignments, the lecturer will update the students score with a method which will return a `void` called `setGrade(int mark)`, which will add the students grade for that assignment to their `grade`.
-
-- As we need to access the `grade` attribute, make sure there is also a `int getGrade()` method.
+Now add a new method called "updateGrade", that takes an `int` parameter (and returns nothing = `void`) that can be used to set a student's grade. After each of the assignments, the lecturer will update the students score with a method which will return a void called `updateGrade(int mark)`, which will add the students grade for that assignment to their grade.
 
 The automarker will be using these terms, so make sure to follow this specification closely (capitalisation matters)!
 
@@ -147,7 +147,7 @@ You can loop through this array and modify each object individually:
 ```java
 for (int i = 0; i < n; i++) {
     ...
-    studentArray[i].setGrade(AN_INTEGER_READ_IN_EARLIER);
+    studentArray[i].updateGrade(AN_INTEGER_READ_IN_EARLIER);
 }    
 ```
 {% endspoiler %}
