@@ -1,33 +1,11 @@
 # Constructing Classes
-In our previous programs we haven't kept much information about the students, apart from their grades. Due to the popularity of `VGather.java` you've been asked to extend the program to have more functionality. 
-
+Due to the popularity of `VGather.java` you've been asked to extend the program to have more functionality. 
 In particular, the administrator is tired of writing letters to each of the students and would prefer instead to automate this entire process. 
 
-{% next %}
 
-## Late Registration
+## Default Constructors
 
-When we create objects we can use the default constructor. This sets each of the variables to their default values (which is normally '0', `false`, or `""`).
-
-We can then go through each of our attributes and manually change these to the values we want them to using setters.
-
-```java
-Student alice = new Student();
-alice.setName("Alice");
-alice.setStudentId(1234567);
-alice.setEmail("aliceXtreme@aol.com");
-alice.setEnrolmentYear(2021);
-alice.setYearOfBirth(1984);
-```
-
-What a lot of code to do something so simple...
-
-{% next %}
-
-## Constructors
-
-When we call `new Student()`, it is useful that Java has set the default values, as it stops uninitialized variable errors from being thrown.
-
+When we create objects we can use the default constructor. 
 Although we haven't put the code below into any of our programs yet, the compiler has automatically created this when we miss it out, and this is what is being called when we say `new Student();`
 
 ```java
@@ -35,6 +13,20 @@ public Student() {
 
 }
 ```
+
+This implicitly also sets each of the variables to their default values (which is normally `0`, `false`, or `""`).
+We can then go through each of our attributes and manually change these to the values we want them to using setters.
+
+```java
+Student alice = new Student();
+alice.name = "Alice";
+alice.studentId = 1234567;
+alice.email = "aliceXtreme@aol.com";
+alice.enrolmentYear = 2021;
+alice.yearOfBirth = 1984;
+```
+
+What a lot of code to do something so simple...
 
 {% next %}
 
@@ -46,33 +38,34 @@ There is no need for us to have such a simple constructor however, and construct
 public Student(String studentName) {
     name = studentName;
 }
-... 
-// Separate program
-Student alice = new Student("Alice");
-
 ```
 
+In a separate (line of the) program we can then instantiate a new student with name "Alice" like this:
+`Student alice = new Student("Alice");`. 
 This enables us to save on some code when creating Student classes, which improves readability of programs all round. 
 
-Change the constructor of the `Student` class so that it takes two `String`s and three `int`s, and creates a new `Student` object without having to call the setter of each of these variables individually, e.g.
+Change the constructor of the Student class so that it takes two `String`s and three `int`s, and creates a new `Student` object without having to call the setter of each of these variables individually, e.g.
 
 ```java
 Sudent alice = new Student("Alice", "aliceXtreme@aol.com", 1984, 2021, 1234567)
 ```
+
+You will notice that the `Student` class has not main method and can therefore not be executed directly.
+In order to test your class, write a main method either in this, or a new dummy "application" class,
+which just instantiates and prints a few students.
 
 {% next %}
 
 ## But Wait There's More
 
 In addition to being able to define a constructor, we can define multiple constructors!
-
 This gives wider applicability to constructors, where we may not know all of the information about an object where we create it, or maybe the information given about an object is given in different formats.
 
 For example we might create a `Student` class when the student first applies to the university, we don't know what their student ID is at this point, and when their place is accepted they may choose to defer their placement for a year.
 
 When we define multiple methods with the same method name, but different arguments this is called *overloading* a method.
 
-Create a new overloaded method for the `Student` class which takes only three arguments, two `String`s and an `int` for the birth year for each of these students.
+Create a new overloaded constructor method for the `Student` class which takes only three arguments, two `String`s and an `int` for the birth year for each of these students.
 
 {% next %}
 
