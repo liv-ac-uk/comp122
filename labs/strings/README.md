@@ -22,10 +22,10 @@ Some methods defined on `String`s include the following:
 
 * `length()`    Returns the number of characters in the String.
 * `contains(s)` Does original String contain char (or String) `s`?
-* `indexOf(c)`  Returns the index (as `int`) within the original String of the first occurrence of `c`. Returns $-1$ if the parameter String does not appear in the original String.
+* `indexOf(c)`  Returns the index (as `int`) within the original String of the first occurrence of `c`. Returns -1 if the parameter String does not appear in the original String.
 * `substring(n,m)` Returns another String that is a copy of the subword between index `n` and `m`.
 
-Java interprets the symbol ($+$) as (inline) string concatenation when *at least one* of the arguments is a `String`.
+Java interprets the symbol (+) as (inline) string concatenation when *at least one* of the arguments is a `String`.
 This is why you can concatenate a string and a number, say, to get a new string. However, Java *does not* understand the multiplication operator in the context of the `String`s.
 
 **FYI,** `String`s are "immutable", meaning that they cannot be changed once they are created.
@@ -56,9 +56,9 @@ called `StringApp`, given in the starter code.
 
 ## Part 1: Powers!
 
-Write a (`public static`) method called `pow` that will take a `String` and a number $n$ as
+Write a (`public static`) method called `pow` that will take a `String` and a number n as
 parameters and will return a `String`, which consists of
-the original one repeated (concatenated) $n$ times. 
+the original one repeated (concatenated) n times. 
 
 **Caution!** The code should `return` the new string and not just print it on the terminal!
 So `pow("abc", 3)` equals `"abcabcabc"`
@@ -233,7 +233,7 @@ Yes and no! It is efficient in the sense that you do not spend time on a second 
 However, calling your previous `factorCount` method 26 times is inefficient in the sense that this will result in 26 readings of the original string. One can do better! For example, you could iterate over the string once, letter by letter,
 and keep a record of how often you have seen each of the 26 letters in an Array of characters `char[]`.
 A speedup by factor 26 will earn you brownie points with your boss if you are a software developer.
-Theoreticians will be less impressed because both algorithms are $O(n)$.
+Theoreticians will be less impressed because both algorithms are O(n).
 
 ### Implementation Hint
 
@@ -247,7 +247,7 @@ is perfectly legal, i.e. Java can interpret the "difference of two
 letters" with no problem, and this will give an integer value. 
 
 If the two letters are of the same case (both upper or both lower case), then this will give a value
-between $-25$ and 25. In particular, if `ch` is a lower case (`char`) letter, then
+between -25 and 25. In particular, if `ch` is a lower case (`char`) letter, then
 
 ```java
 int diff = ch - 'a';
