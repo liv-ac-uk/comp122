@@ -89,7 +89,7 @@ Find the first instance (if it exists, of course), remove it
 from the original string, and repeat. By "remove", I really mean
 find the substring from the original string *beyond* the end
 of the first instance of the target string. For example, the
-first index of "hello" in the example string is $0$ as it occurs
+first index of "hello" in the example string is 0 as it occurs
 right at the beginning of the string.
 If I remove the first instance of "hello", what I really want to
 do is to take the substring that starts at index 5, consisting
@@ -117,8 +117,8 @@ removing the initial part of the string up to the end of the
 first occurrence of the word "hello".
 
 **Notice:**
-Strings are indexed starting from $0$.
-Despite this Array-like indexing, you *cannot* access elements of the `String` using array notation. E.g. `s1[2]` will cause a compilation error! `s1.charAt(2)` is how you access the character at index $2$ in the String `s1`.
+Strings are indexed starting from 0.
+Despite this Array-like indexing, you *cannot* access elements of the `String` using array notation. E.g. `s1[2]` will cause a compilation error! `s1.charAt(2)` is how you access the character at index 2 in the String `s1`.
 
 ### Case insensitive factors?
 How do I do the above operation if I don't care about the case of the original string or the search string?
@@ -233,7 +233,7 @@ Yes and no! It is efficient in the sense that you do not spend time on a second 
 However, calling your previous `factorCount` method 26 times is inefficient in the sense that this will result in 26 readings of the original string. One can do better! For example, you could iterate over the string once, letter by letter,
 and keep a record of how often you have seen each of the 26 letters in an Array of characters `char[]`.
 A speedup by factor 26 will earn you brownie points with your boss if you are a software developer.
-Theoreticians will be less impressed, because both algorithms are $O(n)$.
+Theoreticians will be less impressed because both algorithms are $O(n)$.
 
 ### Implementation Hint
 
@@ -247,11 +247,11 @@ is perfectly legal, i.e. Java can interpret the "difference of two
 letters" with no problem, and this will give an integer value. 
 
 If the two letters are of the same case (both upper or both lower case), then this will give a value
-between $-25$ and $25$. In particular, if `ch` is a lower case (`char`) letter, then
+between $-25$ and 25. In particular, if `ch` is a lower case (`char`) letter, then
 
 ```java
 int diff = ch - 'a';
 ```
 
 tells you how many places after 'a' that letter is in the alphabet.
-(The value of `diff` will be between $0$ and $25$ inclusive).
+(The value of `diff` will be between 0 and 25 inclusive).

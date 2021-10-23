@@ -1,6 +1,7 @@
 lab50:
   files:
     - !exclude "*"
+    - !include "Comp122.class"
     - !include "StringApp.java"
     - !include "teststrings"
     
