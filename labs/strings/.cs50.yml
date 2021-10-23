@@ -1,0 +1,10 @@
+lab50:
+  files:
+    - !exclude "*"
+    - !include "StringApp.java"
+    - !include "teststrings"
+    
+  window:
+    - editor
+    - readme
+    - terminal
