@@ -61,7 +61,7 @@ Here we see that in the Student box we *only* have the new methods and attribute
 
 To ensure consistency with other arrows in UML diagrams, the base of the "extends" symbol (a line with a triangular head) goes *from* the class which "inherits from". 
 
-You can about Student having more "stuff" in it, hence Student gets the wide end of the arrow, and Person gets the pointy end.
+You want the `Student` class to have more "stuff" in it, hence Student gets the wide end of the arrow, and Person gets the pointy end.
 
 {% next %}
 
@@ -81,18 +81,7 @@ Your task for this lab is to implement this class hierarchy
 
 Make very careful note of each of the private and public variables, and additionally make sure that you follow each of the method names and types closely!
 
-{% next %}
-
 ## Submission
 
-You can test your code with 
+Submit your solution to this exercise through Canvas/CodeGrade as before.
 
-```
-check50 liv-ac-uk/comp122/2021/problems/inheritance
-```
-
-And submit your code with:
-
-```
-submit50 liv-ac-uk/comp122/2021/problems/inheritance
-```
