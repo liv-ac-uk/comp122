@@ -1,0 +1,11 @@
+lab50:
+  files:
+    - !exclude "*"
+    - !include "WC.java"
+    - !include "test"
+    
+    
+  window:
+    - editor
+    - readme
+    - terminal
