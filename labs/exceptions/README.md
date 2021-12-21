@@ -4,20 +4,6 @@ This lab covers Java's exception handling mechanism. Following completion you sh
 
 For an even more elaborate intro check out [Oracle's Exceptions tutorial](https://docs.oracle.com/javase/tutorial/essential/exceptions/index.html).
 
-This lab references local tests, you can check your code locally using `SelectFromTest` and `ExceptronTest` like so:
-
-```terminal
-java SelectFromTest
-java ExceptronTest
-```
-
-The latter has the following specific tests
-0-5 that can be run like so:
-`java ExceptronTest <Test Number>`
-
-**Note: Don't forget to recompile your code after any changes before running the test files again.**
-Different sections have relevant tests which will be referenced later on.
-
 {% next %}
 
 ## What is an Exception?
