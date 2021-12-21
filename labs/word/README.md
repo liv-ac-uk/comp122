@@ -74,8 +74,24 @@ $ java WC -l "`cat test`"
 
 {% next %}
 
+## Come Stat Me Bro
 
-## Papa's Got a Brand New Word Bag
+We often use statistics to describe text documents (although nowadays deep neural networks are commonly preferred). One of the most common metrics which we can use in text analysis is "lexical diversity".
+
+Lexical diversity is defined as the number of distinct words in the document, divided by the total number of words in the document
+
+![LexicalDiversity](img/LexicalDiversity.jpg)
+
+Add a method to `WC.java` which computes the lexical diversity of an input string when the `-s` flag is passed to the program.
+
+```
+$ java WC -s "`cat test`"
+0.09638554
+```
+
+{% next %}
+
+## Papa's Got a Brand New Bag of Words
 
 In general text documents aren't a great format to perform numeric analysis on a computer directly. One of the earliest approaches to featurizing text is called the bag of words approach. 
 
@@ -99,28 +115,11 @@ $ java WC -b "That that is is that that is not is not is that it it is"
 
 {% spoiler %}
 Hashmaps are your friend here.
-
 {% endspoiler %}
 
 
 {% next %}
 
-## Come Stat Me Bro
-
-We often use statistics to describe text documents (although nowadays deep neural networks are commonly preferred). One of the most common metrics which we can use in text analysis is "lexical diversity".
-
-Lexical diversity is defined as the number of distinct words in the document, divided by the total number of words in the document
-
-![LexicalDiversity](img/LexicalDiversity.jpg)
-
-Add a method to `WC.java` which computes the lexical diversity of an input string when the `-s` flag is passed to the program.
-
-```
-$ java WC -s "`cat test`"
-0.09638554
-```
-
-{% next %}
 
 
 ## What's Our Vector Victor?
@@ -180,50 +179,5 @@ Ensure your `WC.java` compiles correctly and ensure that each of the given flags
 
 `-d` - print the Euclidean distance between the joint bag of words vector representations of two strings
 
-You can check your code with:
-
-```
-check50 liv-ac-uk/comp122/2021/problems/word
-```
-
-and submit via:
-
-```
-submit50 liv-ac-uk/comp122/2021/problems/word
-```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Submit your solution to this exercise through Canvas/CodeGrade as before.
 
