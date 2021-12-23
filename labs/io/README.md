@@ -117,7 +117,7 @@ We now have everything we need to do the final exercise.
 
 {% next %}
 
-### Parsing a Structured Text File
+### Your Turn!
 
 Examine the file "programs.txt". It contains Program Descriptions, a form of data describing a computer program being applied to a problem, all of which have 6 fields that 
 adhere to the format "fieldName-fieldValue" i.e. the name of the field, followed by "-", followed by the value of the field.
@@ -127,7 +127,6 @@ Of these 6 fields,
 - "correct" is of type `boolean`.
 Before these 6 fields is `"Program Description n"`, where n corresponds to the Program Description's order in the file, and after these 6 fields is a blank line.
 
-### Your Turn!
 
 In the included file `IOLabPartOne.java` modify the function `parseStructuredTextFile(Path path)`, where path is the corresponding file path to the file of interest, such that it returns an `ArrayList<OurData>` corresponding to data in the file. You can be assured that the file will be in the same format as `programs.txt`, though the values and number of entries may be different in tests. 
 
