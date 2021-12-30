@@ -1,0 +1,8 @@
+lab50:
+  files:
+    - !exclude "*"
+    - !include "Comp122.class"
+    - !include "StringTools.java"
+  window:
+    - readme
+    - terminal
