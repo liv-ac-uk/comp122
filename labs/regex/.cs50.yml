@@ -1,0 +1,11 @@
+lab50:
+  files:
+    - !exclude "*"
+    - !include Rebel.java
+    - !include Spam.java
+    - !include Spam.txt
+    
+  window:
+    - editor
+    - readme
+    - terminal
