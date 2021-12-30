@@ -100,7 +100,7 @@ Modify the `matchEmpire()` method so that your program prints these matches to t
 If we were to match this in our program and run it we would see that it has matched on both of these words in the input
 
 ```console
-$ java Rebel 1
+$> java Rebel 1
 29
 34
 Rebel
@@ -233,7 +233,7 @@ Pattern pattern = Pattern.compile("From:.*");
 We have set you up with this basic regex with `Spam.java`. You can run this program as 
 
 ```
-$ java Spam 0
+$> java Spam 0
 ```
 
 
