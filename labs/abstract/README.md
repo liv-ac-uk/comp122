@@ -82,19 +82,11 @@ This should be implemented in `Lecturer.java` (and thus will be inherited by `Pr
 
 The university also likes to take in money as well as give it away. Students must pay to attend, and research councils must pay to fund lecturers and researchers to investigate new fields.
 
-Create an interface class `Billable.java`, again with a single method `payBill();`. The body of this method should again take in the amount to be billed, and simply print this to the console:
+Create an interface class `Billable.java`, again with a single method `void payBill();`. 
 
-`System.out.println(amount);`
+To test all this, create an entirely new class `ResearchCouncil.java`, which should implement both `Billable` and `Emailable`.
+The body `payBill()` should again take in the amount to be billed, and simply print this to the console, as before.
 
-Additionally create an entirely new class `ResearchCouncil.java`, which should implement both `Billable` and `Emailable`. To ensure that we can do this make private variables `name`, and `email`, as well as a public method `greet()`. The method body of `greet()` should be:
-
-```java
-return "sendto: " + email + "Dear " + name + ",\n";
-```
-
-Implement `sendEmail` and `payBill()` as before.
-
-{% next %}
 
 ## Diagramatically
 
@@ -102,13 +94,3 @@ The final class diagram of your solution should be:
 
 ![](img/CompleteUML.png)
 
-{% next %}
-
-## Submission
-
-You can test your code with 
-
-`check50 liv-ac-uk/comp122/2021/problems/abstract`
-
-And submit your code with:
-`submit50 liv-ac-uk/comp122/2021/problems/abstract`
