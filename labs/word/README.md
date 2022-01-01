@@ -30,11 +30,18 @@ for (String w: words)  {
 }
 ```
 
+In the code above we use `String.split` to perform the split, and the pattern in the quotation marks is specifying to split on whitespace (spaces, line breaks, tabs, etc in the string).
+See [here](https://howtodoinjava.com/java/string/java-string-split-example) for more examples for this method.
+It is worth noticing that above we ask `split` to split at each single instance of a whitespace (represented by the special character "\s", but in order to distinguish this single character from the two-character string consisting of a backslash and an "s", the backslash is "escaped" by another preceding backslash.
+
 This functionality has been given to you in `WC.java` in the method `wordCount`. This program can be used as so 
 
 ```
-$ java WC -w "If it takes a man a week to walk a fortnight, how many apples are in a barrel of grapes?"
+$> java WC -w "If it takes a man a week to walk a fortnight, how many apples are in a barrel of grapes?"
 20
+
+$> java WC -w "When in the course of human events..."
+7
 ```
 
 {% next %}
