@@ -23,7 +23,7 @@ can recover from them, usually they should be thrown so that the program will ha
 These exceptions are often used for less catastrophic events from which the program potentially could recover more easily. An example of these exceptions is the `IOException`, which can be triggered while reading/writing from files. Imagine an instance where we are reading data line by line from a file with thousands of lines. If one line is malformed, while the others are correct, we may wish to catch and log the error in the one malformed line
 while still processing the others.
 
-Beyond the philosophical differences with runtime exceptions there is a technical difference: In order to throw a checked exception you must explicitly add the "`throws` (name of your Exception)" to the top of the function from which you are throwing. This allows the compiler to check (hence the name) that a user of your method either handles or re-throws such an exception.
+Beyond the philosophical differences with runtime exceptions there is a technical difference: In order to throw a checked exception you must explicitly add the "`throws` (name of your Exception)" to the top of the method from which you are throwing. This allows the compiler to check (hence the name) that a user of your method either handles or re-throws such an exception.
 
 {% next %}
 
@@ -55,7 +55,7 @@ The first three reasons will be the likeliest culprits in your code, and the big
 
 ## SelectFrom
 
-Examine the provided Java class, `SelectFrom.java`. It is supposed to have a class `SelectFrom` which has a constructor that takes a list of arguments, all assumed to be integers, which are added to `arrayOfNumbers`. The `selectFromArray` function then takes an index i, returning -1 if the index is out of bounds but otherwise returning the `i`th element of `arrayOfNumbers`. At the moment, however, there are a couple errors that will trigger a `NullPointerException`
+Examine the provided Java class, `SelectFrom.java`. It is supposed to have a class `SelectFrom` which has a constructor that takes a list of arguments, all assumed to be integers, which are added to `arrayOfNumbers`. The `selectFromArray` method then takes an index i, returning -1 if the index is out of bounds but otherwise returning the `i`th element of `arrayOfNumbers`. At the moment, however, there are a couple errors that will trigger a `NullPointerException`
 and an `ArrayOfIndexOutOfBoundsException`. 
 
 Compile and run `SelectFrom` from the terminal. When you run it, an error is spit out to the console informing you of the exception. 
@@ -67,11 +67,11 @@ Exception in thread "main" java.lang.NullPointerException
 	at SelectFrom.main(SelectFrom.java:21)
 ```
 
-This is a partial printing of the "stack trace" for the exception, which can be fully printed by catching the exception and calling the exception's `printStackTrace()` function. Notice how the stack trace tells you the lines of code where the error occurred. Stack traces are consequently very useful for debugging the source of exceptions.
+This is a partial printing of the "stack trace" for the exception, which can be fully printed by catching the exception and calling the exception's `printStackTrace()` method. Notice how the stack trace tells you the lines of code where the error occurred. Stack traces are consequently very useful for debugging the source of exceptions.
 
 Generally speaking, the first line of the stack trace will be the most important, as this is where the exception was encountered during execution. However, the reason for that exception may have occurred on another line, so you'll need to trace the steps of your program that lead to the line that triggered the exception. 
 
-An aside, when an exception occurs in an external library you should keep reading from the top down until you find the line where your code is calling the library function.
+An aside, when an exception occurs in an external library you should keep reading from the top down until you find the line where your code is calling the library method.
 
 **Your task** here is to fix `SelectFrom` such that it this exception is not thrown.
 While you're at it, also make the attribute `private` for good measure.
@@ -105,35 +105,15 @@ doSomeMoreStuffWithMyClass(mc);
 ## Exceptron
 
 To demonstrate try-catch, we have written a class called `Exceptron`. Its primary purpose is as it sounds:
-it throws exceptions. Specifically, it has preloaded scenarios dependent upon an index that decides which exceptions to throw, and then runs these exceptions with the aptly named function `doSomeStuff()`. 
-
+it throws exceptions when one calls its aptly named method `doSomeStuff()`. If you call this method several times, it will always throw some exception but not always the same. Specifically, `Exceptron` has preloaded scenarios (1-8) and dependent upon which scenario given when instantiated, it decides which exceptions to throw.
 To be clear, this class is not part of Java. It is just a small demo application that we wrote here.
-It has tests 0-5 that can be run like so:
 
-```console
-$> java ExceptronTest <Test Number>
-```
+Let's now modify the provided program `ExceptronPlatform.java`, which interacts with the Exceptron class.
+For now, we'll keep it simple. In the `runExceptron` method uncomment `exceptron.doSomeStuff()`.
+Now, wrap this method in a try catch block, with the `catch` catching `Exception e`. If you are unsure of what this looks like, refer to the try-catch block in `SelectFromTest.java`. In the catch block, return the String `e.toString()`. The Exception's `toString` method returns the name of the exception followed by a colon and then a message often
+shedding light on why the exception occurred.
 
-**Note: Don't forget to recompile your code after any changes before running the test files again.**
-
-
-Let's modify the provided program ExceptronPlatform.java.
-
-For now, we'll keep it simple. In the `runExceptron` function uncomment `exceptron.doSomeStuff()`.
-Now, wrap this function in a try catch block, with the `catch` catching `Exception e`. If you are unsure of what this looks like, refer to the try-catch block in SelectFromTest.java. In the catch block, return the String `e.toString() + "\n"`. The Exception's `toString` function returns the name of the exception followed by a colon and then a message often
-shedding light on why the exception occurred. The "\n" is just a newline.
-
-If the catch block is not reached, `runExceptron` should return `"Everything's Fine\n"`. Note that any code after a try-catch block runs as normal unless the catch block explicitly decides to return from the function or throw an exception. From the instructions above you should return a String, but if instead you merely printed the String the code would pick
-up at the next line after the try-catch block.
-
-Once the above is completed your code should pass tests 0 and 1. 
-To test these, you can use the following commands:
-
-```terminal
-java ExceptronTest 0
-java ExceptronTest 1
-```
-
+If the catch block is not reached, `runExceptron` should *return* `"Everything's Fine\n"`. Note that any code after a try-catch block runs as normal unless the catch block explicitly decides to return from the method or throw an exception. From the instructions above you should return a String, but if instead you merely printed the String the code would pick up at the next line after the try-catch block.
 
 {% next %}
 
@@ -142,9 +122,7 @@ What we have just implemented is a general exception handler. Because it catches
 
 Sometimes, however, we may want to have behaviour for when specific exceptions are encountered. Fortunately, the try-catch block can be expanded to have multiple catch blocks. An example of this can be seen in SelectFromTest.java. The catch blocks are executed in the order from top to bottom i.e., the top block will be checked first and the bottom block will be checked last. The catch blocks have to be ordered such that any type of exception caught is not a parent class of a block below. Specifically, the root exception must always be at the bottom, since it is the parent of all other exceptions.
 
-To demonstrate this, try moving the root exception to be the top block in SelectFromTest.java and try to recompile. It won't work, because the other catch blocks are now unreachable code which is a Java crime.
-
-Back in `ExceptronPlatform`, modify the try-catch block to catch two additional classes, `SQLException` and `SuperCoolException`. You'll need to import `SQLException` so add the following to the top of your code:
+In `ExceptronPlatform`, modify the try-catch block to catch two additional classes, `SQLException` and `SuperCoolException`. You'll need to import `SQLException` so add the following to the top of your code:
 
 ```java
 import java.sql.SQLException;
@@ -152,14 +130,14 @@ import java.sql.SQLException;
 
 `SuperCoolException` is actually a custom exception included with this lab's starter code. Examining it, you'll notice all it does is extend `Exception` and it contains only a constructor that allows a message to be passed in. There is obviously more stuff you can do when extending `Exception`, for example overloading [any of its existing methods](https://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html). However, `SuperCoolException`'s implementation is pretty much all you'll need to do to make a custom exception in the upcoming assignment.
 
-Like before, return `e.toString() + "\n"` from these catch blocks. Your code should now pass test 2 in `ExceptronTest`.
+Like before, return `e.toString()` from these catch blocks.
 
-Right now, because we have the general exception handler we are going to catch and kill catastrophic `RuntimeException`s too. Let's now modify our block to catch `RuntimeException`(s). When we catch one of these, we will throw the exception out of the function. To do this, simply employ the `throw` keyword followed by your exception object e.g. (`throw e`). 
+Right now, because we have the general exception handler we are going to catch and kill catastrophic `RuntimeException`s too. Let's now modify our block to catch `RuntimeException`(s). When we catch one of these, we will throw the exception out of the method. To do this, simply employ the `throw` keyword followed by your exception object e.g. (`throw e`). 
 
 A reasonable question one might have: if I throw an exception from a catch block catching a `RunTimeException`, will it then be caught by the  catch block below that catches all exceptions? The answer is no. Similarly, one might wonder if an exception can "fall through" a catch block, 
 that is to say do something specific for a child class in the block associated with that child class but still have it reach the catch all block where further logic is performed. This also isn't possible.
 
-Once an exception is thrown out of a try block, it is caught by the first block that either it is exactly or is a child of, and from that block you can throw, return from the function, or allow the program to continue onto the code after the try-catch blocks. None of the other catch blocks in that try-catch are involved. If you wanted to emulate the behaviour from the two scenarios above, you could nest try-catch blocks like so:
+Once an exception is thrown out of a try block, it is caught by the first block that either it is exactly or is a child of, and from that block you can throw, return from the method, or allow the program to continue onto the code after the try-catch blocks. None of the other catch blocks in that try-catch are involved. If you wanted to emulate the behaviour from the two scenarios above, you could nest try-catch blocks like so:
 
 ```java
 try{
@@ -175,38 +153,28 @@ try{
 ```
 
 
-Upon completion of the section above, your code should now pass tests 2 and 3 in ExceptronTest. You can run these tests with the following commands:
-```terminal
-java ExceptronTest 2
-java ExceptronTest 3
-```
-
 {% next %}
 
 
 ## Let's Wrap it in a For Loop
-We're almost done. We're now going to emulate the example I gave previously for `IOException`. Specifically, we are going to process `IOExceptions` until a certain number of failures has been encountered, at which point we will throw out of the function and kill the program.
+We're almost done. We're now going to emulate the example I gave previously for `IOException`. Specifically, we are going to process `IOExceptions` until a certain number of failures has been encountered, at which point we will throw out of the method and kill the program.
 
 Wrap the try-catch block in a for loop that iterates from 0 to `exceptron.getScenarioLength()`. Also, create an empty String, which we'll call `messages`, before the loop. Now in your catch blocks where you are returning Strings, instead add these Strings to `messages`. Finally, add an additional catch block for [`IOException`](https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html). Note that `IOException` is a checked exception, hence we need *throws IOException* after the signature of `runExceptron`. This is already done for you.
 
-In this block, check the exception's message with the function `ioe.getMessage()`, assuming your `IOException` object is named `ioe`. If the message is "FATAL ERROR", then throw the `IOException`. Otherwise, like the other checked exceptions, add the string `ioe.toString() + "\n"` to `messages`. Don't forget that if no exceptions are encountered we return "Everything's Fine\n". How can we know no exceptions were encountered? `messages` would be empty, right?
+In this block, check the exception's message with the method `ioe.getMessage()`, assuming your `IOException` object is named `ioe`. If the message is "FATAL ERROR", then throw the `IOException`. Otherwise, like the other checked exceptions, add the string `ioe.toString()` to `messages`. Don't forget that if no exceptions are encountered we return "Everything's Fine". How can we know no exceptions were encountered? `messages` would be empty, right?
 Can we check this somehow?
 
 {% spoiler "Hint" %}
-To check String equality in Java don't use `==`. Use the String function [`equals()`](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#equals(java.lang.Object)). See [this post explaining the difference](https://stackoverflow.com/a/513839/11885326). Basically, `==` compares two objects (Strings) for object identity whereas `String.equals` compares two strings for equality of content.
+To check String equality in Java don't use `==`. Use the String method [`equals()`](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#equals(java.lang.Object)). See [this post explaining the difference](https://stackoverflow.com/a/513839/11885326). Basically, `==` compares two objects (Strings) for object identity whereas `String.equals` compares two strings for equality of content.
 {% endspoiler %}
 
-When your code is working, you should pass test 4 in ExceptronTest. You can test this with the following command:
-```terminal
-java ExceptronTest 4
-```
 
 {% next %}
 
 ## Finally
 
 We `finally` near the end of the lab.
-`finally` blocks are included after try-catch blocks and any code in a `finally` block will *always* be executed, even if we have thrown out of the function. For example, consider if we had the following:
+`finally` blocks are included after try-catch blocks and any code in a `finally` block will *always* be executed, even if we have thrown out of the method. For example, consider if we had the following:
 
 ```java
 try{
@@ -218,17 +186,7 @@ try{
 }
 ```
 
-When the exception is encountered it is thrown out into the next enclosing space, typically the function itself, and it will continue to propagate up through calling functions until it is handled by a catch block or it is thrown out of main and kills the program. After it is done propagating, but before it potentially kills the program,
+When the exception is encountered it is thrown out into the next enclosing space, typically the method itself, and it will continue to propagate up through calling methods until it is handled by a catch block or it is thrown out of main and kills the program. After it is done propagating, but before it potentially kills the program,
 the control flow of the code circles back to the finally block and executes whatever code is within it, in this case `alwaysDone()`. This can be useful if there is some house cleaning or resource management you know you'll always need to do.
 
-To finish off, wrap the for loop from above in a try statement, and then follow this try statement with a finally statement. Note, you don't actually have to have a catch associated with a try block. In the `finally` block, call the function `exceptron.goodBye()`. 
-
-Once you have done this, you should pass test 5 and thus all tests in ExceptronTest. To check test 5 use the following command:
-```terminal
-java ExceptronTest 5
-```
-To run all the tests you can use the following command:
-```terminal
-java ExceptronTest
-```
-
+To finish off, wrap the for loop from above in a try statement, and then follow this try statement with a finally statement. Note, you don't actually have to have a catch associated with a try block. In the `finally` block, call the method `exceptron.goodBye()`. 

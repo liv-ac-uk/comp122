@@ -7,7 +7,6 @@ lab50:
     - !include "SelectFromTest.class"
     - !include "SuperCoolException.java"
     - !include "SuperCoolException.class"
-    - !include "ExceptronTest.class"
     - !include "ExceptronPlatform.java"
     
   window:
