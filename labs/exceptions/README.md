@@ -73,12 +73,8 @@ Generally speaking, the first line of the stack trace will be the most important
 
 An aside, when an exception occurs in an external library you should keep reading from the top down until you find the line where your code is calling the library function.
 
-**Your task** here is to fix `SelectFrom` such that it passes the test in the provided `SelectFromTest.java` file. 
-The specific command to run the test is:
-
-```terminal
-java SelectFromTest
-```
+**Your task** here is to fix `SelectFrom` such that it this exception is not thrown.
+While you're at it, also make the attribute `private` for good measure.
 
 {% next %}
 
