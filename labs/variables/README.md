@@ -93,6 +93,9 @@ java Declarations
 
 Try it with different values of `currentWeight` and `newWeight` to ensure it works as you would expect (don't forget to recompile, or it will simply use the old version of your program)
 
+Before you submit your code change `Declarations.java` so that it compiles fine and make `currentWeight = 122.5` and `newWeight = 60`. 
+
+
 {% next %}
 
 
@@ -133,6 +136,10 @@ Make ![](img/07.gif) and add this together 3 times.
 Is this equal to 1?
 
 For your final submission change `x = 0.05` and add this together 20 times.
+
+{% spoiler "Hint" %}
+**Hint:** to arrive at an integral value try to cast `y` into an `int` and back or use `Math.floor`?
+{% endspoiler %}
 
 {% next %}
 
