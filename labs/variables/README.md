@@ -233,7 +233,7 @@ There is a square root function in the Math package which it would be wise to us
 
 When we do not have a right angled triangle, but we do have the values of `a`, `b`, and the angle between these ![](img/17.gif), we can see that the relationship between `c` and these values is given by the [Law of Cosines](https://www.wikipedia.org/wiki/Law_of_cosines)
 
-![](img/18.gif)
+![](img/18.png)
 
 ![Cosines](img/loc.png)
 
