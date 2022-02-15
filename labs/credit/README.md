@@ -71,7 +71,7 @@ Number: 6176292929
 INVALID
 ```
 
-Test out your program with a whole bunch of inputs, both valid and invalid. Here are a [few card numbers](https://developer.paypal.com/docs/classic/payflow/payflow-pro/payflow-pro-testing/#credit-card-numbers-for-testing) that PayPal recommends for testing.
+Test out your program with a whole bunch of inputs, both valid and invalid. Here are a [few card numbers](https://www.paypalobjects.com/en_GB/vhelp/paypalmanager_help/credit_card_numbers.htm) that PayPal recommends for testing.
 If your program behaves incorrectly on some inputs (or doesn't compile at all), time to debug!
 
 ### Walkthrough
