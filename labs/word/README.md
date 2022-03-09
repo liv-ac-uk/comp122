@@ -96,6 +96,10 @@ $ java WC -s "`cat test`"
 0.09638554
 ```
 
+{% spoiler "Hint" %}
+`HashSet` or `HashMap`s are your friend here.
+{% endspoiler %}
+
 {% next %}
 
 ## Papa's Got a Brand New Bag of Words
@@ -121,7 +125,14 @@ $ java WC -b "That that is is that that is not is not is that it it is"
 ```
 
 {% spoiler %}
-Hashmaps are your friend here.
+The automarker expects the vector dimensions to correspond to words in lexicographical order,
+and that we are discarding the case of the letter.
+To sort an existing collection like `ArrayList<String>`, you can use 
+
+```java
+Collections.sort(list);
+```
+
 {% endspoiler %}
 
 
