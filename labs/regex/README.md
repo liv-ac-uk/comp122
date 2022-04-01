@@ -295,6 +295,7 @@ There are still two big issues with how our regex is matching emails. First of a
 #### Your Turn
 
 Modify the regex in `matchEmails()` so that it correctly prints every single email addresses in `Spam.txt` to the terminal completely, ensuring there are no leading and trailing `<>`s.
+Since matching email addresses correctly [according to the corresponding RFC is complicated yet not very interesting)[http://www.ex-parrot.com/~pdw/Mail-RFC822-Address.html], let's for simplicity use this RE here: `[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}`.
 
 ```console
 $> java Spam 1
