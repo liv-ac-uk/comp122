@@ -295,12 +295,12 @@ There are still two big issues with how our regex is matching emails. First of a
 #### Your Turn
 
 Modify the regex in `matchEmails()` so that it correctly prints every single email addresses in `Spam.txt` to the terminal completely, ensuring there are no leading and trailing `<>`s.
-Since matching email addresses correctly [according to the corresponding RFC is complicated yet not very interesting)[http://www.ex-parrot.com/~pdw/Mail-RFC822-Address.html], let's for simplicity use this RE here: `[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}`.
+Since matching email addresses correctly [according to the corresponding RFC is complicated yet not very interesting)[http://www.ex-parrot.com/~pdw/Mail-RFC822-Address.html], let's for simplicity use this RE here: `[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}`.
 
 ```console
 $> java Spam 1
 makalele01@xzapmail.com
-2200384715453906@xzapmail.com
+166691-2200384715453906@xzapmail.com
 ...
 ed1b73ed1f4c.ed1f4ced1b73@123mail.cl
 esamakingdom@fsmail.net
@@ -308,6 +308,7 @@ esamakingdom@fsmail.net
 esamakingdom@fsmail.net
 revcistercium@planafla.es
 ```
+
 
 {% next %}
 
